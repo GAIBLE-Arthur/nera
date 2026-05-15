@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arthur Gaible — Conseil en Achats et Matières Premières</title>
+<meta name="description" content="Conseil en achats et matières premières. J'accompagne les directions achats des ETI et PME : veille MP, stratégie d'approvisionnement, dashboards opérationnels, analyses sectorielles. Livrables concrets, délais courts, tarification au forfait.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0e0d0b;
+    --paper: #f5f0e8;
+    --paper-dark: #ede7d5;
+    --accent: #b8341b;
+    --accent-light: #d94f2b;
+    --gold: #c9a84c;
+    --steel: #3d5a8a;
+    --muted: #7a7060;
+    --rule: #d0c8b4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Libre Baskerville', Georgia, serif;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* Custom cursor */
+  .cursor {
+    position: fixed;
+    left: 50%; top: 50%;
+    width: 12px; height: 12px;
+    background: var(--accent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
+    animation: cursorPulse 1.8s ease-in-out infinite;
+  }
+  @keyframes cursorPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(184,52,27,0.55); }
+    50%      { box-shadow: 0 0 0 12px rgba(184,52,27,0); }
+  }
+  .cursor-ring {
+    position: fixed;
+    left: 50%; top: 50%;
+    width: 36px; height: 36px;
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.18s ease, width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+    opacity: 0.5;
+  }
+  body:has(a:hover) .cursor,
+  body:has(button:hover) .cursor { width: 6px; height: 6px; background: var(--gold); }
+  body:has(a:hover) .cursor-ring,
+  body:has(button:hover) .cursor-ring { width: 52px; height: 52px; opacity: 0.8; border-color: var(--gold); }
+
+  /* NOTION PILL */
+  .notion-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    text-decoration: none;
+    padding: 0.6rem 1rem 0.6rem 0.7rem;
+    border: 1px solid var(--rule);
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .notion-pill::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: var(--ink);
+    transform: translateX(-101%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+  }
+  .notion-pill:hover::before { transform: translateX(0); }
+  .notion-pill:hover { border-color: var(--ink); transform: translateY(-2px); }
+  .notion-pill:hover * { color: var(--paper) !important; }
+  .notion-pill:hover .notion-pill-dot { background: var(--gold) !important; box-shadow: 0 0 8px var(--gold) !important; }
+  .notion-pill-dot {
+    position: relative; z-index: 1;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 3px rgba(184,52,27,0.15);
+    flex-shrink: 0;
+    animation: dotPulse 2s ease-in-out infinite;
+  }
+  .notion-pill-text {
+    position: relative; z-index: 1;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--ink);
+    transition: color 0.3s;
+  }
+  .notion-pill-sub {
+    position: relative; z-index: 1;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    transition: color 0.3s;
+  }
+  .notion-pill-arrow {
+    position: relative; z-index: 1;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--accent);
+    transition: color 0.3s, transform 0.3s;
+    margin-left: 0.2rem;
+  }
+  .notion-pill:hover .notion-pill-arrow { transform: translateX(4px); }
+  @keyframes dotPulse {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(184,52,27,0.15); }
+    50% { box-shadow: 0 0 0 6px rgba(184,52,27,0.05); }
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.4rem 3rem;
+    background: rgba(245, 240, 232, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    text-decoration: none;
+    display: flex; align-items: baseline; gap: 0.8rem;
+  }
+  .nav-logo span {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 6rem 3rem 6rem 4rem;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.6rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .hero-tag::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--accent); }
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 5.5vw, 5rem);
+    font-weight: 900;
+    line-height: 1.0;
+    margin-bottom: 0.6rem;
+    color: var(--ink);
+  }
+  .hero-name em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1rem, 1.7vw, 1.3rem);
+    color: var(--muted);
+    margin-bottom: 2.2rem;
+    line-height: 1.5;
+    max-width: 40ch;
+  }
+  .hero-desc {
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: var(--ink);
+    max-width: 42ch;
+    margin-bottom: 2.6rem;
+    opacity: 0.85;
+  }
+  .hero-cta {
+    display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: var(--accent);
+    color: var(--paper);
+    text-decoration: none;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.85rem 1.6rem;
+    transition: background 0.2s, transform 0.2s;
+    border: none;
+  }
+  .btn-primary:hover { background: var(--accent-light); transform: translateY(-1px); }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    border: 1px solid var(--rule);
+    color: var(--muted);
+    text-decoration: none;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.85rem 1.6rem;
+    transition: border-color 0.2s, color 0.2s;
+    background: transparent;
+  }
+  .btn-secondary:hover { border-color: var(--ink); color: var(--ink); }
+
+  .hero-right {
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--ink);
+    overflow: hidden;
+  }
+  .hero-network {
+    position: absolute;
+    inset: 0;
+    opacity: 0.22;
+  }
+  .hero-tagline {
+    position: relative;
+    z-index: 2;
+    padding: 3rem;
+    text-align: center;
+  }
+  .hero-tagline p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1.1rem, 1.9vw, 1.45rem);
+    color: rgba(245,240,232,0.6);
+    line-height: 1.7;
+    max-width: 32ch;
+    margin: 0 auto;
+  }
+  .hero-tagline strong { color: var(--gold); font-style: normal; }
+
+  /* STATS BAND */
+  .stats-band {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2px;
+    background: var(--rule);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .stat-card {
+    background: var(--paper);
+    padding: 2rem 1.6rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .stat-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--accent);
+  }
+  .stat-card:nth-child(2)::before { background: var(--gold); }
+  .stat-card:nth-child(3)::before { background: var(--steel); }
+  .stat-card:nth-child(4)::before { background: #4a7c6f; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* DIVIDER */
+  .section-rule {
+    display: flex; align-items: center; gap: 1.5rem;
+    padding: 0 4rem;
+    margin: 0 0 3rem;
+  }
+  .section-rule::before, .section-rule::after {
+    content: ''; flex: 1; height: 1px; background: var(--rule);
+  }
+  .section-rule-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  /* SECTION */
+  section { padding: 6rem 4rem; }
+  .section-header {
+    margin-bottom: 4rem;
+    display: flex; align-items: baseline; gap: 2rem;
+  }
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 900;
+    line-height: 1.1;
+  }
+
+  /* SERVICE CARDS — variation: include a "livrable" footer */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+  .service-card {
+    background: var(--paper);
+    padding: 2.4rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.25s ease;
+  }
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .service-card:hover::after { transform: scaleX(1); background: var(--gold); }
+  .service-icon {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .service-icon::before {
+    content: '';
+    display: inline-block;
+    width: 22px; height: 1px;
+    background: var(--accent);
+  }
+  .service-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    color: var(--ink);
+  }
+  .service-desc {
+    font-size: 0.88rem;
+    line-height: 1.8;
+    color: var(--muted);
+    margin-bottom: 1.6rem;
+  }
+  .service-deliv {
+    border-top: 1px dashed var(--rule);
+    padding-top: 1rem;
+    display: flex; flex-direction: column; gap: 0.3rem;
+  }
+  .service-deliv-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .service-deliv-text {
+    font-family: 'Libre Baskerville', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  /* CASE CARDS — same pattern as original project-cards */
+  .cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+  .case-card {
+    background: var(--paper);
+    padding: 2.4rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.25s ease;
+  }
+  .case-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .case-card:hover { background: var(--ink); }
+  .case-card:hover * { color: var(--paper) !important; }
+  .case-card:hover .case-tag { background: rgba(255,255,255,0.1); color: var(--paper) !important; }
+  .case-card:hover::after { transform: scaleX(1); background: var(--gold); }
+  .case-card:hover .case-arrow { opacity: 1; transform: translate(0, 0); }
+  .case-tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: rgba(184, 52, 27, 0.08);
+    padding: 0.3rem 0.7rem;
+    margin-bottom: 1.4rem;
+  }
+  .case-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+    color: var(--ink);
+  }
+  .case-desc {
+    font-size: 0.85rem;
+    line-height: 1.75;
+    color: var(--muted);
+    margin-bottom: 1.6rem;
+  }
+  .case-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    border-top: 1px solid var(--rule);
+    padding-top: 1rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .case-arrow {
+    opacity: 0;
+    transform: translate(-4px, 4px);
+    transition: opacity 0.25s, transform 0.25s;
+    font-size: 1.1rem;
+  }
+
+  /* FEATURED — APPROCHE */
+  .featured {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 6rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .featured::before {
+    content: '§';
+    position: absolute;
+    top: 2rem; right: 4rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 22rem;
+    font-weight: 900;
+    color: rgba(255,255,255,0.03);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .featured .section-num { color: var(--gold); }
+  .featured .section-title { color: var(--paper); }
+  .featured-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+    margin-top: 4rem;
+  }
+  .featured-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.7rem;
+    color: var(--paper);
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+  }
+  .featured-text p {
+    font-size: 0.92rem;
+    line-height: 1.85;
+    color: rgba(245,240,232,0.7);
+    margin-bottom: 1.4rem;
+  }
+  .featured-text strong { color: var(--gold); font-weight: 700; }
+
+  /* PROCESS STEPS — new component for approche */
+  .process {
+    display: flex; flex-direction: column; gap: 1px;
+    background: rgba(255,255,255,0.06);
+  }
+  .process-step {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 1.6rem;
+    padding: 1.5rem 1.6rem;
+    background: rgba(255,255,255,0.03);
+    border-left: 3px solid transparent;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .process-step:hover { border-color: var(--gold); background: rgba(255,255,255,0.06); }
+  .process-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .process-content h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--paper);
+    margin-bottom: 0.4rem;
+  }
+  .process-content p {
+    font-size: 0.82rem;
+    line-height: 1.65;
+    color: rgba(245,240,232,0.55);
+    margin: 0;
+  }
+
+  /* PARCOURS / ABOUT */
+  .about {
+    background: var(--paper-dark);
+    padding: 6rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 6rem;
+    align-items: start;
+  }
+  .about-left h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+  .about-left h2 em { font-style: italic; color: var(--accent); }
+  .about-left p {
+    font-size: 0.92rem;
+    line-height: 1.85;
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+  }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-top: 3rem;
+  }
+  .skill-item {
+    background: var(--paper);
+    padding: 1.4rem;
+  }
+  .skill-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+  }
+  .skill-list {
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+
+  /* TIMELINE */
+  .timeline {
+    display: flex; flex-direction: column; gap: 0;
+    border-left: 2px solid var(--rule);
+    padding-left: 1.8rem;
+    margin-left: 0.5rem;
+  }
+  .timeline-item {
+    position: relative;
+    padding-bottom: 2rem;
+  }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.4rem;
+    top: 0.4rem;
+    width: 11px; height: 11px;
+    background: var(--paper-dark);
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+  }
+  .timeline-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+  }
+  .timeline-role {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+  .timeline-org {
+    font-family: 'Libre Baskerville', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+  .timeline-detail {
+    font-size: 0.82rem;
+    line-height: 1.65;
+    color: var(--muted);
+  }
+
+  /* CONTACT */
+  .contact-block {
+    padding: 3rem;
+    background: var(--ink);
+    color: var(--paper);
+    position: relative;
+  }
+  .contact-block::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 80px; height: 80px;
+    border-top: 2px solid var(--gold);
+    border-right: 2px solid var(--gold);
+  }
+  .contact-block .badge {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(201, 168, 76, 0.4);
+    padding: 0.3rem 0.7rem;
+    margin-bottom: 1.4rem;
+  }
+  .contact-block h3 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+  .contact-block p {
+    font-size: 0.85rem;
+    color: rgba(245,240,232,0.6);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+  .contact-email {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--gold);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 2rem;
+    transition: opacity 0.2s;
+    word-break: break-all;
+  }
+  .contact-email:hover { opacity: 0.7; }
+  .contact-links { display: flex; flex-direction: column; gap: 0.8rem; }
+  .contact-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.5);
+    text-decoration: none;
+    display: flex; align-items: center; gap: 0.8rem;
+    transition: color 0.2s;
+  }
+  .contact-links a::before { content: '→'; color: var(--accent); }
+  .contact-links a:hover { color: var(--paper); }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: rgba(245,240,232,0.3);
+    padding: 2rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  footer a { color: var(--gold); text-decoration: none; }
+  footer a:hover { opacity: 0.7; }
+
+  /* MODAL */
+  .modal-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(14, 13, 11, 0.85);
+    z-index: 500;
+    backdrop-filter: blur(6px);
+    align-items: center; justify-content: center;
+    padding: 2rem;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--paper);
+    max-width: 680px; width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalIn 0.3s ease;
+  }
+  @keyframes modalIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .modal-header {
+    background: var(--ink);
+    padding: 2.4rem 2.4rem 2rem;
+    position: sticky; top: 0; z-index: 1;
+  }
+  .modal-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+  }
+  .modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--paper);
+    line-height: 1.25;
+  }
+  .modal-close {
+    position: absolute; top: 1.4rem; right: 1.6rem;
+    background: none; border: none;
+    color: rgba(245,240,232,0.4);
+    font-size: 1.4rem;
+    cursor: none;
+    transition: color 0.2s;
+    line-height: 1;
+  }
+  .modal-close:hover { color: var(--paper); }
+  .modal-body { padding: 2.4rem; }
+  .modal-body p {
+    font-size: 0.9rem;
+    line-height: 1.85;
+    color: var(--muted);
+    margin-bottom: 1.4rem;
+  }
+  .modal-body p strong { color: var(--ink); font-weight: 700; }
+  .modal-body .modal-link {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--accent);
+    color: var(--paper);
+    text-decoration: none;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.8rem 1.6rem;
+    margin-top: 0.5rem;
+    transition: background 0.2s;
+  }
+  .modal-body .modal-link:hover { background: var(--accent-light); }
+  .modal-kv { display: flex; flex-direction: column; gap: 1px; background: var(--rule); margin-bottom: 1.8rem; }
+  .modal-kv-row { display: flex; background: var(--paper-dark); padding: 0.8rem 1.2rem; gap: 2rem; }
+  .modal-kv-key { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); min-width: 110px; }
+  .modal-kv-val { font-size: 0.85rem; color: var(--ink); }
+
+  /* ANIMATIONS */
+  .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* Cross-site link */
+  .cross-link {
+    background: var(--paper-dark);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 1.5rem 4rem;
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .cross-link a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .cross-link a:hover { border-color: var(--accent); }
+
+  /* NEWSLETTER ENCART */
+  .newsletter-wrap { max-width: 980px; margin: 0 auto; }
+  .newsletter-card {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    background: var(--paper-dark);
+    border: 1px solid var(--rule);
+    position: relative;
+    overflow: hidden;
+  }
+  .newsletter-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: var(--accent);
+  }
+  .newsletter-text {
+    padding: 2.6rem 2.4rem;
+    display: flex; flex-direction: column;
+    border-right: 1px solid var(--rule);
+  }
+  .newsletter-kicker {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .newsletter-h {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.2rem;
+    color: var(--ink);
+  }
+  .newsletter-h em { font-style: italic; color: var(--accent); }
+  .newsletter-text p {
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: var(--muted);
+  }
+  .newsletter-cta {
+    background: var(--ink);
+    padding: 2.6rem 2.4rem;
+    display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+    gap: 0.9rem;
+    position: relative;
+  }
+  .newsletter-cta::after {
+    content: '';
+    position: absolute;
+    top: 1.4rem; right: 1.4rem;
+    width: 36px; height: 36px;
+    border-top: 1px solid rgba(201, 168, 76, 0.4);
+    border-right: 1px solid rgba(201, 168, 76, 0.4);
+  }
+  .newsletter-btn {
+    display: inline-flex; align-items: center; gap: 0.8rem;
+    background: var(--gold);
+    color: var(--ink);
+    text-decoration: none;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.95rem 1.6rem;
+    transition: background 0.2s, transform 0.2s;
+    font-weight: 500;
+  }
+  .newsletter-btn:hover { background: var(--paper); transform: translateY(-1px); }
+  .newsletter-handle {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.45);
+  }
+  .newsletter-cadence {
+    font-family: 'Libre Baskerville', serif;
+    font-style: italic;
+    font-size: 0.78rem;
+    color: rgba(245,240,232,0.55);
+    line-height: 1.5;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 0.9rem;
+    margin-top: 0.4rem;
+  }
+
+  @media (max-width: 900px) {
+    body { cursor: auto; }
+    .cursor, .cursor-ring { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { min-height: 50vh; }
+    .featured-inner, .about { grid-template-columns: 1fr; gap: 3rem; }
+    .newsletter-card { grid-template-columns: 1fr; }
+    .newsletter-text { border-right: none; border-bottom: 1px solid var(--rule); }
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.3rem; }
+    .nav-logo span { display: none; }
+    section, .featured, .about { padding: 4rem 1.5rem; }
+    .hero-left { padding: 4rem 1.5rem; }
+    .section-rule, .cross-link { padding-left: 1.5rem; padding-right: 1.5rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">A. Gaible <span>· Conseil Achats</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#approche">Approche</a></li>
+    <li><a href="#cas">Cas</a></li>
+    <li><a href="#parcours">Parcours</a></li>
+    <li><a href="#newsletter">Newsletter</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding: 0; padding-top: 80px;">
+  <div class="hero-left fade-in">
+    <div class="hero-tag">Conseil en achats et matières premières</div>
+    <h1 class="hero-name">Arthur<br><em>Gaible</em></h1>
+    <p class="hero-subtitle">L'intelligence achats des grands cabinets, à l'échelle des PME et des ETI.</p>
+    <p class="hero-desc">J'accompagne les directions achats des ETI et PME. Veille matières premières, stratégie d'approvisionnement, dashboards opérationnels, analyses sectorielles. Livrables concrets, délais courts, tarification au forfait.</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn-primary">Discuter d'une mission →</a>
+      <a href="https://substack.com/@gaible" target="_blank" rel="noopener" class="newsletter-btn">
+        <span>S'abonner à la newsletter</span>
+        <span>→</span>
+      </a>
+      <a href="#cas" class="btn-secondary">Voir les cas</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <!-- Supply chain network visualization -->
+    <svg class="hero-network" viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice">
+      <!-- Connecting lines -->
+      <g stroke="#c9a84c" stroke-width="0.8" fill="none" opacity="0.7">
+        <line x1="250" y1="200" x2="80" y2="80"/>
+        <line x1="250" y1="200" x2="420" y2="90"/>
+        <line x1="250" y1="200" x2="120" y2="320"/>
+        <line x1="250" y1="200" x2="400" y2="330"/>
+        <line x1="250" y1="200" x2="60" y2="200"/>
+        <line x1="250" y1="200" x2="440" y2="200"/>
+        <line x1="80" y1="80" x2="160" y2="40"/>
+        <line x1="80" y1="80" x2="40" y2="140"/>
+        <line x1="420" y1="90" x2="470" y2="50"/>
+        <line x1="420" y1="90" x2="360" y2="40"/>
+        <line x1="120" y1="320" x2="40" y2="370"/>
+        <line x1="120" y1="320" x2="180" y2="380"/>
+        <line x1="400" y1="330" x2="470" y2="370"/>
+        <line x1="400" y1="330" x2="330" y2="380"/>
+      </g>
+      <!-- Dashed lines for tier-2 -->
+      <g stroke="#b8341b" stroke-width="0.6" fill="none" opacity="0.5" stroke-dasharray="3,3">
+        <line x1="160" y1="40" x2="220" y2="20"/>
+        <line x1="470" y1="50" x2="490" y2="25"/>
+        <line x1="40" y1="370" x2="10" y2="395"/>
+      </g>
+      <!-- Central node -->
+      <circle cx="250" cy="200" r="14" fill="#b8341b"/>
+      <circle cx="250" cy="200" r="22" fill="none" stroke="#b8341b" stroke-width="0.6" opacity="0.5"/>
+      <!-- Tier-1 nodes -->
+      <g fill="#c9a84c">
+        <circle cx="80" cy="80" r="7"/>
+        <circle cx="420" cy="90" r="7"/>
+        <circle cx="120" cy="320" r="7"/>
+        <circle cx="400" cy="330" r="7"/>
+        <circle cx="60" cy="200" r="6"/>
+        <circle cx="440" cy="200" r="6"/>
+      </g>
+      <!-- Tier-2 nodes (smaller, paper-light) -->
+      <g fill="#f5f0e8" opacity="0.6">
+        <circle cx="160" cy="40" r="4"/>
+        <circle cx="40" cy="140" r="4"/>
+        <circle cx="470" cy="50" r="4"/>
+        <circle cx="360" cy="40" r="4"/>
+        <circle cx="40" cy="370" r="4"/>
+        <circle cx="180" cy="380" r="4"/>
+        <circle cx="470" cy="370" r="4"/>
+        <circle cx="330" cy="380" r="4"/>
+      </g>
+      <!-- Tier-3 (even smaller) -->
+      <g fill="#f5f0e8" opacity="0.3">
+        <circle cx="220" cy="20" r="2.5"/>
+        <circle cx="490" cy="25" r="2.5"/>
+        <circle cx="10" cy="395" r="2.5"/>
+      </g>
+    </svg>
+    <div class="hero-tagline fade-in" style="transition-delay: 0.3s">
+      <p style="font-size: clamp(0.85rem, 1.2vw, 1rem); margin-bottom: 1.6rem; opacity: 0.75; line-height: 1.6;">Analyser des marchés<br>où l'information est rare,<br>où les prix sont opaques.</p>
+      <div style="width: 36px; height: 1px; background: rgba(245,240,232,0.2); margin: 0 auto 1.6rem;"></div>
+      <p>Quand un cabinet demande<br>six mois et six chiffres,<br><strong>je livre en six semaines.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-band fade-in">
+  <div class="stat-card">
+    <div class="stat-num">€15M+</div>
+    <div class="stat-label">Périmètre achats géré</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">11</div>
+    <div class="stat-label">Sites industriels coordonnés</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">10k+</div>
+    <div class="stat-label">Composants catalogués (BOM)</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">€80k</div>
+    <div class="stat-label">Économies cross-unit identifiées</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-rule"><span class="section-rule-text">I — Ce que je propose</span></div>
+  <div class="section-header fade-in">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Quatre offres,<br>une logique commune.</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card fade-in">
+      <div class="service-icon">⌗ Veille &amp; intelligence MP</div>
+      <h3 class="service-title">Veille matières premières</h3>
+      <p class="service-desc">Cartographie continue des marchés critiques pour votre filière : niobium, lithium, terres rares, cobalt, cuivre, mais aussi composants spécifiques (semi-conducteurs, électronique, métaux d'alliage). Suivi prix, dépendances, risques géopolitiques, alternatives.</p>
+      <div class="service-deliv">
+        <span class="service-deliv-label">Livrable</span>
+        <span class="service-deliv-text">Note trimestrielle + alertes ad-hoc sur événements de marché.</span>
+      </div>
+    </div>
+    <div class="service-card fade-in" style="transition-delay:0.08s">
+      <div class="service-icon">◊ Diagnostic &amp; stratégie</div>
+      <h3 class="service-title">Diagnostic achats &amp; stratégie</h3>
+      <p class="service-desc">Audit du portefeuille fournisseurs : dépendances critiques, <em>single points of failure</em>, leviers de négociation inexploités, opportunités de double-sourcing. Construction d'un plan d'action 12 mois priorisé par impact.</p>
+      <div class="service-deliv">
+        <span class="service-deliv-label">Livrable</span>
+        <span class="service-deliv-text">Rapport d'audit + plan d'action chiffré + présentation Codir.</span>
+      </div>
+    </div>
+    <div class="service-card fade-in" style="transition-delay:0.16s">
+      <div class="service-icon">▤ Data &amp; pilotage</div>
+      <h3 class="service-title">Dashboards &amp; data achats</h3>
+      <p class="service-desc">Mise en place d'indicateurs achats opérationnels : <em>spend analysis</em>, structure BOM, performance fournisseurs, SQDC. Stack adaptée à votre maturité. Formation de l'équipe incluse.</p>
+      <div class="service-deliv">
+        <span class="service-deliv-label">Livrable</span>
+        <span class="service-deliv-text">Dashboard interactif + documentation + formation utilisateur.</span>
+      </div>
+    </div>
+    <div class="service-card fade-in" style="transition-delay:0.24s">
+      <div class="service-icon">§ Analyses ciblées</div>
+      <h3 class="service-title">Analyses sectorielles ad-hoc</h3>
+      <p class="service-desc">Études ponctuelles sur un marché, un fournisseur, un risque géopolitique, une réglementation (CRMA, CBAM, sanctions). Format flexible, sources tracées, recommandations actionnables.</p>
+      <div class="service-deliv">
+        <span class="service-deliv-label">Livrable</span>
+        <span class="service-deliv-text">Rapport 3 à 15 pages selon le périmètre, sourcé, exploitable.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED — APPROCHE -->
+<div class="featured fade-in" id="approche">
+  <div class="section-rule" style="padding: 0; margin-bottom: 0;">
+    <span class="section-rule-text" style="color: rgba(245,240,232,0.3);">II — Méthode</span>
+  </div>
+  <div class="section-header" style="margin-top: 3rem;">
+    <span class="section-num">02</span>
+    <h2 class="section-title">L'approche.</h2>
+  </div>
+  <div class="featured-inner">
+    <div class="featured-text">
+      <h3>« Ce que les cabinets vendent, vous pouvez l'obtenir, si vous savez qui appeler. »</h3>
+      <p>Le conseil achats traditionnel est calibré pour les <strong>grands groupes</strong>. Tarification au temps passé, délais en trimestres, livrables pondérés par les <em>caveats</em> juridiques. À cette échelle, la facture s'écrit en six chiffres.</p>
+      <p>Pour une PME ou une ETI, le modèle est inadapté, non par manque d'enjeu, mais parce que le coût d'entrée bloque l'accès. Résultat : ces structures pilotent leurs <strong>achats critiques sans intelligence de marché</strong>, sans <em>benchmark</em>, sans cartographie des risques. C'est précisément le vide que je cible.</p>
+      <p>Mon approche : <strong>tarification au forfait</strong>, périmètre défini en amont, livraison en semaines plutôt qu'en trimestres. Un premier échange offert, un cadrage précis, un livrable concret. Pas de retainer, pas de dépendance.</p>
+    </div>
+    <div class="process">
+      <div class="process-step">
+        <div class="process-num">01</div>
+        <div class="process-content">
+          <h4>Premier échange — 30 min, offert</h4>
+          <p>Nous clarifions votre besoin.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">02</div>
+        <div class="process-content">
+          <h4>Proposition cadrée &amp; forfaitaire</h4>
+          <p>Périmètre, livrables, délais et prix. Établissement du devis ensemble en fonction de votre besoin.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">03</div>
+        <div class="process-content">
+          <h4>Exécution — 4 à 8 semaines</h4>
+          <p>Itérations courtes, points hebdomadaires, accès direct.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">04</div>
+        <div class="process-content">
+          <h4>Transfert &amp; autonomie</h4>
+          <p>Documentation, formation, code source ouvert. Votre équipe maîtrise après le départ.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CAS -->
+<section id="cas" style="background: var(--paper-dark);">
+  <div class="section-rule"><span class="section-rule-text">III — Travaux &amp; cas</span></div>
+  <div class="section-header fade-in">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Cas représentatifs.<br><em>Preuves opérationnelles.</em></h2>
+  </div>
+  <div class="cases-grid">
+    <div class="case-card fade-in" onclick="openModal('gevernova')">
+      <span class="case-tag">Mission · GE Vernova · Achats</span>
+      <h3 class="case-title">Cartographie Tier-2 sur 11 sites mondiaux</h3>
+      <p class="case-desc">Construction d'un système de cartographie fournisseurs Tier-2 cross-units, base de 10 000+ composants avec familles standardisées. Logiciel de collecte Excel → KNIME → Dataiku. €80k d'économies cross-unit identifiées sur composants armoires BT.</p>
+      <div class="case-meta">
+        <span>Méthode achats · Data · €15M spend</span>
+        <span class="case-arrow">↗</span>
+      </div>
+    </div>
+    <div class="case-card fade-in" style="transition-delay:0.08s" onclick="openModal('niobium')">
+      <span class="case-tag">Étude · Matières premières</span>
+      <h3 class="case-title">Dossier Niobium — dépendance brésilienne</h3>
+      <p class="case-desc">Étude approfondie du monopole CBMM/Araxá (90% production mondiale), de la stratégie chinoise inverse, et modélisation Monte Carlo des chocs marché. Sources : JRC, USGS, OTC. Recommandations sur <em>offtake agreements</em> et stratégies de double-sourcing.</p>
+      <div class="case-meta">
+        <span>Veille MP · Géopolitique · ~12 000 mots</span>
+        <span class="case-arrow">↗</span>
+      </div>
+    </div>
+    <div class="case-card fade-in" style="transition-delay:0.16s" onclick="openModal('aura')">
+      <span class="case-tag">Data · Énergie · 11 ans</span>
+      <h3 class="case-title">Mix électrique AURA — 2013–2024</h3>
+      <p class="case-desc">Analyse SQLite + Power BI sur données RTE éco2mix. Nucléaire structurellement dominant (+70%), saisonnalité hydraulique forte, thermique en corrélation inverse avec la disponibilité nucléaire. Stack : SQL, SQLite, Power BI.</p>
+      <div class="case-meta">
+        <span>Dashboard · Data analytics</span>
+        <span class="case-arrow">↗</span>
+      </div>
+    </div>
+    <div class="case-card fade-in" style="transition-delay:0.24s" onclick="openModal('eurenco')">
+      <span class="case-tag">Mission · Eurenco · Négociation</span>
+      <h3 class="case-title">Négociation SRM &amp; framework labo</h3>
+      <p class="case-desc">Pilotage du processus d'acquisition d'un logiciel SRM : –40% sur le prix final, soit 250k€ d'économie réelle. En parallèle, co-construction d'un référentiel achats laboratoire (audit groupe + framework groupe), valeur estimée à 400k€ sur 10 ans.</p>
+      <div class="case-meta">
+        <span>Négociation · Framework category</span>
+        <span class="case-arrow">↗</span>
+      </div>
+    </div>
+    <div class="case-card fade-in" style="transition-delay:0.32s" onclick="openModal('palantir')">
+      <span class="case-tag">Data · Palantir · Ontologies</span>
+      <h3 class="case-title">Palantir Vertex — graphes ontologiques</h3>
+      <p class="case-desc">Cas d'usage de détection de réseaux suspects via graphes ontologiques dans Palantir Foundry. Construction du pipeline de nettoyage, modélisation des objets et liens, exploitation de Vertex pour croiser transactions et communications entre entités à risque.</p>
+      <div class="case-meta">
+        <span>Foundry · Ontologie · Graph analysis</span>
+        <span class="case-arrow">↗</span>
+      </div>
+    </div>
+    <div class="case-card fade-in" style="transition-delay:0.40s" onclick="openModal('memoire')">
+      <span class="case-tag">Mémoire · Recherche · GE Vernova</span>
+      <h3 class="case-title">Centralisation des achats data-driven</h3>
+      <p class="case-desc">Mémoire de recherche : comment la centralisation data-driven des achats renforce le pouvoir de décision corporate sans détruire l'autonomie locale. Théorie des organisations, ontologies data, Palantir Foundry, terrain GE Vernova.</p>
+      <div class="case-meta">
+        <span>Mémoire · EN · 2024–2026</span>
+        <span class="case-arrow">↗</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARCOURS -->
+<div class="about" id="parcours">
+  <div class="about-left fade-in">
+    <h2>Marchés opaques,<br><em>décisions</em><br>claires.</h2>
+    <p>Apprenti acheteur global commodity chez GE Vernova depuis 2025, après deux ans chez Eurenco. Double Master en achats (INSEEC) et en affaires européennes (Lille / iaelyon).</p>
+    <p>Particularité : un parcours achats classique doublé d'une stack data opérationnelle (SQL, Dataiku, Power BI, Palantir Foundry). J'analyse le marché, j'industrialise le pilotage.</p>
+    <p>Intérêt particulier pour les chaînes d'approvisionnement stratégiques, et les zones de friction entre logiques économiques et souveraineté industrielle.</p>
+    <div class="skills-grid">
+      <div class="skill-item">
+        <div class="skill-name">Achats</div>
+        <div class="skill-list">Négociation · Stratégie category · SRM · RFQ · Cartographie fournisseurs</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name">Data</div>
+        <div class="skill-list">SQL · Power BI · Dataiku · Palantir Foundry · Excel/KNIME · Python</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name">Marchés &amp; analyse</div>
+        <div class="skill-list">Matières premières critiques · OTC · Géopolitique des ressources · VAN / Monte Carlo</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name">Langues</div>
+        <div class="skill-list">Français · Anglais (C1, TOEIC 960) · Italien (B2) · Espagnol (B1)</div>
+      </div>
+    </div>
+  </div>
+  <div class="fade-in" style="transition-delay: 0.2s">
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">07/2025 – 09/2026</div>
+        <div class="timeline-role">Global Commodity Leader (apprentissage)</div>
+        <div class="timeline-org">GE Vernova — France</div>
+        <div class="timeline-detail">Système de cartographie Tier-2 sur 11 unités mondiales (€15M / an). Base de 10 000+ composants, software de collecte Excel → KNIME → Dataiku agrégant 13M+ SKUs/an. €80k de savings cross-unit identifiés.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">03/2023 – 09/2024</div>
+        <div class="timeline-role">Acheteur (apprentissage)</div>
+        <div class="timeline-org">Eurenco — France</div>
+        <div class="timeline-detail">Négociation acquisition logiciel SRM : –40% sur le prix final (250k€). Co-construction d'un framework achats laboratoire pour les sites du groupe (valeur estimée 400k€ / 10 ans).</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">07/2023 – 09/2023</div>
+        <div class="timeline-role">Assistant ventes export (stage)</div>
+        <div class="timeline-org">Eurenco — Belgique</div>
+        <div class="timeline-detail">Analyse de contrats internationaux, résolution de litiges, anticipation de 100k€ d'économies.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2024 – 2026</div>
+        <div class="timeline-role">Master — Management des affaires européennes</div>
+        <div class="timeline-org">Université de Lille (M1) · iaelyon (M2)</div>
+        <div class="timeline-detail">Mémoire : <em>Strategic Centralization of Procurement in Multi-Site Industrial Groups</em>. Représentation de la Bulgarie au Global Model EU (NY State University, 2025).</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2022 – 2024</div>
+        <div class="timeline-role">Master — Achats</div>
+        <div class="timeline-org">INSEEC</div>
+        <div class="timeline-detail">Mémoire : <em>Développement durable et stratégie économique : une union impossible ?</em> (17/20, mention).</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NEWSLETTER -->
+<section id="newsletter" style="background: var(--paper); padding: 5rem 4rem;">
+  <div class="section-rule"><span class="section-rule-text">IV — Lecture régulière</span></div>
+  <div class="newsletter-wrap">
+    <div class="newsletter-card fade-in">
+      <div class="newsletter-text">
+        <div class="newsletter-kicker">↳ Newsletter Substack</div>
+        <h3 class="newsletter-h">Analyses, notes,<br>échos <em>de marché.</em></h3>
+        <p>Quelques pages par mois sur les matières premières critiques, la géopolitique des ressources, et la fonction achats. Format gratuit, désinscription en un clic. Pour ceux qui veulent suivre le fil sans engager une mission.</p>
+      </div>
+      <div class="newsletter-cta">
+        <a href="https://substack.com/@gaible" target="_blank" rel="noopener" class="newsletter-btn">
+          <span>S'abonner</span>
+          <span>→</span>
+        </a>
+        <span class="newsletter-handle">@gaible · Substack</span>
+        <span class="newsletter-cadence">« L'information rare, traitée régulièrement. »</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background: var(--paper); padding: 5rem 4rem;">
+  <div class="section-rule"><span class="section-rule-text">V — Échanger</span></div>
+  <div style="max-width: 720px; margin: 0 auto;">
+    <div class="contact-block fade-in">
+      <span class="badge">Premier échange — offert</span>
+      <h3>30 minutes pour cadrer<br>votre besoin. Sans engagement.</h3>
+      <p>Disponible pour des missions ponctuelles (analyse sectorielle, dashboard, veille MP) ou des accompagnements plus longs (diagnostic achats complet, structuration de la fonction).</p>
+      <a href="mailto:agaiblepro@gmail.com" class="contact-email">agaiblepro@gmail.com</a>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/arthur-gaible" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.notion.so/35dfe51e040d80249913c543beffe0f2" target="_blank" rel="noopener">Profil complet (Notion)</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2026 Arthur Gaible — Conseil en achats et matières premières.</span>
+  <span><a href="mailto:agaiblepro@gmail.com">agaiblepro@gmail.com</a></span>
+</footer>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+  <div class="modal" id="modalContent">
+    <div class="modal-header">
+      <div class="modal-tag" id="modalTag"></div>
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <button class="modal-close" onclick="closeModalDirect()">×</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+// Cursor
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+  setTimeout(() => {
+    ring.style.left = e.clientX + 'px';
+    ring.style.top = e.clientY + 'px';
+  }, 60);
+});
+
+// Scroll animations
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// JS-based smooth scroll for anchor links (more reliable than CSS hash navigation,
+// works in iframes/sandboxed previews without rewriting the URL)
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    const id = this.getAttribute('href').slice(1);
+    if (!id) return;
+    const target = document.getElementById(id);
+    if (!target) return;
+    const navOffset = 80;
+    const top = target.getBoundingClientRect().top + window.pageYOffset - navOffset;
+    window.scrollTo({ top, behavior: 'smooth' });
+  });
+});
+
+// Modal data
+const cases = {
+  gevernova: {
+    tag: 'GE Vernova · Achats · Data',
+    title: 'Cartographie Tier-2 sur 11 sites mondiaux',
+    kv: [
+      ['Contexte', 'Apprentissage Global Commodity Leader'],
+      ['Périmètre', '€15M / an · 11 unités mondiales'],
+      ['Stack', 'Excel → KNIME → Dataiku'],
+      ['Résultat', '€80k savings identifiés (armoires BT)'],
+    ],
+    body: `<p>Mission de structuration d'un système de cartographie fournisseurs <strong>Tier-2 cross-units</strong> dans un grand groupe d'énergie. Le besoin : passer d'une vision fragmentée site-par-site à une vue consolidée des 13M+ SKUs/an consommés à l'échelle globale.</p>
+    <p>Construction d'une <strong>base de 10 000+ composants</strong> avec catégories et familles standardisées, déploiement d'un logiciel de collecte (prototype KNIME, industrialisation Dataiku) agrégeant les BOM des 11 unités. Visibilité nouvelle sur quantités, fabricants, structures BOM.</p>
+    <p>Premier livrable concret : <strong>€80k d'économies cross-unit identifiées</strong> sur des composants d'armoires BT, en consolidant des achats jusqu'alors décorrélés. Pilotage de RFQ en parallèle (Eaton, Phoenix, Harting…).</p>`,
+  },
+  niobium: {
+    tag: 'Veille MP · Géopolitique · Modélisation',
+    title: 'Dossier Niobium — dépendance brésilienne',
+    kv: [
+      ['Format', 'Dossier en 3 volets · ~12 000 mots'],
+      ['Sources', 'JRC, USGS, Eurostat, OTC, publications académiques'],
+      ['Modélisation', 'Monte Carlo, VaR/CVaR, NPV offtake'],
+      ['Langue', 'Français'],
+    ],
+    body: `<p>Étude complète d'un marché OTC opaque : le niobium, métal critique extrait à <strong>90% par le Brésil</strong> (mine d'Araxá, CBMM). Dossier en trois volets :</p>
+    <p><strong>Volet 1 — Brésil :</strong> mécanique du monopole, prix administrés, raisons pour lesquelles l'UE classe ce métal comme critique depuis 2011 sans qu'aucune alternative occidentale émerge.</p>
+    <p><strong>Volet 2 — Chine :</strong> analyse de la stratégie chinoise inverse — prise de 15% du capital de CBMM, rachat de Catalão par CMOC pour 1,5 Md$, sécurisation de l'amont sans posséder de gisement.</p>
+    <p><strong>Volet 3 — Modélisation :</strong> structure de coûts comparée (open-pit vs souterrain), simulation Monte Carlo des chocs marché sur 5 ans, calcul de VaR/CVaR, démonstration de la VAN-positivité d'un contrat <em>d'offtake</em> sur source alternative.</p>
+    <p>Exemple-type d'un livrable de <strong>veille MP combinée à de la modélisation risque</strong>. Transposable sur cobalt, lithium, terres rares, etc.</p>`,
+  },
+  aura: {
+    tag: 'Data · SQL · Power BI · 11 ans',
+    title: 'Mix électrique AURA — 2013 à 2024',
+    kv: [
+      ['Sujet', 'Analyse mix électrique régional'],
+      ['Source', 'RTE éco2mix · 11 ans de données'],
+      ['Stack', 'SQL · SQLite · Power BI'],
+    ],
+    body: `<p>Analyse de la composition du mix électrique de la région <strong>Auvergne-Rhône-Alpes</strong> sur 11 ans (2013–2024). Données RTE éco2mix traitées via SQLite, dashboard Power BI.</p>
+    <p>Résultats principaux : <strong>nucléaire structurellement dominant à +70%</strong>, saisonnalité hydraulique forte, thermique fossile en corrélation inverse avec la disponibilité nucléaire (effet de substitution). Le dashboard sert d'illustration type d'une mise en place de pilotage data sur un sujet industriel concret.</p>
+    <p>Exemple-type d'un livrable <strong>dashboard &amp; data achats</strong> — transposable à la consommation énergétique d'un site industriel, à la performance fournisseurs, à un suivi SQDC, etc.</p>
+    <a href="https://www.notion.so/35dfe51e040d80ba905cd575fb14d76a" target="_blank" class="modal-link">Voir le projet →</a>`,
+  },
+  eurenco: {
+    tag: 'Eurenco · Négociation · Framework',
+    title: 'Négociation SRM &amp; framework achats labo',
+    kv: [
+      ['Contexte', 'Apprentissage acheteur'],
+      ['Résultat #1', '–40% sur logiciel SRM (250k€)'],
+      ['Résultat #2', 'Framework labo · 400k€ / 10 ans'],
+    ],
+    body: `<p>Deux missions parallèles au sein du service achats d'un groupe industriel.</p>
+    <p><strong>Mission 1 — Acquisition d'un logiciel SRM :</strong> pilotage du processus complet (cahier des charges, RFQ, short-list, négociation finale). Négociation des conditions commerciales aboutissant à une <strong>réduction de 40% sur le prix final</strong>, soit 250k€ d'économie effective par rapport au budget initial.</p>
+    <p><strong>Mission 2 — Framework achats laboratoire :</strong> co-construction d'un référentiel achats appliqué aux laboratoires du groupe, via une série d'audits internes sur plusieurs sites. Valeur estimée du framework : <strong>400k€ sur 10 ans</strong>, par homogénéisation des pratiques et consolidation des volumes.</p>
+    <p>Exemple-type d'une intervention combinant <strong>négociation fournisseur</strong> et <strong>structuration de category management</strong>.</p>`,
+  },
+  palantir: {
+    tag: 'Data · Palantir Foundry · Ontologie',
+    title: 'Palantir Vertex — graphes ontologiques',
+    kv: [
+      ['Sujet', 'Détection de réseaux suspects'],
+      ['Outils', 'Palantir Foundry · Vertex'],
+      ['Compétence', 'Ontologie data · Graph analysis'],
+    ],
+    body: `<p>Cas d'usage exploratoire sur la <strong>détection de réseaux suspects</strong> via graphes ontologiques dans Palantir Foundry. Construction du pipeline de nettoyage, modélisation des objets et liens ontologiques, utilisation de <strong>Vertex</strong> pour croiser transactions financières et communications entre entités à risque.</p>
+    <p>Démontre la capacité à mobiliser une plateforme de niveau enterprise pour des cas d'usage qui dépassent le simple <em>dashboarding</em>. Transposable à la détection de fraude fournisseur, à la cartographie d'exposition de chaîne d'approvisionnement, au suivi de conformité (sanctions, ESG).</p>
+    <a href="https://www.notion.so/35dfe51e040d8033a363dbbc326a523a" target="_blank" class="modal-link">Voir le projet →</a>`,
+  },
+  memoire: {
+    tag: 'Mémoire · Recherche · 2024–2026',
+    title: 'Centralisation des achats data-driven',
+    kv: [
+      ['Titre complet', 'Strategic Centralization of Procurement in Multi-Site Industrial Groups'],
+      ['Sous-titre', 'A Data-Driven Approach to Corporate Decision-Making Power'],
+      ['Cadre', 'Master 2 · iaelyon · GE Vernova'],
+      ['Langue', 'Anglais'],
+    ],
+    body: `<p>Mémoire de recherche interrogeant la question suivante : <strong>comment la centralisation data-driven des achats renforce le pouvoir de décision corporate</strong> sur les marchés fournisseurs sans détruire l'autonomie opérationnelle des sites ?</p>
+    <p>Cadre théorique mobilisant la théorie des organisations (Mintzberg, Williamson) et les concepts d'ontologie data appliqués au procurement. Terrain : programme de cartographie Tier-2 chez GE Vernova, articulant Excel, KNIME et Palantir Foundry pour consolider 13M+ SKUs/an.</p>
+    <p>Contribution principale : un cadre conceptuel articulant <strong>centralisation décisionnelle / décentralisation opérationnelle</strong> via une couche data partagée — ni "tout corporate", ni "tout autonome".</p>`,
+  },
+};
+
+function openModal(id) {
+  const p = cases[id];
+  if (!p) return;
+  document.getElementById('modalTag').textContent = p.tag;
+  document.getElementById('modalTitle').innerHTML = p.title;
+  let kv = '<div class="modal-kv">';
+  p.kv.forEach(([k, v]) => { kv += `<div class="modal-kv-row"><span class="modal-kv-key">${k}</span><span class="modal-kv-val">${v}</span></div>`; });
+  kv += '</div>';
+  document.getElementById('modalBody').innerHTML = kv + p.body;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(e) {
+  if (e.target === document.getElementById('modal')) closeModalDirect();
+}
+function closeModalDirect() {
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDirect(); });
+</script>
+</body>
+</html>
