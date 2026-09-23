@@ -195,10 +195,10 @@ const solutionPages: SolutionPages = {
       ],
       technologies: ["PostgreSQL", "ETL", "dbt", "Apache Superset", "Power BI", "Docker", "ONLYOFFICE"],
       approachNote:
-        "Quand cela réduit les coûts de licence et augmente le contrôle, NERA propose une alternative open source que le client peut exploiter de façon autonome, sans traiter l'open source comme une exigence en soi.",
+        "Quand cela réduit les coûts de licence et augmente le contrôle, NERA propose une alternative open source que le client peut exploiter de façon autonome.",
       cta: {
-        title: "Vous avez dépassé les tableurs et les exports ponctuels ?",
-        body: "Discutons de ce à quoi ressemblerait une plateforme analytics dimensionnée pour vos données et votre équipe.",
+        title: "Vos tableurs et exports ponctuels ne suffisent plus ?",
+        body: "Discutons de ce à quoi ressemblerait une plateforme analytique dimensionnée pour vos données et votre équipe.",
       },
     },
   },
@@ -251,8 +251,8 @@ const solutionPages: SolutionPages = {
       problem: {
         title: "Le problème",
         body: [
-          "Un tableur, une boîte mail partagée et quelques outils déconnectés peuvent faire tourner une petite structure un moment, jusqu'à ce que cela ne suffise plus. La croissance révèle les failles : aucune source de vérité unique, des transferts manuels, des processus qui n'existent que dans la tête de quelqu'un.",
-          "La solution n'est pas une nouvelle appli ajoutée par-dessus. C'est une plateforme conçue autour du fonctionnement réel de l'entreprise.",
+          "Un tableur, une boîte mail partagée et quelques outils qui ne se parlent pas peuvent suffire un temps. Mais la croissance révèle vite les limites : aucune source de vérité unique, des transferts manuels, des processus qui n'existent que dans la tête de quelqu'un.",
+          "La réponse n'est pas d'empiler une nouvelle application par-dessus l'existant, mais de construire une plateforme pensée autour du fonctionnement réel de l'entreprise.",
         ],
       },
       whatWeBuild: {

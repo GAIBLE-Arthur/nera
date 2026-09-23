@@ -33,7 +33,7 @@ interface UiText {
     description: string;
     diagram: Record<"existingSystems" | "nera" | "existingStack" | "openSource" | "workingSystem", DiagramNodeText>;
   };
-  footer: { tagline: string; solutionsHeading: string; siteHeading: string; copyrightSuffix: string; strapline: string };
+  footer: { tagline: string; solutionsHeading: string; siteHeading: string; copyrightSuffix: string };
   navbar: { solutionsHeading: string };
   solutionHero: { backLink: string };
   solutionCard: { viewSolution: string };
@@ -131,7 +131,6 @@ const uiText: Record<Locale, UiText> = {
       solutionsHeading: "Solutions",
       siteHeading: "Site",
       copyrightSuffix: "Independent engineering practice.",
-      strapline: "Data · Software · Private AI",
     },
     navbar: { solutionsHeading: "Solutions" },
     solutionHero: { backLink: "Solutions" },
@@ -230,7 +229,7 @@ const uiText: Record<Locale, UiText> = {
       title: "De bout en bout, par conception",
       description: "NERA construit la technologie qui se trouve en dessous : des données à l'interface.",
       paragraph:
-        "Une recommandation n'est utile que si quelque chose en découle. NERA reste impliquée sur toute la chaîne, des données sur lesquelles un système fonctionne jusqu'à l'interface utilisée.",
+        "NERA reste impliquée sur toute la chaîne, des données sur lesquelles un système fonctionne jusqu'à l'interface utilisée.",
       axisLabel: "NERA : de bout en bout",
       chain: {
         businessNeed: { label: "Besoin métier", description: "Ce que l'entreprise cherche réellement à résoudre." },
@@ -245,7 +244,7 @@ const uiText: Record<Locale, UiText> = {
     approachSection: {
       eyebrow: "Méthode",
       title: "Pas de complexité.",
-      description: "Une séquence simple, répétée sur chaque mission : petite ou grande.",
+      description: "Une séquence simple, répétée sur chaque mission.",
     },
     technologySection: {
       eyebrow: "Technologie",
@@ -265,7 +264,6 @@ const uiText: Record<Locale, UiText> = {
       solutionsHeading: "Solutions",
       siteHeading: "Site",
       copyrightSuffix: "Pratique d'ingénierie indépendante.",
-      strapline: "Data · Software · IA privée",
     },
     navbar: { solutionsHeading: "Solutions" },
     solutionHero: { backLink: "Solutions" },
@@ -307,7 +305,7 @@ const uiText: Record<Locale, UiText> = {
         ingestion: { label: "Ingestion", description: "Récupération des données selon un rythme adapté à leur fréquence de changement." },
         database: { label: "Base de données / entrepôt", description: "Un lieu unique pour les données, dimensionné au volume réel." },
         transformation: { label: "Transformation", description: "Des tables brutes transformées en données requêtables et documentées." },
-        dataModel: { label: "Modèle de données", description: "Une couche cohérente que les équipes métier peuvent interroger sans deviner." },
+        dataModel: { label: "Modèle de données", description: "Une couche cohérente que les équipes métier peuvent interroger." },
         analytics: { label: "Analytique", description: "Tableaux de bord et reporting en libre-service au-dessus du modèle." },
         users: { label: "Utilisateurs", description: "Les équipes qui interrogent les données au quotidien." },
       },
