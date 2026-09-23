@@ -31,7 +31,7 @@ const aboutText: Record<Locale, AboutText> = {
   },
 };
 
-export const founderPortfolioUrl = "https://gaible-arthur.github.io/Portfolio/";
+export const founderPortfolioUrl = "https://portfolio-amber-five-mbyr7urwg3.vercel.app/";
 
 export function getAboutText(locale: Locale): AboutText {
   return aboutText[locale];
