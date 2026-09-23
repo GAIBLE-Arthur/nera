@@ -1,0 +1,397 @@
+import type { Locale } from "@/lib/i18n";
+import type { SolutionId } from "./solutions";
+
+export interface SolutionPageContent {
+  eyebrow: string;
+  heroTitle: string;
+  heroLead: string;
+  problem: { title: string; body: string[] };
+  whatWeBuild: { title: string; items: string[] };
+  deliverables: string[];
+  technologies: string[];
+  approachNote: string;
+  cta: { title: string; body: string };
+  /** Only populated for the Data & Analytics page today; kept generic so it
+   * can be extended with a detailed founder profile later without changing
+   * the page component. */
+  capabilities?: string[];
+  /** Private AI only — infrastructure/pricing disclaimer. */
+  pricingNote?: string;
+  /** Private AI only — deployment/confidentiality clarification. */
+  privacyNote?: string;
+  /** Private AI only — factors that drive hardware/infrastructure sizing. */
+  sizingFactors?: string[];
+  /** Private AI only — short, jargon-free explanation of retrieval (RAG). */
+  ragExplainer?: string;
+}
+
+type SolutionPages = Record<SolutionId, Record<Locale, SolutionPageContent>>;
+
+const solutionPages: SolutionPages = {
+  "data-analytics": {
+    en: {
+      eyebrow: "01 · Data & Analytics Consulting",
+      heroTitle: "Data & Analytics Consulting",
+      heroLead:
+        "Operational work inside your environment: auditing, cleaning, structuring and automating the data your business already runs on.",
+      problem: {
+        title: "The problem",
+        body: [
+          "Most businesses don't lack data, they lack a reliable, understood version of it. Reports disagree, spreadsheets diverge, and every new question means another manual export.",
+          "Fixing this takes more than a diagnosis. It takes someone willing to work inside the actual systems, the ERP, the spreadsheets, the operations data, and change how they're structured.",
+        ],
+      },
+      whatWeBuild: {
+        title: "What NERA builds",
+        items: [
+          "A clear picture of where data lives, how reliable it is, and where it breaks",
+          "Cleaned, structured and documented datasets the team can trust",
+          "Data models that match how the business actually operates",
+          "Automated pipelines that remove repetitive manual work",
+          "Reporting and dashboards people actually use, in whichever tool fits the context",
+        ],
+      },
+      deliverables: [
+        "Data audit and quality assessment",
+        "Cleaned and structured datasets",
+        "Documented data model",
+        "ETL / automation scripts",
+        "KPI definitions and reporting logic",
+        "Dashboards using Power BI, Superset, or existing tooling",
+      ],
+      technologies: ["SQL", "ETL", "Python", "Power Query / Excel", "Power BI", "Microsoft Fabric", "Apache Superset"],
+      approachNote:
+        "For this type of engagement, NERA typically works close to the data: reviewing tables, talking to the people who use the reports daily, and building fixes directly rather than only documenting them.",
+      capabilities: [
+        "Data auditing and quality assessment",
+        "SQL, Python and Power Query for cleaning and transformation",
+        "Data modeling for reporting and analytics",
+        "Process automation: ETL, scheduled jobs, scripts",
+        "Power BI, Microsoft Fabric and Apache Superset",
+        "Working directly inside operations and business data",
+      ],
+      cta: {
+        title: "Have a data problem you can already describe?",
+        body: "That's usually enough to start. Discuss what isn't working today and what fixing it would actually take.",
+      },
+    },
+    fr: {
+      eyebrow: "01 · Conseil Data & Analytics",
+      heroTitle: "Conseil Data & Analytics",
+      heroLead:
+        "Un travail opérationnel dans votre environnement : audit, nettoyage, structuration et automatisation des données sur lesquelles votre entreprise fonctionne déjà.",
+      problem: {
+        title: "Le problème",
+        body: [
+          "La plupart des entreprises ne manquent pas de données, elles manquent d'une version fiable et comprise de ces données. Les rapports se contredisent, les tableurs divergent, et chaque nouvelle question demande un nouvel export manuel.",
+          "Corriger cela demande plus qu'un diagnostic. Cela demande d'intervenir directement dans les systèmes réels, l'ERP, les tableurs, les données opérationnelles, et de changer leur structuration.",
+        ],
+      },
+      whatWeBuild: {
+        title: "Ce que NERA construit",
+        items: [
+          "Une vision claire de où se trouvent les données, de leur fiabilité et de leurs points de rupture",
+          "Des jeux de données nettoyés, structurés et documentés, sur lesquels l'équipe peut s'appuyer",
+          "Des modèles de données qui correspondent au fonctionnement réel de l'entreprise",
+          "Des pipelines automatisés qui suppriment le travail manuel répétitif",
+          "Des rapports et tableaux de bord réellement utilisés, dans l'outil adapté au contexte",
+        ],
+      },
+      deliverables: [
+        "Audit et évaluation de la qualité des données",
+        "Jeux de données nettoyés et structurés",
+        "Modèle de données documenté",
+        "Scripts ETL / automatisation",
+        "Définition des KPI et logique de reporting",
+        "Tableaux de bord (Power BI, Superset, ou outils existants)",
+      ],
+      technologies: ["SQL", "ETL", "Python", "Power Query / Excel", "Power BI", "Microsoft Fabric", "Apache Superset"],
+      approachNote:
+        "Pour ce type de mission, NERA travaille généralement au plus près des données : en examinant les tables, en échangeant avec les personnes qui utilisent les rapports au quotidien, et en construisant les correctifs directement plutôt qu'en se limitant à les documenter.",
+      capabilities: [
+        "Audit et évaluation de la qualité des données",
+        "SQL, Python et Power Query pour le nettoyage et la transformation",
+        "Modélisation de données pour le reporting et l'analytics",
+        "Automatisation de processus : ETL, tâches planifiées, scripts",
+        "Power BI, Microsoft Fabric et Apache Superset",
+        "Intervention directe dans les données opérationnelles et métier",
+      ],
+      cta: {
+        title: "Vous pouvez déjà décrire un problème de données ?",
+        body: "C'est souvent suffisant pour démarrer. Discutons de ce qui ne fonctionne pas aujourd'hui et de ce qu'il faudrait pour le corriger.",
+      },
+    },
+  },
+  "analytics-platform": {
+    en: {
+      eyebrow: "02 · Analytics Platform",
+      heroTitle: "Analytics Platform",
+      heroLead:
+        "A complete analytics environment: from source systems to the dashboards people check every day.",
+      problem: {
+        title: "The problem",
+        body: [
+          "Once a business outgrows spreadsheets, it needs somewhere for data to live, a consistent way to transform it, and a layer people can query.",
+          "Connecting an analytics tool is easy. Cleaning the data, understanding what the tool actually does, making it shareable, and turning it into a decision, is the hard part.",
+        ],
+      },
+      whatWeBuild: {
+        title: "What NERA builds",
+        items: [
+          "Ingestion from the systems that hold the data today",
+          "A warehouse or database sized to the actual data volume",
+          "A transformation layer that documents itself",
+          "A semantic / data model business teams can query consistently",
+          "A reporting layer people can actually use day to day",
+          "Access control, refresh schedules and monitoring so the platform stays trustworthy",
+        ],
+      },
+      deliverables: [
+        "Architecture and technology selection",
+        "Ingestion and transformation pipelines",
+        "Warehouse schema and documentation",
+        "Semantic / data model",
+        "Dashboards and self-service reporting",
+        "Deployment and operating instructions",
+      ],
+      technologies: ["PostgreSQL", "ETL", "dbt", "Apache Superset", "Power BI", "Docker", "ONLYOFFICE"],
+      approachNote:
+        "Where it reduces licensing costs and increases control, NERA proposes an open-source alternative the client can operate independently, without treating open source as a requirement in itself.",
+      cta: {
+        title: "Outgrowing spreadsheets and one-off exports?",
+        body: "Discuss what an analytics platform sized to your data and your team would actually look like.",
+      },
+    },
+    fr: {
+      eyebrow: "02 · Plateforme Analytique",
+      heroTitle: "Plateforme Analytique",
+      heroLead:
+        "Un environnement analytique complet : des systèmes sources jusqu'aux tableaux de bord consultés au quotidien.",
+      problem: {
+        title: "Le problème",
+        body: [
+          "Quand une entreprise dépasse les tableurs, elle a besoin d'un endroit où faire vivre ses données, d'une méthode cohérente pour les transformer, et d'une couche interrogeable.",
+          "Brancher un outil d'analyse est simple. Nettoyer les données, comprendre ce que fait l'outil, pouvoir rendre tout partageable et transformer cela en décision, est la partie difficile.",
+        ],
+      },
+      whatWeBuild: {
+        title: "Ce que NERA construit",
+        items: [
+          "L'ingestion depuis les systèmes qui détiennent les données aujourd'hui",
+          "Un entrepôt ou une base de données dimensionné au volume réel",
+          "Une couche de transformation qui se documente elle-même",
+          "Un modèle sémantique / de données interrogeable de façon cohérente par les équipes métier",
+          "Une couche de reporting que les équipes utilisent réellement au quotidien",
+          "Contrôle d'accès, rafraîchissements programmés et supervision pour garder la plateforme fiable",
+        ],
+      },
+      deliverables: [
+        "Architecture et choix technologiques",
+        "Pipelines d'ingestion et de transformation",
+        "Schéma d'entrepôt et documentation",
+        "Modèle sémantique / de données",
+        "Tableaux de bord et reporting en libre-service",
+        "Déploiement et instructions d'exploitation",
+      ],
+      technologies: ["PostgreSQL", "ETL", "dbt", "Apache Superset", "Power BI", "Docker", "ONLYOFFICE"],
+      approachNote:
+        "Quand cela réduit les coûts de licence et augmente le contrôle, NERA propose une alternative open source que le client peut exploiter de façon autonome, sans traiter l'open source comme une exigence en soi.",
+      cta: {
+        title: "Vous avez dépassé les tableurs et les exports ponctuels ?",
+        body: "Discutons de ce à quoi ressemblerait une plateforme analytics dimensionnée pour vos données et votre équipe.",
+      },
+    },
+  },
+  "digital-platforms": {
+    en: {
+      eyebrow: "03 · Digital Platforms",
+      heroTitle: "Digital Platforms",
+      heroLead:
+        "From business process to working platform: public interface, accounts, admin space and the backend.",
+      problem: {
+        title: "The problem",
+        body: [
+          "A spreadsheet, a shared inbox and a handful of disconnected tools can run a small operation for a while, until they can't. Growth exposes the gaps: no single source of truth, manual handoffs, and processes that live in someone's head.",
+          "The fix isn't another app bolted on top. It's a platform designed around how the business actually works.",
+        ],
+      },
+      whatWeBuild: {
+        title: "What NERA builds",
+        items: [
+          "A public-facing interface and, where needed, authenticated user accounts",
+          "A client space and an administrator space with the right permissions",
+          "Business workflows encoded directly into the platform",
+          "An API and backend that other systems can integrate with",
+          "A database designed around the business's actual data",
+          "Scheduling, payments, notifications or automations where the process needs them",
+          "Containerized deployment so the platform runs the same way in every environment",
+        ],
+      },
+      deliverables: [
+        "Product and workflow scoping",
+        "API / backend",
+        "Web interface, public and authenticated areas",
+        "PostgreSQL database",
+        "Containerized deployment (Docker)",
+        "Security and access control",
+      ],
+      technologies: ["TypeScript", "PostgreSQL", "Docker", "API design", "Automations & integrations"],
+      approachNote:
+        "NERA starts from the business process, not a feature list. The platform is scoped around what the workflow actually requires before any interface is designed.",
+      cta: {
+        title: "Running the business on tools that don't talk to each other?",
+        body: "Discuss the process you want turned into a platform, and what it would need to cover end to end.",
+      },
+    },
+    fr: {
+      eyebrow: "03 · Plateformes Digitales",
+      heroTitle: "Plateformes Digitales",
+      heroLead:
+        "Du processus métier à la plateforme fonctionnelle : interface publique, comptes, espace admin et le backend.",
+      problem: {
+        title: "Le problème",
+        body: [
+          "Un tableur, une boîte mail partagée et quelques outils déconnectés peuvent faire tourner une petite structure un moment, jusqu'à ce que cela ne suffise plus. La croissance révèle les failles : aucune source de vérité unique, des transferts manuels, des processus qui n'existent que dans la tête de quelqu'un.",
+          "La solution n'est pas une nouvelle appli ajoutée par-dessus. C'est une plateforme conçue autour du fonctionnement réel de l'entreprise.",
+        ],
+      },
+      whatWeBuild: {
+        title: "Ce que NERA construit",
+        items: [
+          "Une interface publique et, si besoin, des comptes utilisateurs authentifiés",
+          "Un espace client et un espace administrateur avec les bonnes permissions",
+          "Les workflows métier encodés directement dans la plateforme",
+          "Une API et un backend avec lesquels d'autres systèmes peuvent s'intégrer",
+          "Une base de données conçue autour des données réelles de l'entreprise",
+          "Planification, paiements, notifications ou automatisations quand le processus l'exige",
+          "Un déploiement conteneurisé pour que la plateforme fonctionne de la même façon dans chaque environnement",
+        ],
+      },
+      deliverables: [
+        "Cadrage produit et workflows",
+        "API / backend",
+        "Interface web, espaces public et authentifié",
+        "Base de données PostgreSQL",
+        "Déploiement conteneurisé (Docker)",
+        "Sécurité et contrôle d'accès",
+      ],
+      technologies: ["TypeScript", "PostgreSQL", "Docker", "Conception d'API", "Automatisations & intégrations"],
+      approachNote:
+        "NERA part du processus métier, pas d'une liste de fonctionnalités. La plateforme est cadrée selon ce que le workflow exige réellement, avant même de concevoir une interface.",
+      cta: {
+        title: "Votre entreprise tourne sur des outils qui ne se parlent pas ?",
+        body: "Discutons du processus que vous voulez transformer en plateforme, et de ce qu'il faudrait couvrir de bout en bout.",
+      },
+    },
+  },
+  "private-ai": {
+    en: {
+      eyebrow: "04 · Private AI",
+      heroTitle: "Private AI",
+      heroLead:
+        "AI that depends on what's underneath: company data, retrieval, a model, and the application people actually use.",
+      problem: {
+        title: "The problem",
+        body: [
+          "What determines whether private AI is actually useful, or actually private, is everything underneath it: which documents it can see, how they're indexed, which model runs it, and where that model runs.",
+          "NERA works on the full system, from ingesting company documents and data to deploying the model in an environment that matches the business's confidentiality requirements.",
+        ],
+      },
+      whatWeBuild: {
+        title: "What NERA builds",
+        items: [
+          "Ingestion of company documents and data into a searchable index",
+          "A retrieval layer (RAG) that gives the model relevant context instead of guesswork",
+          "A local or private model sized to the workload, not necessarily the largest available",
+          "An application or API layer connecting the model to how people actually work",
+          "Containerized deployment, on-premise or on dedicated hardware when required",
+        ],
+      },
+      deliverables: [
+        "Document and data ingestion pipeline",
+        "Retrieval / indexing layer",
+        "Model selection and deployment",
+        "Application or API integration",
+        "Docker-based deployment package",
+        "Sizing and infrastructure recommendation",
+      ],
+      technologies: ["Docker", "Open-source LLMs", "Vector / search layer", "Python", "API integration"],
+      approachNote:
+        "NERA treats the retrieval layer and the data feeding it as the real engineering problem. The model is one component among several, not the whole project.",
+      pricingNote:
+        "Infrastructure and pricing depend on the selected model, workload, hardware and deployment requirements.",
+      privacyNote:
+        "Whether data stays fully on-premise depends on the deployment chosen, from fully local infrastructure to hybrid setups. This is defined with the client before the project starts.",
+      ragExplainer:
+        "In practice, this means the model doesn't rely only on what it was trained on. Before answering, it retrieves the most relevant passages from the company's own documents and uses them as context, which keeps answers grounded in current, real information instead of memory alone.",
+      sizingFactors: [
+        "Model size",
+        "Number of concurrent users",
+        "Expected response latency",
+        "Amount of document context retrieved per query",
+        "Overall workload",
+        "Confidentiality requirements",
+      ],
+      cta: {
+        title: "Considering AI that runs on your own data?",
+        body: "Discuss the documents, systems and confidentiality requirements involved. Sizing follows from there.",
+      },
+    },
+    fr: {
+      eyebrow: "04 · IA Privée",
+      heroTitle: "IA Privée",
+      heroLead:
+        "Une IA qui dépend de ce qu'il y a dessous : données de l'entreprise, recherche documentaire, modèle, et l'application réellement utilisée.",
+      problem: {
+        title: "Le problème",
+        body: [
+          "Ce qui détermine si une IA privée est réellement utile, ou réellement privée, c'est tout ce qu'il y a dessous : quels documents elle peut voir, comment ils sont indexés, quel modèle l'exécute, et où ce modèle tourne.",
+          "NERA travaille sur le système complet, de l'ingestion des documents et données de l'entreprise jusqu'au déploiement du modèle dans un environnement conforme aux exigences de confidentialité de l'entreprise.",
+        ],
+      },
+      whatWeBuild: {
+        title: "Ce que NERA construit",
+        items: [
+          "Ingestion des documents et données de l'entreprise dans un index consultable",
+          "Une couche de recherche documentaire (RAG) qui donne au modèle un contexte pertinent plutôt que des approximations",
+          "Un modèle local ou privé dimensionné pour la charge, pas nécessairement le plus grand disponible",
+          "Une couche application ou API qui relie le modèle à l'usage réel des équipes",
+          "Un déploiement conteneurisé, sur site ou sur du matériel dédié si nécessaire",
+        ],
+      },
+      deliverables: [
+        "Pipeline d'ingestion de documents et données",
+        "Couche de recherche documentaire / indexation",
+        "Sélection et déploiement du modèle",
+        "Intégration application ou API",
+        "Package de déploiement basé sur Docker",
+        "Recommandation de dimensionnement et d'infrastructure",
+      ],
+      technologies: ["Docker", "LLM open source", "Couche vectorielle / recherche", "Python", "Intégration API"],
+      approachNote:
+        "NERA considère la couche de recherche documentaire et les données qui l'alimentent comme le véritable enjeu d'ingénierie. Le modèle est un composant parmi d'autres, pas le projet entier.",
+      pricingNote:
+        "L'infrastructure et le tarif dépendent du modèle choisi, de la charge, du matériel et des exigences de déploiement.",
+      privacyNote:
+        "Le fait que les données restent entièrement sur site dépend du déploiement choisi, d'une infrastructure totalement locale à des configurations hybrides. Cela est défini avec le client avant le démarrage du projet.",
+      ragExplainer:
+        "En pratique, cela signifie que le modèle ne s'appuie pas uniquement sur ce qu'il a appris à l'entraînement. Avant de répondre, il recherche les passages les plus pertinents dans les documents de l'entreprise et les utilise comme contexte, ce qui garde les réponses ancrées dans une information réelle et à jour plutôt que dans la seule mémoire du modèle.",
+      sizingFactors: [
+        "Taille du modèle",
+        "Nombre d'utilisateurs simultanés",
+        "Latence de réponse attendue",
+        "Volume de contexte documentaire récupéré par requête",
+        "Charge globale",
+        "Exigences de confidentialité",
+      ],
+      cta: {
+        title: "Vous envisagez une IA qui fonctionne sur vos propres données ?",
+        body: "Discutons des documents, systèmes et exigences de confidentialité concernés. Le dimensionnement en découle.",
+      },
+    },
+  },
+};
+
+export function getSolutionPage(locale: Locale, id: SolutionId): SolutionPageContent {
+  return solutionPages[id][locale];
+}

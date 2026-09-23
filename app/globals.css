@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Design tokens — the entire visual identity funnels through these
+ * variables. Swap values here (or add a `data-theme` override) to change
+ * NERA's look without touching component code.
+ */
+:root {
+  --color-ink: #111113;
+  --color-graphite: #2a2a2d;
+  --color-muted: #63636a;
+  --color-surface: #0b0b0c;
+  --color-surface-alt: #17171a;
+  --color-paper: #f5f4f1;
+  --color-border: rgba(17, 17, 19, 0.12);
+  --color-border-dark: rgba(245, 244, 241, 0.14);
+  --color-on-dark: #f5f4f1;
+  --color-on-dark-muted: rgba(245, 244, 241, 0.64);
+
+  /* Single accent color. Change this to re-skin the whole site. */
+  --color-accent: #c1602a;
+  --color-accent-strong: #9c4a1e;
+
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", monospace;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  /* No native `scroll-behavior: smooth` and no native `scroll-snap-type`
+     here — both fight Lenis, which drives scroll itself via repeated
+     `scrollTo()` calls every frame. Two competing scroll engines is
+     exactly what makes a page feel janky instead of fluid. The momentum
+     and the section snap are both handled in JS by SmoothScrollProvider,
+     through Lenis, so there is only ever one thing moving the page. */
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Visible focus outline everywhere, using the accent color. */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.container-nera {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .container-nera {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+/* Reveal-on-scroll: JS toggles data-revealed once the element is in view.
+   Content is visible by default so nothing breaks without JS. */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-reveal][data-revealed="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.no-js [data-reveal] {
+  opacity: 1;
+  transform: none;
+}
