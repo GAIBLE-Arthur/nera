@@ -13,7 +13,7 @@ export function AboutSection({ locale }: { locale: Locale }) {
         <Reveal className="order-2 max-w-sm lg:order-1">
           <div className="relative aspect-[4/5] overflow-hidden border border-border bg-graphite">
             <Image
-              src="/images/founder.jpg"
+              src="/images/founder.png"
               alt={t.photoAlt}
               fill
               sizes="(min-width: 1024px) 384px, 100vw"
