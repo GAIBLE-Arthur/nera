@@ -87,33 +87,8 @@ const solutionEntries: SolutionEntry[] = [
     },
   },
   {
-    id: "digital-platforms",
-    index: "03",
-    href: "/solutions/digital-platforms",
-    image: {
-      src: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1600&q=70",
-      alt: "A platform interface shown across a phone, laptop and desktop screen",
-    },
-    text: {
-      en: {
-        title: "Digital Platforms",
-        shortTitle: "Digital Platforms",
-        tagline: "From business process to working platform.",
-        description:
-          "Full-stack platforms: public interface, accounts, admin space, workflows, APIs and deployment, designed around how the business actually operates.",
-      },
-      fr: {
-        title: "Plateformes Digitales",
-        shortTitle: "Plateformes Digitales",
-        tagline: "Du processus métier à la plateforme fonctionnelle.",
-        description:
-          "Des plateformes complètes : interface publique, comptes, espace admin, workflows, API et déploiement, conçues autour du fonctionnement réel de l'entreprise.",
-      },
-    },
-  },
-  {
     id: "private-ai",
-    index: "04",
+    index: "03",
     href: "/solutions/private-ai",
     image: {
       src: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=70",
@@ -133,6 +108,31 @@ const solutionEntries: SolutionEntry[] = [
         tagline: "Une IA qui dépend de ce qu'il y a dessous.",
         description:
           "Modèles locaux, recherche dans vos documents et données, intégration dans les applications déjà utilisées par vos équipes.",
+      },
+    },
+  },
+  {
+    id: "digital-platforms",
+    index: "04",
+    href: "/solutions/digital-platforms",
+    image: {
+      src: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1600&q=70",
+      alt: "A platform interface shown across a phone, laptop and desktop screen",
+    },
+    text: {
+      en: {
+        title: "Digital Platforms",
+        shortTitle: "Digital Platforms",
+        tagline: "From business process to working platform.",
+        description:
+          "Full-stack platforms: public interface, accounts, admin space, workflows, APIs and deployment, designed around how the business actually operates.",
+      },
+      fr: {
+        title: "Plateformes Digitales",
+        shortTitle: "Plateformes Digitales",
+        tagline: "Du processus métier à la plateforme fonctionnelle.",
+        description:
+          "Des plateformes complètes : interface publique, comptes, espace admin, workflows, API et déploiement, conçues autour du fonctionnement réel de l'entreprise.",
       },
     },
   },
