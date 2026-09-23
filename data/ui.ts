@@ -27,6 +27,7 @@ interface UiText {
     chain: Record<"businessNeed" | "data" | "dataModel" | "businessLogic" | "backend" | "interface" | "users", DiagramNodeText>;
   };
   approachSection: { eyebrow: string; title: string; description: string };
+  engagementSection: { eyebrow: string; title: string; description: string; commitmentsLabel: string };
   technologySection: {
     eyebrow: string;
     title: string;
@@ -48,6 +49,7 @@ interface UiText {
     capabilitiesTitle: string;
     technologyTitle: string;
     pricingLabel: string;
+    maintenanceLabel: string;
     hardwareSizedAround: string;
     whereItRunsTitle: string;
     whereItRunsDescription: string;
@@ -113,6 +115,12 @@ const uiText: Record<Locale, UiText> = {
       title: "No complexity.",
       description: "A straightforward sequence, repeated on every engagement: small or large.",
     },
+    engagementSection: {
+      eyebrow: "Engagement",
+      title: "Start small, commit as it proves out.",
+      description: "A progressive path, and a few commitments that hold regardless of scope.",
+      commitmentsLabel: "What holds either way",
+    },
     technologySection: {
       eyebrow: "Technology",
       title: "Use what makes sense. Own what matters.",
@@ -146,6 +154,7 @@ const uiText: Record<Locale, UiText> = {
       capabilitiesTitle: "Direct expertise",
       technologyTitle: "Technologies used in this type of work",
       pricingLabel: "Pricing",
+      maintenanceLabel: "After go-live",
       hardwareSizedAround: "Hardware is sized around",
       whereItRunsTitle: "Where it runs",
       whereItRunsDescription:
@@ -246,6 +255,12 @@ const uiText: Record<Locale, UiText> = {
       title: "Pas de complexité.",
       description: "Une séquence simple, répétée sur chaque mission.",
     },
+    engagementSection: {
+      eyebrow: "Engagement",
+      title: "Commencer petit, engager selon ce qui se confirme.",
+      description: "Un chemin progressif, et quelques engagements qui tiennent quel que soit le périmètre.",
+      commitmentsLabel: "Ce qui ne bouge pas",
+    },
     technologySection: {
       eyebrow: "Technologie",
       title: "Utiliser ce qui a du sens. Maîtriser ce qui compte.",
@@ -279,6 +294,7 @@ const uiText: Record<Locale, UiText> = {
       capabilitiesTitle: "Expertise directe",
       technologyTitle: "Technologies utilisées pour ce type de mission",
       pricingLabel: "Tarification",
+      maintenanceLabel: "Après la mise en production",
       hardwareSizedAround: "Le matériel est dimensionné selon",
       whereItRunsTitle: "Où cela fonctionne",
       whereItRunsDescription:

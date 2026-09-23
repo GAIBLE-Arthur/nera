@@ -23,6 +23,8 @@ export interface SolutionPageContent {
   sizingFactors?: string[];
   /** Private AI only — short, jargon-free explanation of retrieval (RAG). */
   ragExplainer?: string;
+  /** Private AI only — what happens after go-live: model updates, monitoring, infra cost. */
+  maintenanceNote?: string;
 }
 
 type SolutionPages = Record<SolutionId, Record<Locale, SolutionPageContent>>;
@@ -320,6 +322,8 @@ const solutionPages: SolutionPages = {
         "NERA treats the retrieval layer and the data feeding it as the real engineering problem. The model is one component among several, not the whole project.",
       pricingNote:
         "Infrastructure and pricing depend on the selected model, workload, hardware and deployment requirements.",
+      maintenanceNote:
+        "Private AI has a life after go-live: open-source models get updated, usage shifts, and infrastructure cost needs tracking. Update cadence, response-quality monitoring and cost tracking are scoped upfront, not left undefined once the system is live.",
       privacyNote:
         "Whether data stays fully on-premise depends on the deployment chosen, from fully local infrastructure to hybrid setups. This is defined with the client before the project starts.",
       ragExplainer:
@@ -372,6 +376,8 @@ const solutionPages: SolutionPages = {
         "NERA considère la couche de recherche documentaire et les données qui l'alimentent comme le véritable enjeu d'ingénierie. Le modèle est un composant parmi d'autres, pas le projet entier.",
       pricingNote:
         "L'infrastructure et le tarif dépendent du modèle choisi, de la charge, du matériel et des exigences de déploiement.",
+      maintenanceNote:
+        "L'IA privée a une vie après la mise en production : les modèles open source évoluent, les usages changent, les coûts d'infrastructure doivent être suivis. La cadence de mise à jour, le suivi de la qualité des réponses et le suivi des coûts sont cadrés en amont, pas laissés flous une fois le système en production.",
       privacyNote:
         "Le fait que les données restent entièrement sur site dépend du déploiement choisi, d'une infrastructure totalement locale à des configurations hybrides. Cela est défini avec le client avant le démarrage du projet.",
       ragExplainer:

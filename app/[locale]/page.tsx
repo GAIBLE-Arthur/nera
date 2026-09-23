@@ -2,6 +2,7 @@ import { Hero } from "@/components/sections/Hero";
 import { SolutionsSection } from "@/components/sections/SolutionsSection";
 import { EndToEndSection } from "@/components/sections/EndToEndSection";
 import { ApproachSection } from "@/components/sections/ApproachSection";
+import { EngagementSection } from "@/components/sections/EngagementSection";
 import { TechnologySection } from "@/components/sections/TechnologySection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ContactSection } from "@/components/sections/ContactSection";
@@ -18,6 +19,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       <SolutionsSection locale={locale} />
       <EndToEndSection locale={locale} />
       <ApproachSection locale={locale} />
+      <EngagementSection locale={locale} />
       <TechnologySection locale={locale} />
       <AboutSection locale={locale} />
       <ContactSection locale={locale} />

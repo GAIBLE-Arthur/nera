@@ -107,15 +107,25 @@ export default function PrivateAIPage({ params }: { params: { locale: string } }
         </div>
       </section>
 
-      {content.pricingNote && (
+      {(content.pricingNote || content.maintenanceNote) && (
         <section className="bg-paper pb-20 sm:pb-24">
-          <div className="container-nera">
-            <div className="border border-border bg-paper px-6 py-5">
-              <p className="text-sm text-muted">
-                <span className="font-medium text-ink">{t.solutionShared.pricingLabel}: </span>
-                {content.pricingNote}
-              </p>
-            </div>
+          <div className="container-nera grid gap-4 sm:grid-cols-2">
+            {content.pricingNote && (
+              <div className="border border-border bg-paper px-6 py-5">
+                <p className="text-sm text-muted">
+                  <span className="font-medium text-ink">{t.solutionShared.pricingLabel}: </span>
+                  {content.pricingNote}
+                </p>
+              </div>
+            )}
+            {content.maintenanceNote && (
+              <div className="border border-border bg-paper px-6 py-5">
+                <p className="text-sm text-muted">
+                  <span className="font-medium text-ink">{t.solutionShared.maintenanceLabel}: </span>
+                  {content.maintenanceNote}
+                </p>
+              </div>
+            )}
           </div>
         </section>
       )}

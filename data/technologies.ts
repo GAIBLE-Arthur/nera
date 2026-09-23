@@ -21,7 +21,7 @@ const technologyEntries: TechnologyEntry[] = [
   { name: "Apache Superset", role: { en: "Open-source analytics and dashboards", fr: "Analytics et tableaux de bord open source" } },
   { name: "Power BI", role: { en: "Reporting inside a Microsoft environment", fr: "Reporting dans un environnement Microsoft" } },
   { name: "Microsoft Fabric", role: { en: "Managed analytics at platform scale", fr: "Analytics managés à l'échelle d'une plateforme" } },
-  { name: "ONLYOFFICE", role: { en: "Collaborative document workflows", fr: "Workflows documentaires collaboratifs" } },
+  { name: "Office", role: { en: "Collaborative document workflows", fr: "Workflows documentaires collaboratifs" } },
 ];
 
 export function getTechnologies(locale: Locale): Technology[] {
