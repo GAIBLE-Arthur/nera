@@ -10,7 +10,7 @@ import { PrivateAIDeploymentDiagram } from "@/components/diagrams/PrivateAIDeplo
 import { getSolutionPage } from "@/data/solution-pages";
 import { getSolution } from "@/data/solutions";
 import { getUiText } from "@/data/ui";
-import { isLocale, locales, type Locale } from "@/lib/i18n";
+import { isLocale, locales, defaultLocale, type Locale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
@@ -18,7 +18,7 @@ export function generateStaticParams() {
 }
 
 export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
-  const locale: Locale = isLocale(params.locale) ? params.locale : "en";
+  const locale: Locale = isLocale(params.locale) ? params.locale : defaultLocale;
   const content = getSolutionPage(locale, "private-ai");
   return { title: content.heroTitle, description: content.heroLead };
 }

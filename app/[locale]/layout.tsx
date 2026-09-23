@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, IBM_Plex_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
-import { locales, isLocale, type Locale } from "@/lib/i18n";
+import { locales, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
 import { site, getSiteText } from "@/data/site";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -31,7 +31,7 @@ export function generateMetadata({
   params: { locale: string };
 }): Metadata {
   const { locale: rawLocale } = params;
-  const locale: Locale = isLocale(rawLocale) ? rawLocale : "en";
+  const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
   const text = getSiteText(locale);
 
   return {

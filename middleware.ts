@@ -8,9 +8,11 @@ function detectLocale(request: NextRequest): string {
     return cookieLocale;
   }
 
+  // French is the site's primary language (see defaultLocale in lib/i18n.ts)
+  // — only send visitors to English if their browser actually asks for it.
   const acceptLanguage = request.headers.get("accept-language") ?? "";
-  if (acceptLanguage.toLowerCase().startsWith("fr")) {
-    return "fr";
+  if (acceptLanguage.toLowerCase().startsWith("en")) {
+    return "en";
   }
 
   return defaultLocale;
