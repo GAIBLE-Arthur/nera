@@ -6,8 +6,7 @@ export const site = {
   name: "NERA",
   // TEMP placeholder domain — update before deploying to production.
   url: "https://nera.example.com",
-  // TEMP placeholder contact address — replace with the real inbox.
-  email: "contact@nera.example.com",
+  email: "agaiblepro@gmail.com",
 } as const;
 
 interface SiteText {
