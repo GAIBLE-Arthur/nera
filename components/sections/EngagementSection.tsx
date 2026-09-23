@@ -12,7 +12,7 @@ export function EngagementSection({ locale }: { locale: Locale }) {
   return (
     <section id="engagement" className="bg-paper py-24 sm:py-28">
       <div className="container-nera">
-        <SectionHeader eyebrow={t.eyebrow} title={t.title} description={t.description} />
+        <SectionHeader title={t.title} description={t.description} />
 
         <ol className="mt-14 grid grid-cols-1 gap-px overflow-hidden border border-border bg-border sm:grid-cols-4">
           {tiers.map((tier, index) => (
@@ -25,9 +25,6 @@ export function EngagementSection({ locale }: { locale: Locale }) {
         </ol>
 
         <div className="mt-16">
-          <p className="mb-4 font-mono text-xs uppercase tracking-widest2 text-accent-strong">
-            {t.commitmentsLabel}
-          </p>
           <div className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-3">
             {commitments.map((commitment, index) => (
               <Reveal key={commitment.title} delay={index * 60} className="bg-paper p-6">

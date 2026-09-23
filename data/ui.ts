@@ -27,7 +27,7 @@ interface UiText {
     chain: Record<"businessNeed" | "data" | "dataModel" | "businessLogic" | "backend" | "interface" | "users", DiagramNodeText>;
   };
   approachSection: { eyebrow: string; title: string; description: string };
-  engagementSection: { eyebrow: string; title: string; description: string; commitmentsLabel: string };
+  engagementSection: { title: string; description: string };
   technologySection: {
     eyebrow: string;
     title: string;
@@ -116,10 +116,8 @@ const uiText: Record<Locale, UiText> = {
       description: "A straightforward sequence, repeated on every engagement: small or large.",
     },
     engagementSection: {
-      eyebrow: "Engagement",
       title: "Start small, commit as it proves out.",
       description: "A progressive path, and a few commitments that hold regardless of scope.",
-      commitmentsLabel: "What holds either way",
     },
     technologySection: {
       eyebrow: "Technology",
@@ -256,10 +254,8 @@ const uiText: Record<Locale, UiText> = {
       description: "Une séquence simple, répétée sur chaque mission.",
     },
     engagementSection: {
-      eyebrow: "Engagement",
       title: "Commencer petit, engager selon ce qui se confirme.",
       description: "Un chemin progressif, et quelques engagements qui tiennent quel que soit le périmètre.",
-      commitmentsLabel: "Ce qui ne bouge pas",
     },
     technologySection: {
       eyebrow: "Technologie",
