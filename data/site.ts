@@ -40,14 +40,14 @@ interface HeroCopy {
 const heroCopy: Record<Locale, HeroCopy> = {
   en: {
     kicker: "Data. Software. Private AI.",
-    headline: "Data, software and private AI engineering: end-to-end, built pragmatically.",
+    headline: "End-to-end technology. Built pragmatically.",
     sub: "NERA designs and builds systems from the data foundations up to the interfaces teams use every day. One practice, accountable for the whole chain.",
     primaryCta: { label: "Explore solutions", href: "#solutions" },
     secondaryCta: { label: "Discuss a project", href: "#contact" },
   },
   fr: {
     kicker: "Data. Software. IA privée.",
-    headline: "Ingénierie data, software et IA privée : de bout en bout, avec pragmatisme.",
+    headline: "Technologique de bout en bout. Construite avec pragmatisme.",
     sub: "NERA conçoit et construit des systèmes, des fondations data jusqu'aux interfaces utilisées chaque jour par les équipes. Une pratique, responsable de toute la chaîne.",
     primaryCta: { label: "Explorer les solutions", href: "#solutions" },
     secondaryCta: { label: "Discuter d'un projet", href: "#contact" },
