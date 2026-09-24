@@ -262,7 +262,7 @@ const uiText: Record<Locale, UiText> = {
       },
     },
     footer: {
-      tagline: "Technologique de bout en bout. Construite avec pragmatisme.",
+      tagline: "Technologie de bout en bout. Construite avec pragmatisme.",
       solutionsHeading: "Solutions",
       siteHeading: "Site",
       copyrightSuffix: "Pratique d'ingénierie indépendante.",

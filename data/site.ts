@@ -47,7 +47,7 @@ const heroCopy: Record<Locale, HeroCopy> = {
   },
   fr: {
     kicker: "Data. Software. IA privée.",
-    headline: "Technologique de bout en bout. Construite avec pragmatisme.",
+    headline: "Technologie de bout en bout. Construite avec pragmatisme.",
     sub: "NERA conçoit et construit des systèmes, des fondations data jusqu'aux interfaces utilisées chaque jour par les équipes. Une pratique, responsable de toute la chaîne.",
     primaryCta: { label: "Explorer les solutions", href: "#solutions" },
     secondaryCta: { label: "Discuter d'un projet", href: "#contact" },
