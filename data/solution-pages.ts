@@ -49,8 +49,8 @@ const solutionPages: SolutionPages = {
           "A clear picture of where data lives, how reliable it is, and where it breaks",
           "Cleaned, structured and documented datasets the team can trust",
           "Data models that match how the business actually operates",
-          "Automated pipelines that remove repetitive manual work",
-          "Reporting and dashboards people actually use, in whichever tool fits the context",
+          "Automated pipelines that remove repetitive work",
+          "Reporting and dashboards, in whichever tool fits the context",
         ],
       },
       deliverables: [
@@ -63,7 +63,7 @@ const solutionPages: SolutionPages = {
       ],
       technologies: ["SQL", "ETL", "Python", "Power Query / Excel", "Power BI", "Microsoft Fabric", "Apache Superset"],
       approachNote:
-        "For this type of engagement, NERA typically works close to the data: reviewing tables, talking to the people who use the reports daily, and building fixes directly rather than only documenting them.",
+        "For this type of engagement, NERA works close to the data: reviewing tables, talking to the people who use the reports daily, and building fixes directly rather than only documenting them.",
       capabilities: [
         "Data auditing and quality assessment",
         "SQL, Python and Power Query for cleaning and transformation",
@@ -95,8 +95,8 @@ const solutionPages: SolutionPages = {
           "Une vision claire de où se trouvent les données, de leur fiabilité et de leurs points de rupture",
           "Des jeux de données nettoyés, structurés et documentés, sur lesquels l'équipe peut s'appuyer",
           "Des modèles de données qui correspondent au fonctionnement réel de l'entreprise",
-          "Des pipelines automatisés qui suppriment le travail manuel répétitif",
-          "Des rapports et tableaux de bord réellement utilisés, dans l'outil adapté au contexte",
+          "Des pipelines automatisés qui suppriment le travail répétitif",
+          "Des rapports et tableaux de bord dans l'outil adapté au contexte",
         ],
       },
       deliverables: [
@@ -109,7 +109,7 @@ const solutionPages: SolutionPages = {
       ],
       technologies: ["SQL", "ETL", "Python", "Power Query / Excel", "Power BI", "Microsoft Fabric", "Apache Superset"],
       approachNote:
-        "Pour ce type de mission, NERA travaille généralement au plus près des données : en examinant les tables, en échangeant avec les personnes qui utilisent les rapports au quotidien, et en construisant les correctifs directement plutôt qu'en se limitant à les documenter.",
+        "Pour ce type de mission, NERA travaille au plus près des données : en examinant les tables, en échangeant avec les personnes qui utilisent les rapports au quotidien, et en construisant les correctifs directement plutôt qu'en se limitant à les documenter.",
       capabilities: [
         "Audit et évaluation de la qualité des données",
         "SQL, Python et Power Query pour le nettoyage et la transformation",
@@ -133,8 +133,8 @@ const solutionPages: SolutionPages = {
       problem: {
         title: "The problem",
         body: [
-          "Once a business outgrows spreadsheets, it needs somewhere for data to live, a consistent way to transform it, and a layer people can query.",
-          "Connecting an analytics tool is easy. Cleaning the data, understanding what the tool actually does, making it shareable, and turning it into a decision, is the hard part.",
+          "A business needs somewhere for data to live, a consistent way to transform it, and a layer people can query.",
+          "Cleaning the data, understanding what it says, and making it usable requires a rigorous approach.",
         ],
       },
       whatWeBuild: {
@@ -156,11 +156,11 @@ const solutionPages: SolutionPages = {
         "Dashboards and self-service reporting",
         "Deployment and operating instructions",
       ],
-      technologies: ["PostgreSQL", "ETL", "dbt", "Apache Superset", "Power BI", "Docker", "ONLYOFFICE"],
+      technologies: ["PostgreSQL", "ETL", "dbt", "Apache Superset", "Power BI", "Docker", "Office"],
       approachNote:
         "Where it reduces licensing costs and increases control, NERA proposes an open-source alternative the client can operate independently, without treating open source as a requirement in itself.",
       cta: {
-        title: "Outgrowing spreadsheets and one-off exports?",
+        title: "Need an analytics platform sized to your data?",
         body: "Discuss what an analytics platform sized to your data and your team would actually look like.",
       },
     },
@@ -172,8 +172,8 @@ const solutionPages: SolutionPages = {
       problem: {
         title: "Le problème",
         body: [
-          "Quand une entreprise dépasse les tableurs, elle a besoin d'un endroit où faire vivre ses données, d'une méthode cohérente pour les transformer, et d'une couche interrogeable.",
-          "Brancher un outil d'analyse est simple. Nettoyer les données, comprendre ce que fait l'outil, pouvoir rendre tout partageable et transformer cela en décision, est la partie difficile.",
+          "Une entreprise a besoin d'un endroit où faire vivre ses données, d'une méthode cohérente pour les transformer, et d'une couche interrogeable.",
+          "Nettoyer les données, comprendre ce qu'elles racontent et les rendre exploitables nécessite une approche rigoureuse.",
         ],
       },
       whatWeBuild: {
@@ -195,11 +195,11 @@ const solutionPages: SolutionPages = {
         "Tableaux de bord et reporting en libre-service",
         "Déploiement et instructions d'exploitation",
       ],
-      technologies: ["PostgreSQL", "ETL", "dbt", "Apache Superset", "Power BI", "Docker", "ONLYOFFICE"],
+      technologies: ["PostgreSQL", "ETL", "dbt", "Apache Superset", "Power BI", "Docker", "Office"],
       approachNote:
         "Quand cela réduit les coûts de licence et augmente le contrôle, NERA propose une alternative open source que le client peut exploiter de façon autonome.",
       cta: {
-        title: "Vos tableurs et exports ponctuels ne suffisent plus ?",
+        title: "Vous avez besoin d'une plateforme analytique dimensionnée pour vos données ?",
         body: "Discutons de ce à quoi ressemblerait une plateforme analytique dimensionnée pour vos données et votre équipe.",
       },
     },
@@ -214,7 +214,7 @@ const solutionPages: SolutionPages = {
         title: "The problem",
         body: [
           "A spreadsheet, a shared inbox and a handful of disconnected tools can run a small operation for a while, until they can't. Growth exposes the gaps: no single source of truth, manual handoffs, and processes that live in someone's head.",
-          "The fix isn't another app bolted on top. It's a platform designed around how the business actually works.",
+          "It's about building, for specific needs, a platform designed around how the business actually works.",
         ],
       },
       whatWeBuild: {
@@ -241,7 +241,7 @@ const solutionPages: SolutionPages = {
       approachNote:
         "NERA starts from the business process, not a feature list. The platform is scoped around what the workflow actually requires before any interface is designed.",
       cta: {
-        title: "Running the business on tools that don't talk to each other?",
+        title: "Have a business process you want turned into a platform?",
         body: "Discuss the process you want turned into a platform, and what it would need to cover end to end.",
       },
     },
@@ -254,7 +254,7 @@ const solutionPages: SolutionPages = {
         title: "Le problème",
         body: [
           "Un tableur, une boîte mail partagée et quelques outils qui ne se parlent pas peuvent suffire un temps. Mais la croissance révèle vite les limites : aucune source de vérité unique, des transferts manuels, des processus qui n'existent que dans la tête de quelqu'un.",
-          "La réponse n'est pas d'empiler une nouvelle application par-dessus l'existant, mais de construire une plateforme pensée autour du fonctionnement réel de l'entreprise.",
+          "Il s'agit de construire, pour des besoins spécifiques, une plateforme pensée autour du fonctionnement réel de l'entreprise.",
         ],
       },
       whatWeBuild: {
@@ -281,7 +281,7 @@ const solutionPages: SolutionPages = {
       approachNote:
         "NERA part du processus métier, pas d'une liste de fonctionnalités. La plateforme est cadrée selon ce que le workflow exige réellement, avant même de concevoir une interface.",
       cta: {
-        title: "Votre entreprise tourne sur des outils qui ne se parlent pas ?",
+        title: "Vous avez un processus métier à transformer en plateforme ?",
         body: "Discutons du processus que vous voulez transformer en plateforme, et de ce qu'il faudrait couvrir de bout en bout.",
       },
     },
@@ -323,7 +323,7 @@ const solutionPages: SolutionPages = {
       pricingNote:
         "Infrastructure and pricing depend on the selected model, workload, hardware and deployment requirements.",
       maintenanceNote:
-        "Private AI has a life after go-live: open-source models get updated, usage shifts, and infrastructure cost needs tracking. Update cadence, response-quality monitoring and cost tracking are scoped upfront, not left undefined once the system is live.",
+        "Private AI has a life after go-live: models evolve, usage shifts. That follow-up gets scoped as part of the project — it isn't an open-ended support commitment.",
       privacyNote:
         "Whether data stays fully on-premise depends on the deployment chosen, from fully local infrastructure to hybrid setups. This is defined with the client before the project starts.",
       ragExplainer:
@@ -377,7 +377,7 @@ const solutionPages: SolutionPages = {
       pricingNote:
         "L'infrastructure et le tarif dépendent du modèle choisi, de la charge, du matériel et des exigences de déploiement.",
       maintenanceNote:
-        "L'IA privée a une vie après la mise en production : les modèles open source évoluent, les usages changent, les coûts d'infrastructure doivent être suivis. La cadence de mise à jour, le suivi de la qualité des réponses et le suivi des coûts sont cadrés en amont, pas laissés flous une fois le système en production.",
+        "L'IA privée a une vie après la mise en production : les modèles évoluent, les usages changent. Ce suivi est cadré dès le projet — ce n'est pas un engagement de support illimité.",
       privacyNote:
         "Le fait que les données restent entièrement sur site dépend du déploiement choisi, d'une infrastructure totalement locale à des configurations hybrides. Cela est défini avec le client avant le démarrage du projet.",
       ragExplainer:

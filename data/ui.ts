@@ -27,7 +27,6 @@ interface UiText {
     chain: Record<"businessNeed" | "data" | "dataModel" | "businessLogic" | "backend" | "interface" | "users", DiagramNodeText>;
   };
   approachSection: { eyebrow: string; title: string; description: string };
-  engagementSection: { title: string; description: string };
   technologySection: {
     eyebrow: string;
     title: string;
@@ -115,15 +114,11 @@ const uiText: Record<Locale, UiText> = {
       title: "No complexity.",
       description: "A straightforward sequence, repeated on every engagement: small or large.",
     },
-    engagementSection: {
-      title: "Start small, commit as it proves out.",
-      description: "A progressive path, and a few commitments that hold regardless of scope.",
-    },
     technologySection: {
       eyebrow: "Technology",
       title: "Use what makes sense. Own what matters.",
       description:
-        "NERA can work inside what's already in place, complete it, or build an alternative when it can't do the job. The technology serves the problem, it isn't the product.",
+        "NERA can work inside what's already in place, or complete it. The technology serves the problem, it isn't the product.",
       diagram: {
         existingSystems: { label: "Existing systems", description: "What the client already runs today." },
         nera: { label: "NERA", description: "Assesses what to keep, what to complete, and what to replace." },
@@ -165,15 +160,15 @@ const uiText: Record<Locale, UiText> = {
         rawData: { label: "Raw data", description: "ERP exports, spreadsheets, disconnected sources." },
         auditCleaning: { label: "Audit & cleaning", description: "Quality checked, deduplicated, fixed at the source where possible." },
         structuredModel: { label: "Structured model", description: "A consistent shape the rest of the business can rely on." },
-        automation: { label: "Automation", description: "Scripts and scheduled jobs that remove manual re-exporting." },
-        reporting: { label: "Reporting", description: "Dashboards people actually check, in the tool they already use." },
+        automation: { label: "Automation", description: "Scripts and scheduled jobs." },
+        reporting: { label: "Reporting", description: "Dashboards in the tools already in use, or built for the occasion." },
       },
     },
     analyticsPlatformPage: {
       architectureTitle: "Sources to dashboards",
       architectureDescription:
         "A governed path from source systems to the reporting layer, open source where it reduces licensing cost and increases control.",
-      approachTitle: "Built to be owned, not just used",
+      approachTitle: "Built to be owned",
       diagram: {
         dataSources: { label: "Data sources", description: "ERP, CRM, files, APIs: wherever the data starts out." },
         ingestion: { label: "Ingestion", description: "Pulling data in on a schedule that matches how fast it changes." },
@@ -253,15 +248,11 @@ const uiText: Record<Locale, UiText> = {
       title: "Pas de complexité.",
       description: "Une séquence simple, répétée sur chaque mission.",
     },
-    engagementSection: {
-      title: "Commencer petit, engager selon ce qui se confirme.",
-      description: "Un chemin progressif, et quelques engagements qui tiennent quel que soit le périmètre.",
-    },
     technologySection: {
       eyebrow: "Technologie",
       title: "Utiliser ce qui a du sens. Maîtriser ce qui compte.",
       description:
-        "NERA peut travailler dans l'existant, le compléter, ou construire une alternative quand cela ne suffit pas. La technologie sert le problème, elle n'est pas le produit.",
+        "NERA peut travailler dans l'existant, ou le compléter. La technologie sert le problème, elle n'est pas le produit.",
       diagram: {
         existingSystems: { label: "Systèmes existants", description: "Ce que le client utilise déjà aujourd'hui." },
         nera: { label: "NERA", description: "Évalue ce qui doit être gardé, complété, ou remplacé." },
@@ -303,15 +294,15 @@ const uiText: Record<Locale, UiText> = {
         rawData: { label: "Données brutes", description: "Exports ERP, tableurs, sources déconnectées." },
         auditCleaning: { label: "Audit & nettoyage", description: "Qualité vérifiée, doublons supprimés, corrigé à la source si possible." },
         structuredModel: { label: "Modèle structuré", description: "Une structure cohérente sur laquelle le reste de l'entreprise peut s'appuyer." },
-        automation: { label: "Automatisation", description: "Scripts et tâches planifiées qui suppriment les ré-exports manuels." },
-        reporting: { label: "Reporting", description: "Des tableaux de bord réellement consultés, dans l'outil déjà utilisé." },
+        automation: { label: "Automatisation", description: "Scripts et tâches planifiées." },
+        reporting: { label: "Reporting", description: "Des tableaux de bord dans les outils déjà utilisés ou créés pour l'occasion." },
       },
     },
     analyticsPlatformPage: {
       architectureTitle: "Des sources aux tableaux de bord",
       architectureDescription:
         "Un chemin gouverné depuis les systèmes sources jusqu'à la couche de reporting, open source quand cela réduit les coûts de licence et augmente le contrôle.",
-      approachTitle: "Conçu pour être maîtrisé, pas seulement utilisé",
+      approachTitle: "Conçu pour être maîtrisé",
       diagram: {
         dataSources: { label: "Sources de données", description: "ERP, CRM, fichiers, API : là où les données démarrent." },
         ingestion: { label: "Ingestion", description: "Récupération des données selon un rythme adapté à leur fréquence de changement." },
