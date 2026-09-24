@@ -128,7 +128,7 @@ const uiText: Record<Locale, UiText> = {
       },
     },
     footer: {
-      tagline: "Data, software and private AI engineering: end-to-end, built pragmatically.",
+      tagline: "End-to-end technology. Built pragmatically.",
       solutionsHeading: "Solutions",
       siteHeading: "Site",
       copyrightSuffix: "Independent engineering practice.",
@@ -262,7 +262,7 @@ const uiText: Record<Locale, UiText> = {
       },
     },
     footer: {
-      tagline: "Ingénierie data, software et IA privée : de bout en bout, avec pragmatisme.",
+      tagline: "Technologique de bout en bout. Construite avec pragmatisme.",
       solutionsHeading: "Solutions",
       siteHeading: "Site",
       copyrightSuffix: "Pratique d'ingénierie indépendante.",
