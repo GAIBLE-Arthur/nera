@@ -39,7 +39,7 @@ const solutionPages: SolutionPages = {
       problem: {
         title: "The problem",
         body: [
-          "Most businesses don't lack data, they lack a reliable, understood version of it. Reports disagree, spreadsheets diverge, and every new question means another manual export.",
+          "Most businesses don't lack data, they lack a reliable, understood version of it. Reports disagree, spreadsheets diverge, and every new question means another export.",
           "Fixing this takes more than a diagnosis. It takes someone willing to work inside the actual systems, the ERP, the spreadsheets, the operations data, and change how they're structured.",
         ],
       },
@@ -85,8 +85,8 @@ const solutionPages: SolutionPages = {
       problem: {
         title: "Le problème",
         body: [
-          "La plupart des entreprises ne manquent pas de données, elles manquent d'une version fiable et comprise de ces données. Les rapports se contredisent, les tableurs divergent, et chaque nouvelle question demande un nouvel export manuel.",
-          "Corriger cela demande plus qu'un diagnostic. Cela demande d'intervenir directement dans les systèmes réels, l'ERP, les tableurs, les données opérationnelles, et de changer leur structuration.",
+          "La plupart des entreprises ne manquent pas de données, elles manquent d'une version fiable et comprise de ces données. Les rapports se contredisent, les tableurs divergent, et chaque nouvelle question demande un nouvel export.",
+          "Corriger cela demande plus qu'un diagnostic. Cela demande d'intervenir directement dans les systèmes réels, l'ERP, les tableurs, les données opérationnelles, et de changer leur structure.",
         ],
       },
       whatWeBuild: {
@@ -295,7 +295,7 @@ const solutionPages: SolutionPages = {
       problem: {
         title: "The problem",
         body: [
-          "What determines whether private AI is actually useful, or actually private, is everything underneath it: which documents it can see, how they're indexed, which model runs it, and where that model runs.",
+          "What determines whether AI is actually useful, or actually private, is everything underneath it: which documents it can see, how they're indexed, which model runs it, and where that model runs.",
           "NERA works on the full system, from ingesting company documents and data to deploying the model in an environment that matches the business's confidentiality requirements.",
         ],
       },
@@ -349,7 +349,7 @@ const solutionPages: SolutionPages = {
       problem: {
         title: "Le problème",
         body: [
-          "Ce qui détermine si une IA privée est réellement utile, ou réellement privée, c'est tout ce qu'il y a dessous : quels documents elle peut voir, comment ils sont indexés, quel modèle l'exécute, et où ce modèle tourne.",
+          "Ce qui détermine si une IA est réellement utile, ou réellement privée, c'est tout ce qu'il y a dessous : quels documents elle peut voir, comment ils sont indexés, quel modèle l'exécute, et où ce modèle tourne.",
           "NERA travaille sur le système complet, de l'ingestion des documents et données de l'entreprise jusqu'au déploiement du modèle dans un environnement conforme aux exigences de confidentialité de l'entreprise.",
         ],
       },
