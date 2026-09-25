@@ -1,36 +1,12 @@
 import type { Locale } from "@/lib/i18n";
 
-export const projectTypeIds = ["data-analytics", "analytics-platform", "digital-platform", "private-ai", "other"] as const;
-export type ProjectTypeId = (typeof projectTypeIds)[number];
-
-const projectTypeLabels: Record<Locale, Record<ProjectTypeId, string>> = {
-  en: {
-    "data-analytics": "Data & reporting",
-    "analytics-platform": "Analytics platform",
-    "digital-platform": "Business tools",
-    "private-ai": "Private AI",
-    other: "Other",
-  },
-  fr: {
-    "data-analytics": "Données & reporting",
-    "analytics-platform": "Plateforme analytique",
-    "digital-platform": "Outils métier",
-    "private-ai": "IA privée",
-    other: "Autre",
-  },
-};
-
-export function getProjectTypes(locale: Locale): { id: ProjectTypeId; label: string }[] {
-  return projectTypeIds.map((id) => ({ id, label: projectTypeLabels[locale][id] }));
-}
-
 interface ContactText {
   title: string;
+  intro: string;
   preferEmail: string;
   nameLabel: string;
   companyLabel: string;
   emailLabel: string;
-  projectTypeLabel: string;
   messageLabel: string;
   sendLabel: string;
   sendingLabel: string;
@@ -45,13 +21,13 @@ interface ContactText {
 
 const contactText: Record<Locale, ContactText> = {
   en: {
-    title: "Let's build something useful.",
+    title: "Describe your problem.",
+    intro: "A few lines are enough. First conversation with no commitment.",
     preferEmail: "Prefer email?",
     nameLabel: "Name",
     companyLabel: "Company (optional)",
     emailLabel: "Email",
-    projectTypeLabel: "Project type (optional)",
-    messageLabel: "What do you want to build?",
+    messageLabel: "Your problem in a few lines",
     sendLabel: "Send message",
     sendingLabel: "Sending…",
     sentNotice: "Message sent. We'll get back to you shortly.",
@@ -59,17 +35,17 @@ const contactText: Record<Locale, ContactText> = {
     errorRequiredName: "Please enter your name.",
     errorRequiredEmail: "Please enter your email.",
     errorInvalidEmail: "Please enter a valid email address.",
-    errorRequiredMessage: "Let us know what you want to build.",
+    errorRequiredMessage: "Describe your problem in a few lines.",
     errorShortMessage: "A few more details would help: at least 10 characters.",
   },
   fr: {
-    title: "Construisons quelque chose d'utile.",
+    title: "Décrivez votre problème.",
+    intro: "Quelques lignes suffisent. Premier échange sans engagement.",
     preferEmail: "Vous préférez l'email ?",
     nameLabel: "Nom",
     companyLabel: "Entreprise (optionnel)",
     emailLabel: "Email",
-    projectTypeLabel: "Type de projet (optionnel)",
-    messageLabel: "Que voulez-vous construire ?",
+    messageLabel: "Votre problème en quelques lignes",
     sendLabel: "Envoyer",
     sendingLabel: "Envoi…",
     sentNotice: "Message envoyé. Nous revenons vers vous rapidement.",
@@ -77,7 +53,7 @@ const contactText: Record<Locale, ContactText> = {
     errorRequiredName: "Merci d'indiquer votre nom.",
     errorRequiredEmail: "Merci d'indiquer votre email.",
     errorInvalidEmail: "Merci d'indiquer une adresse email valide.",
-    errorRequiredMessage: "Indiquez ce que vous voulez construire.",
+    errorRequiredMessage: "Décrivez votre problème en quelques lignes.",
     errorShortMessage: "Quelques détails supplémentaires aideraient : au moins 10 caractères.",
   },
 };

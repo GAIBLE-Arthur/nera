@@ -26,7 +26,13 @@ interface SectionCtaText {
   label: string;
 }
 
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
 interface UiText {
+  faqSection: { title: string; items: FaqItem[] };
   problemsSection: {
     title: string;
     items: ProblemItem[];
@@ -102,6 +108,18 @@ interface UiText {
 
 const uiText: Record<Locale, UiText> = {
   en: {
+    faqSection: {
+      title: "Frequently asked questions",
+      items: [
+        { question: "How much does it cost?", answer: "The price depends on the problem to fix. A precise quote is given after a first conversation, with no commitment. Ballpark: [range to fill in]." },
+        { question: "How long does it take?", answer: "From a few days to automate a report to a few weeks for a custom tool. The timeline is set in the quote." },
+        { question: "Does our data need to be clean to start?", answer: "No. Putting your files back in order is part of the work." },
+        { question: "Do we have to change our software?", answer: "No. The work starts from what you already use. A tool is only replaced if it really gets in the way." },
+        { question: "Where does our data go?", answer: "It stays with you, or in the environment you choose. Nothing is sent to an outside service without your agreement." },
+        { question: "What if you're not available?", answer: "Everything that's built is documented and belongs to you. Another provider can take over at any time." },
+        { question: "Where do you work?", answer: "[Area to fill in]: on site in the region, remotely anywhere in France." },
+      ],
+    },
     problemsSection: {
       title: "Sound familiar?",
       items: [
@@ -112,13 +130,13 @@ const uiText: Record<Locale, UiText> = {
         { situation: "You want to use AI, but not just any way.", objective: "Concrete uses, with your data staying in-house." },
         { situation: "Decisions are made without a clear view of the business.", objective: "The right indicators, visible at the right time." },
       ],
-      cta: { text: "Recognise one of these?", label: "Talk about your situation" },
+      cta: { text: "Recognise one of these?", label: "Describe your problem" },
     },
     sectionCtas: {
       solutions: { text: "Your need doesn't fit any of these boxes?", label: "Describe your problem" },
-      approach: { text: "It all starts with a conversation about your situation.", label: "Schedule a call" },
-      technology: { text: "Already have tools in place? KAG Systèmes starts from there.", label: "Discuss your current setup" },
-      about: { text: "A problem to solve, a project in mind?", label: "Get in touch" },
+      approach: { text: "It all starts with a conversation about your situation.", label: "Describe your problem" },
+      technology: { text: "Already have tools in place? KAG Systèmes starts from there.", label: "Describe your problem" },
+      about: { text: "A problem to solve, a project in mind?", label: "Describe your problem" },
     },
     solutionsSection: {
       eyebrow: "What KAG Systèmes builds",
@@ -127,38 +145,39 @@ const uiText: Record<Locale, UiText> = {
     },
     endToEnd: {
       eyebrow: "Positioning",
-      title: "End-to-end, by design",
-      description: "KAG Systèmes builds the technology underneath: from data to interface.",
+      title: "From A to Z, one point of contact.",
+      description:
+        "No subcontracting and no hand-offs between providers: the same person understands your need, organises your data and builds the tool.",
       paragraph:
-        "A recommendation is only useful if something is built from it. KAG Systèmes stays involved across the whole chain, from the data a system runs on to the interface people use, rather than handing off at the point where it gets difficult.",
-      chainTitle: "From data to interface.",
+        "Every step is covered, from what you're trying to fix to what your teams use every day.",
+      chainTitle: "From the need to the screen.",
       axisLabel: "KAG Systèmes: end to end",
       chain: {
-        businessNeed: { label: "Business need", description: "What the business is actually trying to solve, in plain terms." },
-        data: { label: "Data", description: "Where it lives today, how reliable it is, and what needs cleaning." },
-        dataModel: { label: "Data model", description: "A structure that matches how the business actually operates." },
-        businessLogic: { label: "Business logic", description: "The rules and workflows that make the system behave correctly." },
-        backend: { label: "Backend / services", description: "The APIs and services that run the logic and serve the data." },
-        interface: { label: "Interface", description: "What people actually see and use, day to day." },
-        users: { label: "Users", description: "The people the whole chain exists to serve." },
+        businessNeed: { label: "Your need", description: "What you're actually trying to fix, in plain terms." },
+        data: { label: "Your data", description: "Where it is today, how reliable it is, what needs tidying." },
+        dataModel: { label: "Organising the data", description: "A structure that matches how your business really works." },
+        businessLogic: { label: "Your business rules", description: "The rules and steps the tool has to follow." },
+        backend: { label: "The engine", description: "What runs behind the scenes and keeps everything up to date." },
+        interface: { label: "The screens", description: "What people see and use every day." },
+        users: { label: "Your teams", description: "The people the whole chain is built for." },
       },
     },
     approachSection: {
       eyebrow: "Method",
       title: "No complexity.",
-      description: "A straightforward sequence, repeated on every engagement: small or large.",
+      description: "Five steps, always the same.",
     },
     technologySection: {
       eyebrow: "Technology",
       title: "Use what makes sense. Own what matters.",
       description:
-        "KAG Systèmes can work inside what's already in place, or complete it. The technology serves the problem, it isn't the product.",
+        "Your current tools are kept when they work, and completed when needed. The technology serves the problem, it isn't the product.",
       diagram: {
-        existingSystems: { label: "Existing systems", description: "What the client already runs today." },
+        existingSystems: { label: "What you already have", description: "The software and files you use today." },
         nera: { label: "KAG Systèmes", description: "Assesses what to keep, what to complete, and what to replace." },
         existingStack: { label: "Existing tools", description: "Extended in place when they're already fit for purpose." },
         openSource: { label: "Alternative", description: "Proposed where it cuts licensing cost and increases control." },
-        workingSystem: { label: "Working system", description: "Either path ends in something the client actually runs." },
+        workingSystem: { label: "A tool that works", description: "Either way, the result is something your teams actually use." },
       },
     },
     footer: {
@@ -253,6 +272,18 @@ const uiText: Record<Locale, UiText> = {
     diagramHint: "Tap a step for detail",
   },
   fr: {
+    faqSection: {
+      title: "Questions fréquentes",
+      items: [
+        { question: "Combien ça coûte ?", answer: "Le prix dépend du problème à régler. Un devis précis est donné après un premier échange, sans engagement. Ordre de grandeur : [fourchette à compléter]." },
+        { question: "Combien de temps ça prend ?", answer: "De quelques jours pour automatiser un rapport à quelques semaines pour un outil sur mesure. Le délai est fixé dans le devis." },
+        { question: "Faut-il des données propres pour commencer ?", answer: "Non. Remettre de l'ordre dans vos fichiers fait partie du travail." },
+        { question: "Faut-il changer nos logiciels ?", answer: "Non. Le travail part de ce que vous utilisez déjà. Un outil n'est remplacé que s'il bloque vraiment." },
+        { question: "Où vont nos données ?", answer: "Elles restent chez vous, ou dans l'environnement que vous choisissez. Rien n'est envoyé à un service externe sans votre accord." },
+        { question: "Et si vous n'êtes pas disponible ?", answer: "Tout ce qui est construit est documenté et vous appartient. Un autre prestataire peut reprendre la main à tout moment." },
+        { question: "Vous intervenez où ?", answer: "[Zone à compléter] : sur site dans la région, à distance partout en France." },
+      ],
+    },
     problemsSection: {
       title: "Ça vous parle ?",
       items: [
@@ -263,13 +294,13 @@ const uiText: Record<Locale, UiText> = {
         { situation: "Vous voulez utiliser l'IA, mais pas n'importe comment.", objective: "Des usages concrets, avec vos données qui restent chez vous." },
         { situation: "Les décisions se prennent sans vision claire de l'activité.", objective: "Les bons indicateurs, visibles au bon moment." },
       ],
-      cta: { text: "Vous vous reconnaissez ?", label: "Parler de votre situation" },
+      cta: { text: "Vous vous reconnaissez ?", label: "Décrire votre problème" },
     },
     sectionCtas: {
       solutions: { text: "Votre besoin ne rentre dans aucune case ?", label: "Décrire votre problème" },
-      approach: { text: "Tout commence par un échange sur votre situation.", label: "Planifier un échange" },
-      technology: { text: "Vous avez déjà des outils en place ? KAG Systèmes part de là.", label: "Parler de votre existant" },
-      about: { text: "Un problème à régler, un projet en tête ?", label: "Prendre contact" },
+      approach: { text: "Tout commence par un échange sur votre situation.", label: "Décrire votre problème" },
+      technology: { text: "Vous avez déjà des outils en place ? KAG Systèmes part de là.", label: "Décrire votre problème" },
+      about: { text: "Un problème à régler, un projet en tête ?", label: "Décrire votre problème" },
     },
     solutionsSection: {
       eyebrow: "Ce que KAG Systèmes construit",
@@ -278,38 +309,39 @@ const uiText: Record<Locale, UiText> = {
     },
     endToEnd: {
       eyebrow: "Positionnement",
-      title: "De bout en bout, par conception",
-      description: "KAG Systèmes construit la technologie qui se trouve en dessous : des données à l'interface.",
+      title: "De A à Z, un seul interlocuteur.",
+      description:
+        "Pas de sous-traitance ni de relais entre prestataires : la même personne comprend votre besoin, organise vos données et construit l'outil.",
       paragraph:
-        "KAG Systèmes reste impliqué sur toute la chaîne, des données sur lesquelles un système fonctionne jusqu'à l'interface utilisée.",
-      chainTitle: "Des données à l'interface.",
+        "Chaque étape est prise en charge, de ce que vous cherchez à régler jusqu'à ce que vos équipes utilisent tous les jours.",
+      chainTitle: "Du besoin à l'écran.",
       axisLabel: "KAG Systèmes : de bout en bout",
       chain: {
-        businessNeed: { label: "Besoin métier", description: "Ce que l'entreprise cherche réellement à résoudre." },
-        data: { label: "Données", description: "Où elles se trouvent aujourd'hui, leur fiabilité, ce qu'il faut nettoyer." },
-        dataModel: { label: "Modèle de données", description: "Une structure qui correspond au fonctionnement réel de l'entreprise." },
-        businessLogic: { label: "Logique métier", description: "Les règles et workflows qui font fonctionner le système correctement." },
-        backend: { label: "Backend / services", description: "Les API et services qui exécutent la logique et servent les données." },
-        interface: { label: "Interface", description: "Ce que les gens voient et utilisent." },
-        users: { label: "Utilisateurs", description: "Les personnes que toute cette chaîne sert." },
+        businessNeed: { label: "Votre besoin", description: "Ce que vous cherchez vraiment à régler." },
+        data: { label: "Vos données", description: "Où elles sont aujourd'hui, leur fiabilité, ce qu'il faut remettre en ordre." },
+        dataModel: { label: "Organisation des données", description: "Une structure qui correspond à votre fonctionnement réel." },
+        businessLogic: { label: "Vos règles de gestion", description: "Les règles et étapes que l'outil doit suivre." },
+        backend: { label: "Le moteur de l'outil", description: "Ce qui tourne en coulisses et garde tout à jour." },
+        interface: { label: "Les écrans", description: "Ce que vos équipes voient et utilisent chaque jour." },
+        users: { label: "Vos équipes", description: "Les personnes pour qui toute la chaîne est construite." },
       },
     },
     approachSection: {
       eyebrow: "Méthode",
       title: "Pas de complexité.",
-      description: "Une séquence simple, répétée sur chaque mission.",
+      description: "Cinq étapes, toujours les mêmes.",
     },
     technologySection: {
       eyebrow: "Technologie",
       title: "Utiliser ce qui a du sens. Maîtriser ce qui compte.",
       description:
-        "KAG Systèmes peut travailler dans l'existant, ou le compléter. La technologie sert le problème, elle n'est pas le produit.",
+        "Vos outils actuels sont conservés quand ils fonctionnent, et complétés quand il le faut. La technologie sert le problème, elle n'est pas le produit.",
       diagram: {
-        existingSystems: { label: "Systèmes existants", description: "Ce que le client utilise déjà aujourd'hui." },
+        existingSystems: { label: "Ce que vous avez déjà", description: "Les logiciels et fichiers que vous utilisez aujourd'hui." },
         nera: { label: "KAG Systèmes", description: "Évalue ce qui doit être gardé, complété, ou remplacé." },
         existingStack: { label: "Outils existants", description: "Étendus en place quand ils conviennent déjà." },
         openSource: { label: "Alternative", description: "Proposée quand elle réduit les coûts de licence et augmente le contrôle." },
-        workingSystem: { label: "Système fonctionnel", description: "Les deux chemins aboutissent à quelque chose que le client utilise réellement." },
+        workingSystem: { label: "Un outil qui marche", description: "Dans les deux cas, le résultat est un outil que vos équipes utilisent vraiment." },
       },
     },
     footer: {

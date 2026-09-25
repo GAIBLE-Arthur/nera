@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 interface CTAButtonProps {
   href: string;
   children: React.ReactNode;
-  variant?: "primary" | "secondary" | "ghost-dark";
+  variant?: "primary" | "accent" | "secondary" | "ghost-dark";
   className?: string;
   /** Pass false when the link targets an anchor on the page already being
    * viewed — SmoothScrollProvider handles that scroll via Lenis, so
@@ -15,6 +15,7 @@ interface CTAButtonProps {
 
 const variantStyles: Record<NonNullable<CTAButtonProps["variant"]>, string> = {
   primary: "bg-ink text-on-dark hover:bg-accent-strong",
+  accent: "bg-accent text-on-dark hover:bg-accent-strong",
   secondary: "border border-border text-ink hover:border-ink",
   "ghost-dark": "border border-border-dark text-on-dark hover:border-on-dark",
 };

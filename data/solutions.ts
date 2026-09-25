@@ -11,6 +11,8 @@ interface SolutionText {
   shortTitle: string;
   tagline: string;
   description: string;
+  /** Helps visitors pick the right offer. */
+  forYouIf: string;
 }
 
 export interface SolutionSummary {
@@ -22,6 +24,7 @@ export interface SolutionSummary {
   shortTitle: string;
   tagline: string;
   description: string;
+  forYouIf: string;
 }
 
 interface SolutionEntry {
@@ -51,6 +54,7 @@ const solutionEntries: SolutionEntry[] = [
         tagline: "Reliable figures, no re-typing.",
         description:
           "Your current files and software, cleaned, structured and automated. Your reports build themselves.",
+        forYouIf: "For you if your reports are still built by hand.",
       },
       fr: {
         title: "Données & reporting",
@@ -58,6 +62,7 @@ const solutionEntries: SolutionEntry[] = [
         tagline: "Des chiffres fiables, sans ressaisie.",
         description:
           "Vos fichiers et logiciels actuels, nettoyés, structurés et automatisés. Vos rapports se font tout seuls.",
+        forYouIf: "Pour vous si vos rapports se font encore à la main.",
       },
     },
   },
@@ -76,6 +81,7 @@ const solutionEntries: SolutionEntry[] = [
         tagline: "All your data in one place.",
         description:
           "Your software and files brought together in a single, reliable database that keeps the history. The foundation for your reports, analyses and AI projects.",
+        forYouIf: "For you if your data is scattered across several programs.",
       },
       fr: {
         title: "Plateforme analytique",
@@ -83,6 +89,7 @@ const solutionEntries: SolutionEntry[] = [
         tagline: "Toutes vos données au même endroit.",
         description:
           "Vos logiciels et vos fichiers réunis dans une base unique, fiable, qui garde l'historique. La fondation de vos rapports, de vos analyses et de vos projets IA.",
+        forYouIf: "Pour vous si vos données sont éparpillées dans plusieurs logiciels.",
       },
     },
   },
@@ -101,6 +108,7 @@ const solutionEntries: SolutionEntry[] = [
         tagline: "AI that actually helps, with your data kept in-house.",
         description:
           "Find information in your documents, draft a reply, sort requests. AI where it saves time, built into your tools.",
+        forYouIf: "For you if your teams waste time looking for information.",
       },
       fr: {
         title: "IA privée",
@@ -108,6 +116,7 @@ const solutionEntries: SolutionEntry[] = [
         tagline: "L'IA qui sert vraiment, avec vos données chez vous.",
         description:
           "Retrouver une information dans vos documents, préparer une réponse, trier des demandes. L'IA là où elle fait gagner du temps, intégrée à vos outils.",
+        forYouIf: "Pour vous si vos équipes perdent du temps à chercher l'information.",
       },
     },
   },
@@ -126,6 +135,7 @@ const solutionEntries: SolutionEntry[] = [
         tagline: "The software you're missing, built to measure.",
         description:
           "Internal app, customer portal, automation or links between your software: the tool developed for the way you work.",
+        forYouIf: "For you if no off-the-shelf software fits the way you work.",
       },
       fr: {
         title: "Outils métier",
@@ -133,6 +143,7 @@ const solutionEntries: SolutionEntry[] = [
         tagline: "Le logiciel qui vous manque, construit sur mesure.",
         description:
           "Application interne, espace client, automatisation ou lien entre vos logiciels : l'outil développé pour votre façon de travailler.",
+        forYouIf: "Pour vous si aucun logiciel du marché ne colle à votre façon de travailler.",
       },
     },
   },

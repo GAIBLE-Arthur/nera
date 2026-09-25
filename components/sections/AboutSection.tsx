@@ -35,6 +35,9 @@ export function AboutSection({ locale }: { locale: Locale }) {
 
         <div className="order-1 lg:order-2">
           <SectionHeader title={t.title} />
+          <p className="mt-6 border-l-2 border-accent pl-4 text-sm font-medium leading-relaxed text-ink sm:text-base">
+            {t.certification}
+          </p>
           <div className="mt-6 space-y-4 text-sm leading-relaxed text-muted sm:text-base">
             {t.paragraphs.map((p) => (
               <p key={p}>{p}</p>

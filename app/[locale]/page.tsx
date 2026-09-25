@@ -5,6 +5,7 @@ import { EndToEndSection } from "@/components/sections/EndToEndSection";
 import { ApproachSection } from "@/components/sections/ApproachSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { FaqSection } from "@/components/sections/FaqSection";
 import { isLocale, type Locale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
 
@@ -18,8 +19,9 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       <ProblemsSection locale={locale} />
       <SolutionsSection locale={locale} />
       <ApproachSection locale={locale} />
-      <EndToEndSection locale={locale} />
       <AboutSection locale={locale} />
+      <EndToEndSection locale={locale} />
+      <FaqSection locale={locale} />
       <ContactSection locale={locale} />
     </>
   );

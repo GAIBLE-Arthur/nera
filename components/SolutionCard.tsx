@@ -35,6 +35,7 @@ export function SolutionCard({ solution, locale, priority = false }: SolutionCar
         <span className="font-mono text-xs tracking-widest2 text-accent">{solution.index}</span>
         <h3 className="text-xl font-semibold tracking-tightest sm:text-2xl">{solution.title}</h3>
         <p className="text-sm font-medium text-on-dark-muted">{solution.tagline}</p>
+        <p className="text-sm font-medium text-accent">{solution.forYouIf}</p>
 
         {/* Collapsed-until-hover only from sm: up — on mobile, where hover
             doesn't exist, the description is shown by default so nothing

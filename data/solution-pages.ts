@@ -153,7 +153,7 @@ const solutionPages: SolutionPages = {
       cta: {
         title: "Is your data scattered?",
         body: "Tell us which software and files you use today. That's the starting point.",
-        button: "Describe your need",
+        button: "Describe your problem",
       },
     },
     fr: {
@@ -191,7 +191,7 @@ const solutionPages: SolutionPages = {
       cta: {
         title: "Vos données sont éparpillées ?",
         body: "Dites-nous quels logiciels et fichiers vous utilisez aujourd'hui. C'est le point de départ.",
-        button: "Décrire votre besoin",
+        button: "Décrire votre problème",
       },
     },
   },
@@ -231,7 +231,7 @@ const solutionPages: SolutionPages = {
       cta: {
         title: "Missing a tool?",
         body: "Describe what you want to do, or what's getting in the way today. That's the starting point.",
-        button: "Describe your need",
+        button: "Describe your problem",
       },
     },
     fr: {
@@ -269,7 +269,7 @@ const solutionPages: SolutionPages = {
       cta: {
         title: "Il vous manque un outil ?",
         body: "Racontez ce que vous voulez faire, ou ce qui coince aujourd'hui. C'est le point de départ.",
-        button: "Décrire votre besoin",
+        button: "Décrire votre problème",
       },
     },
   },
@@ -321,7 +321,7 @@ const solutionPages: SolutionPages = {
       cta: {
         title: "Want to use AI on your own documents?",
         body: "Tell us what your teams search for or redo every day. That's the starting point.",
-        button: "Describe your need",
+        button: "Describe your problem",
       },
     },
     fr: {
@@ -371,7 +371,7 @@ const solutionPages: SolutionPages = {
       cta: {
         title: "Vous voulez utiliser l'IA sur vos propres documents ?",
         body: "Dites-nous ce que vos équipes cherchent ou refont tous les jours. C'est le point de départ.",
-        button: "Décrire votre besoin",
+        button: "Décrire votre problème",
       },
     },
   },

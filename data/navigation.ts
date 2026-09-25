@@ -21,14 +21,14 @@ const navText: Record<Locale, NavText> = {
     technology: "Technology",
     about: "About",
     solutions: "Solutions",
-    discussProject: "Discuss a project",
+    discussProject: "Describe your problem",
   },
   fr: {
     approach: "Approche",
     technology: "Technologie",
     about: "À propos",
     solutions: "Solutions",
-    discussProject: "Discuter d'un projet",
+    discussProject: "Décrire votre problème",
   },
 };
 

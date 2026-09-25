@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useState, type FormEvent } from "react";
-import { getProjectTypes, getContactText, type ProjectTypeId } from "@/data/contact";
+import { getContactText } from "@/data/contact";
 import { submitContactForm } from "@/lib/contactService";
 import { validateContactForm, isContactFormValid, type ContactFormValues, type ContactFormErrors } from "@/lib/validation";
 import { cn } from "@/lib/utils";
@@ -10,14 +10,12 @@ import type { Locale } from "@/lib/i18n";
 type Status = "idle" | "submitting" | "sent" | "error";
 
 export function ContactForm({ locale }: { locale: Locale }) {
-  const projectTypes = getProjectTypes(locale);
   const t = getContactText(locale);
 
   const [values, setValues] = useState<ContactFormValues>({
     name: "",
     company: "",
     email: "",
-    projectType: projectTypes[0]?.id ?? ("other" as ProjectTypeId),
     message: "",
   });
   const [errors, setErrors] = useState<ContactFormErrors>({});
@@ -91,22 +89,6 @@ export function ContactForm({ locale }: { locale: Locale }) {
           aria-invalid={Boolean(errors.email)}
           className={inputStyles(Boolean(errors.email))}
         />
-      </Field>
-
-      <Field id={`${formId}-projectType`} label={t.projectTypeLabel}>
-        <select
-          id={`${formId}-projectType`}
-          name="projectType"
-          value={values.projectType}
-          onChange={(e) => updateField("projectType", e.target.value as ProjectTypeId)}
-          className={inputStyles(false)}
-        >
-          {projectTypes.map((type) => (
-            <option key={type.id} value={type.id}>
-              {type.label}
-            </option>
-          ))}
-        </select>
       </Field>
 
       <Field id={`${formId}-message`} label={t.messageLabel} error={errors.message}>

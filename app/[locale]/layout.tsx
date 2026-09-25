@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { locales, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
 import { site, getSiteText } from "@/data/site";
 import { Navbar } from "@/components/Navbar";
+import { MobileCtaBar } from "@/components/MobileCtaBar";
 import { Footer } from "@/components/Footer";
 import { SmoothScrollProvider } from "@/components/ui/SmoothScrollProvider";
 import "../globals.css";
@@ -91,6 +92,9 @@ export default function LocaleLayout({
           {children}
         </main>
         <Footer locale={locale} />
+        {/* Room under the footer for the pinned mobile contact bar. */}
+        <div aria-hidden="true" className="h-20 bg-surface lg:hidden" />
+        <MobileCtaBar locale={locale} />
       </body>
     </html>
   );

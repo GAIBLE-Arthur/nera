@@ -19,16 +19,16 @@ const stepEntries: StepEntry[] = [
     step: "01",
     title: { en: "Understand", fr: "Comprendre" },
     description: {
-      en: "The business need, the current data and the constraints, before any tool is chosen.",
-      fr: "Le besoin métier, les données existantes et les contraintes, avant de choisir un outil.",
+      en: "Your need, your current tools and your constraints, before anything is chosen.",
+      fr: "Votre besoin, vos outils actuels et vos contraintes, avant de choisir quoi que ce soit.",
     },
   },
   {
     step: "02",
     title: { en: "Design", fr: "Concevoir" },
     description: {
-      en: "A data model and architecture sized to the problem, not to a template.",
-      fr: "Un modèle de données et une architecture dimensionnés pour le problème, pas pour un modèle générique.",
+      en: "The simplest solution that fixes the problem, sized for your business.",
+      fr: "La solution la plus simple qui règle le problème, adaptée à votre taille.",
     },
   },
   {
@@ -36,25 +36,25 @@ const stepEntries: StepEntry[] = [
     emphasis: true,
     title: { en: "Build", fr: "Construire" },
     description: {
-      en: "The actual system: pipelines, backend, interface, built and tested.",
-      fr: "Le système lui-même : pipelines, backend, interface, construits et testés.",
+      en: "The tool itself, built and tested with the people who will use it.",
+      fr: "L'outil lui-même, construit et testé avec les personnes qui vont s'en servir.",
     },
   },
   {
     step: "04",
     emphasis: true,
-    title: { en: "Deploy", fr: "Déployer" },
+    title: { en: "Go live", fr: "Mettre en service" },
     description: {
-      en: "Into a real environment, with the client's team able to operate it afterwards.",
-      fr: "Dans un environnement réel, avec une équipe client capable de l'utiliser ensuite.",
+      en: "At your company, with a team trained to use it.",
+      fr: "Chez vous, avec une équipe formée pour l'utiliser.",
     },
   },
   {
     step: "05",
     title: { en: "Improve", fr: "Améliorer" },
     description: {
-      en: "Iterate once the system is in use, based on how it actually performs.",
-      fr: "Itérer une fois le système en usage, en fonction de ses performances réelles.",
+      en: "Adjustments once the tool is in use, based on what really works.",
+      fr: "Des ajustements une fois l'outil en usage, selon ce qui marche vraiment.",
     },
   },
 ];

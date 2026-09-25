@@ -26,7 +26,7 @@ export function SectionCTA({ text, label, href = "#contact", theme = "light", cl
       )}
     >
       <p className={cn("text-lg font-medium tracking-tight", isDark ? "text-on-dark" : "text-ink")}>{text}</p>
-      <CTAButton href={href} variant={isDark ? "ghost-dark" : "primary"} scroll={false}>
+      <CTAButton href={href} variant={isDark ? "accent" : "primary"} scroll={false}>
         {label}
       </CTAButton>
     </Reveal>

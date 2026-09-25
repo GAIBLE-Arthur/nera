@@ -1,11 +1,10 @@
 import type { Locale } from "@/lib/i18n";
-import { getContactText, type ProjectTypeId } from "@/data/contact";
+import { getContactText } from "@/data/contact";
 
 export interface ContactFormValues {
   name: string;
   company: string;
   email: string;
-  projectType: ProjectTypeId;
   message: string;
 }
 
@@ -14,7 +13,7 @@ export type ContactFormErrors = Partial<Record<keyof ContactFormValues, string>>
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 /**
- * Frontend validation for the contact form. Company and projectType are
+ * Frontend validation for the contact form. Company is
  * optional by design (see section 11 of the brief) — everything else is
  * required. Kept dependency-free (aside from the localized copy) and easy
  * to unit test in isolation.

@@ -30,27 +30,32 @@ export function getSiteText(locale: Locale): SiteText {
 }
 
 interface HeroCopy {
+  /** Who the site is for, shown above the headline. */
   kicker: string;
   headline: string;
   sub: string;
   primaryCta: { label: string; href: string };
   secondaryCta: { label: string; href: string };
+  /** Short reassurance line under the buttons. */
+  reassurance: string;
 }
 
 const heroCopy: Record<Locale, HeroCopy> = {
   en: {
-    kicker: "Data. Software. Private AI.",
-    headline: "End-to-end technology. Results-driven.",
-    sub: "KAG Systèmes designs and builds data solutions, from the foundations up to the interfaces teams use every day. One practice, accountable for the whole chain.",
-    primaryCta: { label: "Explore solutions", href: "#solutions" },
-    secondaryCta: { label: "Discuss a project", href: "#contact" },
+    kicker: "For small businesses in manufacturing and the trades",
+    headline: "Reliable figures and tools that talk to each other. No overkill.",
+    sub: "KAG Systèmes automates your reporting, brings your data together and builds the tools you're missing, starting from what you already use. One point of contact, from the first conversation to go-live.",
+    primaryCta: { label: "Describe your problem", href: "#contact" },
+    secondaryCta: { label: "See the solutions", href: "#solutions" },
+    reassurance: "First conversation with no commitment. One point of contact from start to finish.",
   },
   fr: {
-    kicker: "Data. Software. IA privée.",
-    headline: "Technologie de bout en bout. Orientée résultat.",
-    sub: "KAG Systèmes conçoit et construit des solutions de données, des fondations jusqu'aux interfaces utilisées chaque jour par les équipes. Une pratique, responsable de toute la chaîne.",
-    primaryCta: { label: "Explorer les solutions", href: "#solutions" },
-    secondaryCta: { label: "Discuter d'un projet", href: "#contact" },
+    kicker: "Pour les TPE et PME de l'industrie et de l'artisanat",
+    headline: "Des chiffres fiables et des outils qui se parlent. Sans usine à gaz.",
+    sub: "KAG Systèmes automatise votre reporting, centralise vos données et construit les outils qui vous manquent, à partir de ce que vous utilisez déjà. Un seul interlocuteur, du premier échange à la mise en service.",
+    primaryCta: { label: "Décrire votre problème", href: "#contact" },
+    secondaryCta: { label: "Voir les solutions", href: "#solutions" },
+    reassurance: "Premier échange sans engagement. Un seul interlocuteur du début à la fin.",
   },
 };
 
