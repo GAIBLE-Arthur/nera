@@ -32,8 +32,8 @@ type SolutionPages = Record<SolutionId, Record<Locale, SolutionPageContent>>;
 const solutionPages: SolutionPages = {
   "data-analytics": {
     en: {
-      eyebrow: "01 · Data & Analytics Consulting",
-      heroTitle: "Data & Analytics Consulting",
+      eyebrow: "01 · Data & reporting",
+      heroTitle: "Data & reporting",
       heroLead:
         "Operational work inside your environment: auditing, cleaning, structuring and automating the data your business already runs on.",
       problem: {
@@ -78,8 +78,8 @@ const solutionPages: SolutionPages = {
       },
     },
     fr: {
-      eyebrow: "01 · Conseil Data & Analytics",
-      heroTitle: "Conseil Data & Analytics",
+      eyebrow: "01 · Données & reporting",
+      heroTitle: "Données & reporting",
       heroLead:
         "Un travail opérationnel dans votre environnement : audit, nettoyage, structuration et automatisation des données sur lesquelles votre entreprise fonctionne déjà.",
       problem: {
@@ -126,8 +126,8 @@ const solutionPages: SolutionPages = {
   },
   "analytics-platform": {
     en: {
-      eyebrow: "02 · Analytics Platform",
-      heroTitle: "Analytics Platform",
+      eyebrow: "02 · Dashboards",
+      heroTitle: "Dashboards",
       heroLead:
         "A complete analytics environment: from source systems to the dashboards people check every day.",
       problem: {
@@ -165,8 +165,8 @@ const solutionPages: SolutionPages = {
       },
     },
     fr: {
-      eyebrow: "02 · Plateforme Analytique",
-      heroTitle: "Plateforme Analytique",
+      eyebrow: "02 · Tableaux de bord",
+      heroTitle: "Tableaux de bord",
       heroLead:
         "Un environnement analytique complet : des systèmes sources jusqu'aux tableaux de bord consultés au quotidien.",
       problem: {
@@ -206,8 +206,8 @@ const solutionPages: SolutionPages = {
   },
   "digital-platforms": {
     en: {
-      eyebrow: "03 · Digital Platforms",
-      heroTitle: "Digital Platforms",
+      eyebrow: "04 · Business tools",
+      heroTitle: "Business tools",
       heroLead:
         "From business process to working platform: public interface, accounts, admin space and the backend.",
       problem: {
@@ -246,8 +246,8 @@ const solutionPages: SolutionPages = {
       },
     },
     fr: {
-      eyebrow: "03 · Plateformes Digitales",
-      heroTitle: "Plateformes Digitales",
+      eyebrow: "04 · Outils métier",
+      heroTitle: "Outils métier",
       heroLead:
         "Du processus métier à la plateforme fonctionnelle : interface publique, comptes, espace admin et le backend.",
       problem: {
@@ -288,7 +288,7 @@ const solutionPages: SolutionPages = {
   },
   "private-ai": {
     en: {
-      eyebrow: "04 · Private AI",
+      eyebrow: "03 · Private AI",
       heroTitle: "Private AI",
       heroLead:
         "AI that depends on what's underneath: company data, retrieval, a model, and the application people actually use.",
@@ -342,8 +342,8 @@ const solutionPages: SolutionPages = {
       },
     },
     fr: {
-      eyebrow: "04 · IA Privée",
-      heroTitle: "IA Privée",
+      eyebrow: "03 · IA privée",
+      heroTitle: "IA privée",
       heroLead:
         "Une IA qui dépend de ce qu'il y a dessous : données de l'entreprise, recherche documentaire, modèle, et l'application réellement utilisée.",
       problem: {

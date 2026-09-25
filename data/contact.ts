@@ -5,17 +5,17 @@ export type ProjectTypeId = (typeof projectTypeIds)[number];
 
 const projectTypeLabels: Record<Locale, Record<ProjectTypeId, string>> = {
   en: {
-    "data-analytics": "Data & Analytics",
-    "analytics-platform": "Analytics Platform",
-    "digital-platform": "Digital Platform",
+    "data-analytics": "Data & reporting",
+    "analytics-platform": "Dashboards",
+    "digital-platform": "Business tools",
     "private-ai": "Private AI",
     other: "Other",
   },
   fr: {
-    "data-analytics": "Data & Analytics",
-    "analytics-platform": "Plateforme Analytique",
-    "digital-platform": "Plateforme Digitale",
-    "private-ai": "IA Privée",
+    "data-analytics": "Données & reporting",
+    "analytics-platform": "Tableaux de bord",
+    "digital-platform": "Outils métier",
+    "private-ai": "IA privée",
     other: "Autre",
   },
 };

@@ -46,18 +46,18 @@ const solutionEntries: SolutionEntry[] = [
     },
     text: {
       en: {
-        title: "Data & Analytics Consulting",
-        shortTitle: "Data & Analytics",
-        tagline: "Operational work, inside your environment.",
+        title: "Data & reporting",
+        shortTitle: "Data & reporting",
+        tagline: "Reliable figures, no re-typing.",
         description:
-          "Data audits, cleaning, structuring and automation, done directly with your team and your existing tools.",
+          "Your current files and software, cleaned, structured and automated. Your reports build themselves.",
       },
       fr: {
-        title: "Conseil Data & Analytics",
-        shortTitle: "Data & Analytics",
-        tagline: "Un travail opérationnel, dans votre environnement.",
+        title: "Données & reporting",
+        shortTitle: "Données & reporting",
+        tagline: "Des chiffres fiables, sans ressaisie.",
         description:
-          "Audit, nettoyage, structuration et automatisation des données, réalisés directement avec votre équipe et vos outils.",
+          "Vos fichiers et logiciels actuels, nettoyés, structurés et automatisés. Vos rapports se font tout seuls.",
       },
     },
   },
@@ -71,18 +71,18 @@ const solutionEntries: SolutionEntry[] = [
     },
     text: {
       en: {
-        title: "Analytics Platform",
-        shortTitle: "Analytics Platform",
-        tagline: "A complete analytics environment.",
+        title: "Dashboards",
+        shortTitle: "Dashboards",
+        tagline: "Your whole business, on one screen.",
         description:
-          "From raw sources to a governed data model and dashboards, built to stay maintainable.",
+          "Your sources connected, dashboards always up to date, and a tool your team can keep growing.",
       },
       fr: {
-        title: "Plateforme Analytique",
-        shortTitle: "Plateforme Analytique",
-        tagline: "Un environnement analytique complet.",
+        title: "Tableaux de bord",
+        shortTitle: "Tableaux de bord",
+        tagline: "Toute votre activité, sur un seul écran.",
         description:
-          "Des sources brutes jusqu'à un modèle de données gouverné et des tableaux de bord, conçu pour rester maintenable.",
+          "Vos sources reliées entre elles, des tableaux de bord toujours à jour, et un outil que votre équipe peut faire évoluer.",
       },
     },
   },
@@ -98,16 +98,16 @@ const solutionEntries: SolutionEntry[] = [
       en: {
         title: "Private AI",
         shortTitle: "Private AI",
-        tagline: "AI that depends on what's underneath.",
+        tagline: "AI that actually helps, with your data kept in-house.",
         description:
-          "Local models, retrieval over your documents and data, and integration into the applications your teams already use.",
+          "Find information in your documents, draft a reply, sort requests. AI where it saves time, built into your tools.",
       },
       fr: {
-        title: "IA Privée",
-        shortTitle: "IA Privée",
-        tagline: "Une IA qui dépend de ce qu'il y a dessous.",
+        title: "IA privée",
+        shortTitle: "IA privée",
+        tagline: "L'IA qui sert vraiment, avec vos données chez vous.",
         description:
-          "Modèles locaux, recherche dans vos documents et données, intégration dans les applications déjà utilisées par vos équipes.",
+          "Retrouver une information dans vos documents, préparer une réponse, trier des demandes. L'IA là où elle fait gagner du temps, intégrée à vos outils.",
       },
     },
   },
@@ -121,18 +121,18 @@ const solutionEntries: SolutionEntry[] = [
     },
     text: {
       en: {
-        title: "Digital Platforms",
-        shortTitle: "Digital Platforms",
-        tagline: "From business process to working platform.",
+        title: "Business tools",
+        shortTitle: "Business tools",
+        tagline: "The tool that replaces the shared Excel file.",
         description:
-          "Full-stack platforms: public interface, accounts, admin space, workflows, APIs and deployment, designed around how the business actually operates.",
+          "A custom tool for your orders, production or job sites. Enter data once, available to the whole team.",
       },
       fr: {
-        title: "Plateformes Digitales",
-        shortTitle: "Plateformes Digitales",
-        tagline: "Du processus métier à la plateforme fonctionnelle.",
+        title: "Outils métier",
+        shortTitle: "Outils métier",
+        tagline: "L'outil qui remplace le fichier Excel partagé.",
         description:
-          "Des plateformes complètes : interface publique, comptes, espace admin, workflows, API et déploiement, conçues autour du fonctionnement réel de l'entreprise.",
+          "Un outil sur mesure pour vos commandes, votre production ou vos chantiers. Une seule saisie, accessible à toute l'équipe.",
       },
     },
   },

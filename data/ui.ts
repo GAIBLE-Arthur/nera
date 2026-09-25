@@ -125,7 +125,7 @@ const uiText: Record<Locale, UiText> = {
     solutionsSection: {
       eyebrow: "What KAG Systèmes builds",
       title: "Solutions",
-      description: "Four areas of work, one practice. Each can stand alone or connect into a larger system.",
+      description: "Four ways to fix a concrete problem. Each can stand alone or connect into a larger system.",
     },
     endToEnd: {
       eyebrow: "Positioning",
@@ -278,7 +278,7 @@ const uiText: Record<Locale, UiText> = {
     solutionsSection: {
       eyebrow: "Ce que KAG Systèmes construit",
       title: "Solutions",
-      description: "Quatre domaines d'intervention, une seule pratique. Chacun peut fonctionner seul ou s'intégrer dans un système plus large.",
+      description: "Quatre façons de régler un problème concret. Chacune peut fonctionner seule ou s'intégrer dans un système plus large.",
     },
     endToEnd: {
       eyebrow: "Positionnement",
