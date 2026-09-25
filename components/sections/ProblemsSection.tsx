@@ -10,15 +10,14 @@ export function ProblemsSection({ locale }: { locale: Locale }) {
   return (
     <section id="problems" data-snap className="bg-paper py-24 sm:py-28">
       <div className="container-nera">
-        <SectionHeader eyebrow={t.eyebrow} title={t.title} description={t.description} />
+        <SectionHeader title={t.title} description={t.description} />
 
         <ul className="mt-14 grid grid-cols-1 gap-px overflow-hidden border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
           {t.items.map((item, index) => (
             <Reveal key={item.situation} as="li" delay={index * 60} className="flex flex-col gap-4 bg-paper p-6">
               <span className="text-lg font-semibold leading-snug tracking-tight text-ink">{item.situation}</span>
               <span className="mt-auto text-sm leading-relaxed text-muted">
-                <span className="font-mono text-xs uppercase tracking-widest2 text-accent-strong">{t.objectiveLabel}</span>
-                <br />
+                <span aria-hidden="true" className="text-accent-strong">→ </span>
                 {item.objective}
               </span>
             </Reveal>

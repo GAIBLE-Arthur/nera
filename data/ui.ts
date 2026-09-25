@@ -28,10 +28,8 @@ interface SectionCtaText {
 
 interface UiText {
   problemsSection: {
-    eyebrow: string;
     title: string;
     description: string;
-    objectiveLabel: string;
     items: ProblemItem[];
     cta: SectionCtaText;
   };
@@ -107,10 +105,8 @@ interface UiText {
 const uiText: Record<Locale, UiText> = {
   en: {
     problemsSection: {
-      eyebrow: "Objective",
       title: "Sound familiar?",
       description: "Situations found in many companies. If one of them is yours, it's a problem that can be fixed.",
-      objectiveLabel: "Objective",
       items: [
         { situation: "The same reports are rebuilt by hand every week.", objective: "Figures that update themselves." },
         { situation: "Each department has its own numbers, and they never match.", objective: "One reliable source, shared by everyone." },
@@ -262,10 +258,8 @@ const uiText: Record<Locale, UiText> = {
   },
   fr: {
     problemsSection: {
-      eyebrow: "Objectif",
       title: "Ça vous parle ?",
       description: "Des situations qu'on retrouve dans beaucoup d'entreprises. Si l'une d'elles est la vôtre, c'est un problème qui se règle.",
-      objectiveLabel: "Objectif",
       items: [
         { situation: "Vous refaites les mêmes tableaux chaque semaine, à la main.", objective: "Des chiffres qui se mettent à jour tout seuls." },
         { situation: "Chaque service a ses propres chiffres, et ils ne concordent jamais.", objective: "Une seule source fiable, partagée par tous." },
