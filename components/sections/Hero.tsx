@@ -38,10 +38,11 @@ export function Hero({ locale }: { locale: Locale }) {
 
         <ParallaxCard className="hidden lg:flex lg:items-center lg:justify-center">
           <div className="flex aspect-[4/5] w-full max-w-sm items-center justify-center border border-border-dark bg-paper p-6 shadow-2xl">
-            <span className={`${caveat.className} -rotate-2 text-[7rem] leading-none text-ink`} aria-hidden="true">
-              NERA
+            <span className={`${caveat.className} flex -rotate-2 flex-col items-center leading-none text-ink`} aria-hidden="true">
+              <span className="text-[7rem]">KAG</span>
+              <span className="text-[3.25rem]">Systèmes</span>
             </span>
-            <span className="sr-only">NERA</span>
+            <span className="sr-only">KAG Systèmes</span>
           </div>
         </ParallaxCard>
       </div>

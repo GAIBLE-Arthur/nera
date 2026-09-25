@@ -34,7 +34,7 @@ const paths = [
 ];
 
 /**
- * Small branching diagram for the Technology section: NERA can work in the
+ * Small branching diagram for the Technology section: KAG Systèmes can work in the
  * existing stack, complete it with open-source components, or both. Either
  * way the output is one working system.
  *

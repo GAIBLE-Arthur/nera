@@ -88,17 +88,17 @@ interface UiText {
 const uiText: Record<Locale, UiText> = {
   en: {
     solutionsSection: {
-      eyebrow: "What NERA builds",
+      eyebrow: "What KAG Systèmes builds",
       title: "Solutions",
       description: "Four areas of work, one practice. Each can stand alone or connect into a larger system.",
     },
     endToEnd: {
       eyebrow: "Positioning",
       title: "End-to-end, by design",
-      description: "NERA builds the technology underneath: from data to interface.",
+      description: "KAG Systèmes builds the technology underneath: from data to interface.",
       paragraph:
-        "A recommendation is only useful if something is built from it. NERA stays involved across the whole chain, from the data a system runs on to the interface people use, rather than handing off at the point where it gets difficult.",
-      axisLabel: "NERA: end to end",
+        "A recommendation is only useful if something is built from it. KAG Systèmes stays involved across the whole chain, from the data a system runs on to the interface people use, rather than handing off at the point where it gets difficult.",
+      axisLabel: "KAG Systèmes: end to end",
       chain: {
         businessNeed: { label: "Business need", description: "What the business is actually trying to solve, in plain terms." },
         data: { label: "Data", description: "Where it lives today, how reliable it is, and what needs cleaning." },
@@ -118,10 +118,10 @@ const uiText: Record<Locale, UiText> = {
       eyebrow: "Technology",
       title: "Use what makes sense. Own what matters.",
       description:
-        "NERA can work inside what's already in place, or complete it. The technology serves the problem, it isn't the product.",
+        "KAG Systèmes can work inside what's already in place, or complete it. The technology serves the problem, it isn't the product.",
       diagram: {
         existingSystems: { label: "Existing systems", description: "What the client already runs today." },
-        nera: { label: "NERA", description: "Assesses what to keep, what to complete, and what to replace." },
+        nera: { label: "KAG Systèmes", description: "Assesses what to keep, what to complete, and what to replace." },
         existingStack: { label: "Existing stack", description: "Extended in place when it's already fit for purpose." },
         openSource: { label: "Open-source components", description: "Added where they cut licensing cost and increase control." },
         workingSystem: { label: "Working system", description: "Either path ends in something the client actually runs." },
@@ -222,17 +222,17 @@ const uiText: Record<Locale, UiText> = {
   },
   fr: {
     solutionsSection: {
-      eyebrow: "Ce que NERA construit",
+      eyebrow: "Ce que KAG Systèmes construit",
       title: "Solutions",
       description: "Quatre domaines d'intervention, une seule pratique. Chacun peut fonctionner seul ou s'intégrer dans un système plus large.",
     },
     endToEnd: {
       eyebrow: "Positionnement",
       title: "De bout en bout, par conception",
-      description: "NERA construit la technologie qui se trouve en dessous : des données à l'interface.",
+      description: "KAG Systèmes construit la technologie qui se trouve en dessous : des données à l'interface.",
       paragraph:
-        "NERA reste impliquée sur toute la chaîne, des données sur lesquelles un système fonctionne jusqu'à l'interface utilisée.",
-      axisLabel: "NERA : de bout en bout",
+        "KAG Systèmes reste impliqué sur toute la chaîne, des données sur lesquelles un système fonctionne jusqu'à l'interface utilisée.",
+      axisLabel: "KAG Systèmes : de bout en bout",
       chain: {
         businessNeed: { label: "Besoin métier", description: "Ce que l'entreprise cherche réellement à résoudre." },
         data: { label: "Données", description: "Où elles se trouvent aujourd'hui, leur fiabilité, ce qu'il faut nettoyer." },
@@ -252,10 +252,10 @@ const uiText: Record<Locale, UiText> = {
       eyebrow: "Technologie",
       title: "Utiliser ce qui a du sens. Maîtriser ce qui compte.",
       description:
-        "NERA peut travailler dans l'existant, ou le compléter. La technologie sert le problème, elle n'est pas le produit.",
+        "KAG Systèmes peut travailler dans l'existant, ou le compléter. La technologie sert le problème, elle n'est pas le produit.",
       diagram: {
         existingSystems: { label: "Systèmes existants", description: "Ce que le client utilise déjà aujourd'hui." },
-        nera: { label: "NERA", description: "Évalue ce qui doit être gardé, complété, ou remplacé." },
+        nera: { label: "KAG Systèmes", description: "Évalue ce qui doit être gardé, complété, ou remplacé." },
         existingStack: { label: "Stack existante", description: "Étendue en place quand elle convient déjà." },
         openSource: { label: "Composants open source", description: "Ajoutés quand ils réduisent les coûts de licence et augmentent le contrôle." },
         workingSystem: { label: "Système fonctionnel", description: "Les deux chemins aboutissent à quelque chose que le client utilise réellement." },

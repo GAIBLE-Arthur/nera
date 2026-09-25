@@ -44,7 +44,7 @@ const solutionPages: SolutionPages = {
         ],
       },
       whatWeBuild: {
-        title: "What NERA builds",
+        title: "What KAG Systèmes builds",
         items: [
           "A clear picture of where data lives, how reliable it is, and where it breaks",
           "Cleaned, structured and documented datasets the team can trust",
@@ -63,7 +63,7 @@ const solutionPages: SolutionPages = {
       ],
       technologies: ["SQL", "ETL", "Python", "Power Query / Excel", "Power BI", "Microsoft Fabric", "Apache Superset"],
       approachNote:
-        "For this type of engagement, NERA works close to the data: reviewing tables, talking to the people who use the reports daily, and building fixes directly rather than only documenting them.",
+        "For this type of engagement, KAG Systèmes works close to the data: reviewing tables, talking to the people who use the reports daily, and building fixes directly rather than only documenting them.",
       capabilities: [
         "Data auditing and quality assessment",
         "SQL, Python and Power Query for cleaning and transformation",
@@ -90,7 +90,7 @@ const solutionPages: SolutionPages = {
         ],
       },
       whatWeBuild: {
-        title: "Ce que NERA construit",
+        title: "Ce que KAG Systèmes construit",
         items: [
           "Une vision claire de où se trouvent les données, de leur fiabilité et de leurs points de rupture",
           "Des jeux de données nettoyés, structurés et documentés, sur lesquels l'équipe peut s'appuyer",
@@ -109,7 +109,7 @@ const solutionPages: SolutionPages = {
       ],
       technologies: ["SQL", "ETL", "Python", "Power Query / Excel", "Power BI", "Microsoft Fabric", "Apache Superset"],
       approachNote:
-        "Pour ce type de mission, NERA travaille au plus près des données : en examinant les tables, en échangeant avec les personnes qui utilisent les rapports au quotidien, et en construisant les correctifs directement plutôt qu'en se limitant à les documenter.",
+        "Pour ce type de mission, KAG Systèmes travaille au plus près des données : en examinant les tables, en échangeant avec les personnes qui utilisent les rapports au quotidien, et en construisant les correctifs directement plutôt qu'en se limitant à les documenter.",
       capabilities: [
         "Audit et évaluation de la qualité des données",
         "SQL, Python et Power Query pour le nettoyage et la transformation",
@@ -138,7 +138,7 @@ const solutionPages: SolutionPages = {
         ],
       },
       whatWeBuild: {
-        title: "What NERA builds",
+        title: "What KAG Systèmes builds",
         items: [
           "Ingestion from the systems that hold the data today",
           "A warehouse or database sized to the actual data volume",
@@ -158,7 +158,7 @@ const solutionPages: SolutionPages = {
       ],
       technologies: ["PostgreSQL", "ETL", "dbt", "Apache Superset", "Power BI", "Docker", "Office"],
       approachNote:
-        "Where it reduces licensing costs and increases control, NERA proposes an open-source alternative the client can operate independently, without treating open source as a requirement in itself.",
+        "Where it reduces licensing costs and increases control, KAG Systèmes proposes an open-source alternative the client can operate independently, without treating open source as a requirement in itself.",
       cta: {
         title: "Need an analytics platform sized to your data?",
         body: "Discuss what an analytics platform sized to your data and your team would actually look like.",
@@ -177,7 +177,7 @@ const solutionPages: SolutionPages = {
         ],
       },
       whatWeBuild: {
-        title: "Ce que NERA construit",
+        title: "Ce que KAG Systèmes construit",
         items: [
           "L'ingestion depuis les systèmes qui détiennent les données aujourd'hui",
           "Un entrepôt ou une base de données dimensionné au volume réel",
@@ -197,7 +197,7 @@ const solutionPages: SolutionPages = {
       ],
       technologies: ["PostgreSQL", "ETL", "dbt", "Apache Superset", "Power BI", "Docker", "Office"],
       approachNote:
-        "Quand cela réduit les coûts de licence et augmente le contrôle, NERA propose une alternative open source que le client peut exploiter de façon autonome.",
+        "Quand cela réduit les coûts de licence et augmente le contrôle, KAG Systèmes propose une alternative open source que le client peut exploiter de façon autonome.",
       cta: {
         title: "Vous avez besoin d'une plateforme analytique dimensionnée pour vos données ?",
         body: "Discutons de ce à quoi ressemblerait une plateforme analytique dimensionnée pour vos données et votre équipe.",
@@ -218,7 +218,7 @@ const solutionPages: SolutionPages = {
         ],
       },
       whatWeBuild: {
-        title: "What NERA builds",
+        title: "What KAG Systèmes builds",
         items: [
           "A public-facing interface and, where needed, authenticated user accounts",
           "A client space and an administrator space with the right permissions",
@@ -239,7 +239,7 @@ const solutionPages: SolutionPages = {
       ],
       technologies: ["TypeScript", "PostgreSQL", "Docker", "API design", "Automations & integrations"],
       approachNote:
-        "NERA starts from the business process, not a feature list. The platform is scoped around what the workflow actually requires before any interface is designed.",
+        "KAG Systèmes starts from the business process, not a feature list. The platform is scoped around what the workflow actually requires before any interface is designed.",
       cta: {
         title: "Have a business process you want turned into a platform?",
         body: "Discuss the process you want turned into a platform, and what it would need to cover end to end.",
@@ -258,7 +258,7 @@ const solutionPages: SolutionPages = {
         ],
       },
       whatWeBuild: {
-        title: "Ce que NERA construit",
+        title: "Ce que KAG Systèmes construit",
         items: [
           "Une interface publique et, si besoin, des comptes utilisateurs authentifiés",
           "Un espace client et un espace administrateur avec les bonnes permissions",
@@ -279,7 +279,7 @@ const solutionPages: SolutionPages = {
       ],
       technologies: ["TypeScript", "PostgreSQL", "Docker", "Conception d'API", "Automatisations & intégrations"],
       approachNote:
-        "NERA part du processus métier, pas d'une liste de fonctionnalités. La plateforme est cadrée selon ce que le workflow exige réellement, avant même de concevoir une interface.",
+        "KAG Systèmes part du processus métier, pas d'une liste de fonctionnalités. La plateforme est cadrée selon ce que le workflow exige réellement, avant même de concevoir une interface.",
       cta: {
         title: "Vous avez un processus métier à transformer en plateforme ?",
         body: "Discutons du processus que vous voulez transformer en plateforme, et de ce qu'il faudrait couvrir de bout en bout.",
@@ -296,11 +296,11 @@ const solutionPages: SolutionPages = {
         title: "The problem",
         body: [
           "What determines whether AI is actually useful, or actually private, is everything underneath it: which documents it can see, how they're indexed, which model runs it, and where that model runs.",
-          "NERA works on the full system, from ingesting company documents and data to deploying the model in an environment that matches the business's confidentiality requirements.",
+          "KAG Systèmes works on the full system, from ingesting company documents and data to deploying the model in an environment that matches the business's confidentiality requirements.",
         ],
       },
       whatWeBuild: {
-        title: "What NERA builds",
+        title: "What KAG Systèmes builds",
         items: [
           "Ingestion of company documents and data into a searchable index",
           "A retrieval layer (RAG) that gives the model relevant context instead of guesswork",
@@ -319,7 +319,7 @@ const solutionPages: SolutionPages = {
       ],
       technologies: ["Docker", "Open-source LLMs", "Vector / search layer", "Python", "API integration"],
       approachNote:
-        "NERA treats the retrieval layer and the data feeding it as the real engineering problem. The model is one component among several, not the whole project.",
+        "KAG Systèmes treats the retrieval layer and the data feeding it as the real engineering problem. The model is one component among several, not the whole project.",
       pricingNote:
         "Infrastructure and pricing depend on the selected model, workload, hardware and deployment requirements.",
       maintenanceNote:
@@ -350,11 +350,11 @@ const solutionPages: SolutionPages = {
         title: "Le problème",
         body: [
           "Ce qui détermine si une IA est réellement utile, ou réellement privée, c'est tout ce qu'il y a dessous : quels documents elle peut voir, comment ils sont indexés, quel modèle l'exécute, et où ce modèle tourne.",
-          "NERA travaille sur le système complet, de l'ingestion des documents et données de l'entreprise jusqu'au déploiement du modèle dans un environnement conforme aux exigences de confidentialité de l'entreprise.",
+          "KAG Systèmes travaille sur le système complet, de l'ingestion des documents et données de l'entreprise jusqu'au déploiement du modèle dans un environnement conforme aux exigences de confidentialité de l'entreprise.",
         ],
       },
       whatWeBuild: {
-        title: "Ce que NERA construit",
+        title: "Ce que KAG Systèmes construit",
         items: [
           "Ingestion des documents et données de l'entreprise dans un index consultable",
           "Une couche de recherche documentaire (RAG) qui donne au modèle un contexte pertinent plutôt que des approximations",
@@ -373,7 +373,7 @@ const solutionPages: SolutionPages = {
       ],
       technologies: ["Docker", "LLM open source", "Couche vectorielle / recherche", "Python", "Intégration API"],
       approachNote:
-        "NERA considère la couche de recherche documentaire et les données qui l'alimentent comme le véritable enjeu d'ingénierie. Le modèle est un composant parmi d'autres, pas le projet entier.",
+        "KAG Systèmes considère la couche de recherche documentaire et les données qui l'alimentent comme le véritable enjeu d'ingénierie. Le modèle est un composant parmi d'autres, pas le projet entier.",
       pricingNote:
         "L'infrastructure et le tarif dépendent du modèle choisi, de la charge, du matériel et des exigences de déploiement.",
       maintenanceNote:
