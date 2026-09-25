@@ -37,7 +37,7 @@ export function EndToEndSection({ locale }: { locale: Locale }) {
             <h3 className="text-xl font-semibold tracking-tight text-on-dark sm:text-2xl">{tech.title}</h3>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-on-dark-muted sm:text-base">{tech.description}</p>
           </div>
-          <div className="lg:col-start-2 lg:row-start-2 lg:self-center">
+          <div className="lg:col-start-2 lg:row-start-2">
             <TechApproachDiagram locale={locale} />
           </div>
         </div>
