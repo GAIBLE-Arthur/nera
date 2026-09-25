@@ -16,7 +16,26 @@ export interface DiagramNodeText {
   description: string;
 }
 
+interface ProblemItem {
+  situation: string;
+  objective: string;
+}
+
+interface SectionCtaText {
+  text: string;
+  label: string;
+}
+
 interface UiText {
+  problemsSection: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    objectiveLabel: string;
+    items: ProblemItem[];
+    cta: SectionCtaText;
+  };
+  sectionCtas: Record<"solutions" | "approach" | "technology" | "about", SectionCtaText>;
   solutionsSection: { eyebrow: string; title: string; description: string };
   endToEnd: {
     eyebrow: string;
@@ -87,6 +106,27 @@ interface UiText {
 
 const uiText: Record<Locale, UiText> = {
   en: {
+    problemsSection: {
+      eyebrow: "Objective",
+      title: "Sound familiar?",
+      description: "Situations found in many companies. If one of them is yours, it's a problem that can be fixed.",
+      objectiveLabel: "Objective",
+      items: [
+        { situation: "The same reports are rebuilt by hand every week.", objective: "Figures that update themselves." },
+        { situation: "Each department has its own numbers, and they never match.", objective: "One reliable source, shared by everyone." },
+        { situation: "The same information is typed in two or three times.", objective: "Enter it once, use it everywhere." },
+        { situation: "Everything depends on a spreadsheet only one person understands.", objective: "A clear tool the whole team can use." },
+        { situation: "You want to use AI, but not just any way.", objective: "Concrete uses, with your data staying in-house." },
+        { situation: "Decisions are made without a clear view of the business.", objective: "The right indicators, visible at the right time." },
+      ],
+      cta: { text: "Recognise one of these?", label: "Talk about your situation" },
+    },
+    sectionCtas: {
+      solutions: { text: "Your need doesn't fit any of these boxes?", label: "Describe your problem" },
+      approach: { text: "It all starts with a conversation about your situation.", label: "Schedule a call" },
+      technology: { text: "Already have tools in place? That's where we start.", label: "Discuss your current setup" },
+      about: { text: "A problem to solve, a project in mind?", label: "Get in touch" },
+    },
     solutionsSection: {
       eyebrow: "What KAG Systèmes builds",
       title: "Solutions",
@@ -128,10 +168,10 @@ const uiText: Record<Locale, UiText> = {
       },
     },
     footer: {
-      tagline: "End-to-end technology. Built pragmatically.",
+      tagline: "End-to-end technology. Results-driven.",
       solutionsHeading: "Solutions",
       siteHeading: "Site",
-      copyrightSuffix: "Independent engineering practice.",
+      copyrightSuffix: "Independent practice.",
     },
     navbar: { solutionsHeading: "Solutions" },
     solutionHero: { backLink: "Solutions" },
@@ -221,6 +261,27 @@ const uiText: Record<Locale, UiText> = {
     diagramHint: "Tap a step for detail",
   },
   fr: {
+    problemsSection: {
+      eyebrow: "Objectif",
+      title: "Ça vous parle ?",
+      description: "Des situations qu'on retrouve dans beaucoup d'entreprises. Si l'une d'elles est la vôtre, c'est un problème qui se règle.",
+      objectiveLabel: "Objectif",
+      items: [
+        { situation: "Vous refaites les mêmes tableaux chaque semaine, à la main.", objective: "Des chiffres qui se mettent à jour tout seuls." },
+        { situation: "Chaque service a ses propres chiffres, et ils ne concordent jamais.", objective: "Une seule source fiable, partagée par tous." },
+        { situation: "Les mêmes informations sont saisies deux ou trois fois.", objective: "Une seule saisie, utilisée partout." },
+        { situation: "Tout repose sur un fichier Excel que seule une personne maîtrise.", objective: "Un outil clair que toute l'équipe utilise." },
+        { situation: "Vous voulez utiliser l'IA, mais pas n'importe comment.", objective: "Des usages concrets, avec vos données qui restent chez vous." },
+        { situation: "Les décisions se prennent sans vision claire de l'activité.", objective: "Les bons indicateurs, visibles au bon moment." },
+      ],
+      cta: { text: "Vous vous reconnaissez ?", label: "Parler de votre situation" },
+    },
+    sectionCtas: {
+      solutions: { text: "Votre besoin ne rentre dans aucune case ?", label: "Décrire votre problème" },
+      approach: { text: "Tout commence par un échange sur votre situation.", label: "Planifier un échange" },
+      technology: { text: "Vous avez déjà des outils en place ? On part de là.", label: "Parler de votre existant" },
+      about: { text: "Un problème à régler, un projet en tête ?", label: "Prendre contact" },
+    },
     solutionsSection: {
       eyebrow: "Ce que KAG Systèmes construit",
       title: "Solutions",
@@ -262,10 +323,10 @@ const uiText: Record<Locale, UiText> = {
       },
     },
     footer: {
-      tagline: "Technologie de bout en bout. Construite avec pragmatisme.",
+      tagline: "Technologie de bout en bout. Orientée résultat.",
       solutionsHeading: "Solutions",
       siteHeading: "Site",
-      copyrightSuffix: "Pratique d'ingénierie indépendante.",
+      copyrightSuffix: "Pratique indépendante.",
     },
     navbar: { solutionsHeading: "Solutions" },
     solutionHero: { backLink: "Solutions" },

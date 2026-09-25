@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/Hero";
+import { ProblemsSection } from "@/components/sections/ProblemsSection";
 import { SolutionsSection } from "@/components/sections/SolutionsSection";
 import { EndToEndSection } from "@/components/sections/EndToEndSection";
 import { ApproachSection } from "@/components/sections/ApproachSection";
@@ -15,9 +16,10 @@ export default function HomePage({ params }: { params: { locale: string } }) {
   return (
     <>
       <Hero locale={locale} />
+      <ProblemsSection locale={locale} />
       <SolutionsSection locale={locale} />
-      <EndToEndSection locale={locale} />
       <ApproachSection locale={locale} />
+      <EndToEndSection locale={locale} />
       <TechnologySection locale={locale} />
       <AboutSection locale={locale} />
       <ContactSection locale={locale} />

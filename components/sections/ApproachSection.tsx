@@ -1,4 +1,5 @@
 import { SectionHeader } from "@/components/SectionHeader";
+import { SectionCTA } from "@/components/SectionCTA";
 import { Reveal } from "@/components/ui/Reveal";
 import { getApproachSteps } from "@/data/approach";
 import { getUiText } from "@/data/ui";
@@ -7,7 +8,9 @@ import type { Locale } from "@/lib/i18n";
 
 export function ApproachSection({ locale }: { locale: Locale }) {
   const steps = getApproachSteps(locale);
-  const t = getUiText(locale).approachSection;
+  const ui = getUiText(locale);
+  const t = ui.approachSection;
+  const cta = ui.sectionCtas.approach;
 
   return (
     <section id="approach" data-snap className="bg-paper py-24 sm:py-28">
@@ -32,6 +35,8 @@ export function ApproachSection({ locale }: { locale: Locale }) {
             </Reveal>
           ))}
         </ol>
+
+        <SectionCTA text={cta.text} label={cta.label} />
       </div>
     </section>
   );

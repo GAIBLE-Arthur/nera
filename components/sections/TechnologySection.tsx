@@ -1,4 +1,5 @@
 import { SectionHeader } from "@/components/SectionHeader";
+import { SectionCTA } from "@/components/SectionCTA";
 import { TechnologyItem } from "@/components/TechnologyItem";
 import { TechApproachDiagram } from "@/components/diagrams/TechApproachDiagram";
 import { getTechnologies } from "@/data/technologies";
@@ -7,10 +8,12 @@ import type { Locale } from "@/lib/i18n";
 
 export function TechnologySection({ locale }: { locale: Locale }) {
   const technologies = getTechnologies(locale);
-  const t = getUiText(locale).technologySection;
+  const ui = getUiText(locale);
+  const t = ui.technologySection;
+  const cta = ui.sectionCtas.technology;
 
   return (
-    <section id="technology" data-snap data-nav-theme="dark" className="bg-surface py-24 text-on-dark sm:py-28">
+    <section id="technology" data-snap data-nav-theme="dark" className="border-t border-border-dark bg-surface py-24 text-on-dark sm:py-28">
       <div className="container-nera">
         <SectionHeader title={t.title} theme="dark" description={t.description} />
 
@@ -23,6 +26,8 @@ export function TechnologySection({ locale }: { locale: Locale }) {
 
           <TechApproachDiagram locale={locale} />
         </div>
+
+        <SectionCTA text={cta.text} label={cta.label} theme="dark" />
       </div>
     </section>
   );

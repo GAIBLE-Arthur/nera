@@ -40,15 +40,15 @@ interface HeroCopy {
 const heroCopy: Record<Locale, HeroCopy> = {
   en: {
     kicker: "Data. Software. Private AI.",
-    headline: "End-to-end technology. Built pragmatically.",
-    sub: "KAG Systèmes designs and builds systems from the data foundations up to the interfaces teams use every day. One practice, accountable for the whole chain.",
+    headline: "End-to-end technology. Results-driven.",
+    sub: "KAG Systèmes designs and builds data solutions, from the foundations up to the interfaces teams use every day. One practice, accountable for the whole chain.",
     primaryCta: { label: "Explore solutions", href: "#solutions" },
     secondaryCta: { label: "Discuss a project", href: "#contact" },
   },
   fr: {
     kicker: "Data. Software. IA privée.",
-    headline: "Technologie de bout en bout. Construite avec pragmatisme.",
-    sub: "KAG Systèmes conçoit et construit des systèmes, des fondations data jusqu'aux interfaces utilisées chaque jour par les équipes. Une pratique, responsable de toute la chaîne.",
+    headline: "Technologie de bout en bout. Orientée résultat.",
+    sub: "KAG Systèmes conçoit et construit des solutions de données, des fondations jusqu'aux interfaces utilisées chaque jour par les équipes. Une pratique, responsable de toute la chaîne.",
     primaryCta: { label: "Explorer les solutions", href: "#solutions" },
     secondaryCta: { label: "Discuter d'un projet", href: "#contact" },
   },
