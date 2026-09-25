@@ -158,8 +158,8 @@ const uiText: Record<Locale, UiText> = {
       diagram: {
         existingSystems: { label: "Existing systems", description: "What the client already runs today." },
         nera: { label: "KAG Systèmes", description: "Assesses what to keep, what to complete, and what to replace." },
-        existingStack: { label: "Existing stack", description: "Extended in place when it's already fit for purpose." },
-        openSource: { label: "Open-source components", description: "Added where they cut licensing cost and increase control." },
+        existingStack: { label: "Existing tools", description: "Extended in place when they're already fit for purpose." },
+        openSource: { label: "Alternative", description: "Proposed where it cuts licensing cost and increases control." },
         workingSystem: { label: "Working system", description: "Either path ends in something the client actually runs." },
       },
     },
@@ -311,8 +311,8 @@ const uiText: Record<Locale, UiText> = {
       diagram: {
         existingSystems: { label: "Systèmes existants", description: "Ce que le client utilise déjà aujourd'hui." },
         nera: { label: "KAG Systèmes", description: "Évalue ce qui doit être gardé, complété, ou remplacé." },
-        existingStack: { label: "Stack existante", description: "Étendue en place quand elle convient déjà." },
-        openSource: { label: "Composants open source", description: "Ajoutés quand ils réduisent les coûts de licence et augmentent le contrôle." },
+        existingStack: { label: "Outils existants", description: "Étendus en place quand ils conviennent déjà." },
+        openSource: { label: "Alternative", description: "Proposée quand elle réduit les coûts de licence et augmente le contrôle." },
         workingSystem: { label: "Système fonctionnel", description: "Les deux chemins aboutissent à quelque chose que le client utilise réellement." },
       },
     },
