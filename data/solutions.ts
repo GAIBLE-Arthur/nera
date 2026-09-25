@@ -73,16 +73,16 @@ const solutionEntries: SolutionEntry[] = [
       en: {
         title: "Analytics platform",
         shortTitle: "Analytics platform",
-        tagline: "Your whole business, on one screen.",
+        tagline: "All your data in one place.",
         description:
-          "Your sources connected, dashboards always up to date, and a tool your team can keep growing.",
+          "Your software and files brought together in a single, reliable database that keeps the history. The foundation for your reports, analyses and AI projects.",
       },
       fr: {
         title: "Plateforme analytique",
         shortTitle: "Plateforme analytique",
-        tagline: "Toute votre activité, sur un seul écran.",
+        tagline: "Toutes vos données au même endroit.",
         description:
-          "Vos sources reliées entre elles, des tableaux de bord toujours à jour, et un outil que votre équipe peut faire évoluer.",
+          "Vos logiciels et vos fichiers réunis dans une base unique, fiable, qui garde l'historique. La fondation de vos rapports, de vos analyses et de vos projets IA.",
       },
     },
   },

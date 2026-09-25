@@ -199,7 +199,7 @@ const uiText: Record<Locale, UiText> = {
     analyticsPlatformPage: {
       architectureTitle: "Sources to dashboards",
       architectureDescription:
-        "A governed path from source systems to the reporting layer, open source where it reduces licensing cost and increases control.",
+        "The path your data takes, from the software where it's entered to the screens where you use it.",
       approachTitle: "Built to be owned",
       diagram: {
         dataSources: { label: "Data sources", description: "ERP, CRM, files, APIs: wherever the data starts out." },
@@ -350,7 +350,7 @@ const uiText: Record<Locale, UiText> = {
     analyticsPlatformPage: {
       architectureTitle: "Des sources aux tableaux de bord",
       architectureDescription:
-        "Un chemin gouverné depuis les systèmes sources jusqu'à la couche de reporting, open source quand cela réduit les coûts de licence et augmente le contrôle.",
+        "Le chemin de vos données, du logiciel où elles sont saisies jusqu'aux écrans où vous les exploitez.",
       approachTitle: "Conçu pour être maîtrisé",
       diagram: {
         dataSources: { label: "Sources de données", description: "ERP, CRM, fichiers, API : là où les données démarrent." },
