@@ -109,8 +109,8 @@ const solutionPages: SolutionPages = {
   },
   "analytics-platform": {
     en: {
-      eyebrow: "02 · Dashboards",
-      heroTitle: "Dashboards",
+      eyebrow: "02 · Analytics platform",
+      heroTitle: "Analytics platform",
       heroLead:
         "A complete analytics environment: from source systems to the dashboards people check every day.",
       problem: {
@@ -148,8 +148,8 @@ const solutionPages: SolutionPages = {
       },
     },
     fr: {
-      eyebrow: "02 · Tableaux de bord",
-      heroTitle: "Tableaux de bord",
+      eyebrow: "02 · Plateforme analytique",
+      heroTitle: "Plateforme analytique",
       heroLead:
         "Un environnement analytique complet : des systèmes sources jusqu'aux tableaux de bord consultés au quotidien.",
       problem: {

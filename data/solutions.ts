@@ -71,15 +71,15 @@ const solutionEntries: SolutionEntry[] = [
     },
     text: {
       en: {
-        title: "Dashboards",
-        shortTitle: "Dashboards",
+        title: "Analytics platform",
+        shortTitle: "Analytics platform",
         tagline: "Your whole business, on one screen.",
         description:
           "Your sources connected, dashboards always up to date, and a tool your team can keep growing.",
       },
       fr: {
-        title: "Tableaux de bord",
-        shortTitle: "Tableaux de bord",
+        title: "Plateforme analytique",
+        shortTitle: "Plateforme analytique",
         tagline: "Toute votre activité, sur un seul écran.",
         description:
           "Vos sources reliées entre elles, des tableaux de bord toujours à jour, et un outil que votre équipe peut faire évoluer.",
