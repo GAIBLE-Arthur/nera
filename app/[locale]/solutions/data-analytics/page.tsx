@@ -3,6 +3,7 @@ import { SolutionHero } from "@/components/solutions/SolutionHero";
 import { ContentBlock } from "@/components/solutions/ContentBlock";
 import { ListSection } from "@/components/solutions/ListSection";
 import { SolutionCTA } from "@/components/solutions/SolutionCTA";
+import { ToolsBlock } from "@/components/solutions/ToolsBlock";
 import { SectionHeader } from "@/components/SectionHeader";
 import { PipelineDiagram, type PipelineStep } from "@/components/diagrams/PipelineDiagram";
 import { getSolutionPage } from "@/data/solution-pages";
@@ -72,8 +73,15 @@ export default function DataAnalyticsPage({ params }: { params: { locale: string
       </section>
 
       <section className="bg-paper pb-20 sm:pb-24">
-        <div className="container-nera">
+        <div className="container-nera grid gap-14 lg:grid-cols-2">
           <ContentBlock title={t.dataAnalyticsPage.approachTitle} paragraphs={[content.approachNote]} />
+          {content.tools && (
+            <ToolsBlock
+              title={content.tools.title}
+              items={content.tools.items}
+              certification={content.tools.certification}
+            />
+          )}
         </div>
       </section>
 

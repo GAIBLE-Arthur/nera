@@ -13,6 +13,8 @@ export interface SolutionPageContent {
   deliverablesTitle?: string;
   deliverables: string[];
   approachNote: string;
+  /** Tools clients recognise, shown next to the approach note. */
+  tools?: { title: string; items: string[]; certification?: string };
   cta: { title: string; body: string; button?: string };
   /** Private AI only — infrastructure/pricing disclaimer. */
   pricingNote?: string;
@@ -61,6 +63,11 @@ const solutionPages: SolutionPages = {
       ],
       approachNote:
         "Close to your data: reviewing your files, talking to the people who build the reports, and fixing things directly.",
+      tools: {
+        title: "Tools",
+        certification: "Microsoft Certified: Power BI Data Analyst Associate (PL‑300)",
+        items: ["Power BI", "Microsoft Fabric", "SQL", "Power Query / Excel", "Python"],
+      },
       cta: {
         title: "Have a data problem you can already describe?",
         body: "That's usually enough to start. Discuss what isn't working today and what fixing it would actually take.",
@@ -98,6 +105,11 @@ const solutionPages: SolutionPages = {
       ],
       approachNote:
         "Au plus près de vos données : examen de vos fichiers, échanges avec ceux qui font les rapports, et corrections faites directement.",
+      tools: {
+        title: "Outils maîtrisés",
+        certification: "Certifié Microsoft Power BI Data Analyst (PL‑300)",
+        items: ["Power BI", "Microsoft Fabric", "SQL", "Power Query / Excel", "Python"],
+      },
       cta: {
         title: "Vous pouvez déjà décrire un problème de données ?",
         body: "C'est souvent suffisant pour démarrer. Discutons de ce qui ne fonctionne pas aujourd'hui et de ce qu'il faudrait pour le corriger.",
