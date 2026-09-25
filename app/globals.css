@@ -5,7 +5,7 @@
 /*
  * Design tokens — the entire visual identity funnels through these
  * variables. Swap values here (or add a `data-theme` override) to change
- * NERA's look without touching component code.
+ * KAG Systèmes's look without touching component code.
  */
 :root {
   --color-ink: #111113;

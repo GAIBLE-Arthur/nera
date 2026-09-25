@@ -17,24 +17,29 @@ interface NodeLayout {
   emphasis?: boolean;
 }
 
+// Drawn on a 400 x 518 canvas: tall enough that, at full column width on
+// desktop, the diagram matches the height of the end-to-end chain beside it.
+const VIEW_W = 400;
+const VIEW_H = 518;
+
 const layout: NodeLayout[] = [
-  { key: "existingSystems", cx: 200, cy: 32, w: 190, h: 48 },
-  { key: "nera", cx: 200, cy: 120, w: 120, h: 48, emphasis: true },
-  { key: "existingStack", cx: 108, cy: 216, w: 160, h: 48 },
-  { key: "openSource", cx: 292, cy: 216, w: 180, h: 48 },
-  { key: "workingSystem", cx: 200, cy: 300, w: 190, h: 48 },
+  { key: "existingSystems", cx: 200, cy: 28, w: 190, h: 56 },
+  { key: "nera", cx: 200, cy: 175, w: 130, h: 56, emphasis: true },
+  { key: "existingStack", cx: 108, cy: 335, w: 170, h: 56 },
+  { key: "openSource", cx: 292, cy: 335, w: 180, h: 56 },
+  { key: "workingSystem", cx: 200, cy: 490, w: 190, h: 56 },
 ];
 
 const paths = [
-  "M200,56 V96",
-  "M200,144 C200,168 108,168 108,192",
-  "M200,144 C200,168 292,168 292,192",
-  "M108,240 C108,270 200,270 200,276",
-  "M292,240 C292,270 200,270 200,276",
+  "M200,56 V147",
+  "M200,203 C200,255 108,255 108,307",
+  "M200,203 C200,255 292,255 292,307",
+  "M108,363 C108,425 200,425 200,462",
+  "M292,363 C292,425 200,425 200,462",
 ];
 
 /**
- * Small branching diagram for the Technology section: NERA can work in the
+ * Small branching diagram for the Technology section: KAG Systèmes can work in the
  * existing stack, complete it with open-source components, or both. Either
  * way the output is one working system.
  *
@@ -49,9 +54,9 @@ export function TechApproachDiagram({ locale }: { locale: Locale }) {
   const [active, setActive] = useState<NodeKey | null>(null);
 
   return (
-    <Reveal className="mx-auto w-full max-w-md" delay={100}>
-      <div className="relative w-full" style={{ aspectRatio: "400 / 330" }}>
-        <svg viewBox="0 0 400 330" aria-hidden="true" className="absolute inset-0 h-full w-full overflow-visible">
+    <Reveal className="mx-auto w-full max-w-md lg:max-w-none" delay={100}>
+      <div className="relative w-full" style={{ aspectRatio: `${VIEW_W} / ${VIEW_H}` }}>
+        <svg viewBox={`0 0 ${VIEW_W} ${VIEW_H}`} aria-hidden="true" className="absolute inset-0 h-full w-full overflow-visible">
           {paths.map((d) => (
             <path key={d} d={d} fill="none" stroke="var(--color-border-dark)" strokeWidth="1.5" />
           ))}
@@ -77,10 +82,10 @@ export function TechApproachDiagram({ locale }: { locale: Locale }) {
             onClick={() => setActive((current) => (current === node.key ? null : node.key))}
             style={{
               position: "absolute",
-              left: `${(node.cx / 400) * 100}%`,
-              top: `${(node.cy / 330) * 100}%`,
-              width: `${(node.w / 400) * 100}%`,
-              height: `${(node.h / 330) * 100}%`,
+              left: `${(node.cx / VIEW_W) * 100}%`,
+              top: `${(node.cy / VIEW_H) * 100}%`,
+              width: `${(node.w / VIEW_W) * 100}%`,
+              height: `${(node.h / VIEW_H) * 100}%`,
               transform: "translate(-50%, -50%)",
             }}
           />

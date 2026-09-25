@@ -46,18 +46,18 @@ const solutionEntries: SolutionEntry[] = [
     },
     text: {
       en: {
-        title: "Data & Analytics Consulting",
-        shortTitle: "Data & Analytics",
-        tagline: "Operational work, inside your environment.",
+        title: "Data & reporting",
+        shortTitle: "Data & reporting",
+        tagline: "Reliable figures, no re-typing.",
         description:
-          "Data audits, cleaning, structuring and automation, done directly with your team and your existing tools.",
+          "Your current files and software, cleaned, structured and automated. Your reports build themselves.",
       },
       fr: {
-        title: "Conseil Data & Analytics",
-        shortTitle: "Data & Analytics",
-        tagline: "Un travail opérationnel, dans votre environnement.",
+        title: "Données & reporting",
+        shortTitle: "Données & reporting",
+        tagline: "Des chiffres fiables, sans ressaisie.",
         description:
-          "Audit, nettoyage, structuration et automatisation des données, réalisés directement avec votre équipe et vos outils.",
+          "Vos fichiers et logiciels actuels, nettoyés, structurés et automatisés. Vos rapports se font tout seuls.",
       },
     },
   },
@@ -71,18 +71,18 @@ const solutionEntries: SolutionEntry[] = [
     },
     text: {
       en: {
-        title: "Analytics Platform",
-        shortTitle: "Analytics Platform",
-        tagline: "A complete analytics environment.",
+        title: "Analytics platform",
+        shortTitle: "Analytics platform",
+        tagline: "All your data in one place.",
         description:
-          "From raw sources to a governed data model and dashboards, built to stay maintainable.",
+          "Your software and files brought together in a single, reliable database that keeps the history. The foundation for your reports, analyses and AI projects.",
       },
       fr: {
-        title: "Plateforme Analytique",
-        shortTitle: "Plateforme Analytique",
-        tagline: "Un environnement analytique complet.",
+        title: "Plateforme analytique",
+        shortTitle: "Plateforme analytique",
+        tagline: "Toutes vos données au même endroit.",
         description:
-          "Des sources brutes jusqu'à un modèle de données gouverné et des tableaux de bord, conçu pour rester maintenable.",
+          "Vos logiciels et vos fichiers réunis dans une base unique, fiable, qui garde l'historique. La fondation de vos rapports, de vos analyses et de vos projets IA.",
       },
     },
   },
@@ -98,16 +98,16 @@ const solutionEntries: SolutionEntry[] = [
       en: {
         title: "Private AI",
         shortTitle: "Private AI",
-        tagline: "AI that depends on what's underneath.",
+        tagline: "AI that actually helps, with your data kept in-house.",
         description:
-          "Local models, retrieval over your documents and data, and integration into the applications your teams already use.",
+          "Find information in your documents, draft a reply, sort requests. AI where it saves time, built into your tools.",
       },
       fr: {
-        title: "IA Privée",
-        shortTitle: "IA Privée",
-        tagline: "Une IA qui dépend de ce qu'il y a dessous.",
+        title: "IA privée",
+        shortTitle: "IA privée",
+        tagline: "L'IA qui sert vraiment, avec vos données chez vous.",
         description:
-          "Modèles locaux, recherche dans vos documents et données, intégration dans les applications déjà utilisées par vos équipes.",
+          "Retrouver une information dans vos documents, préparer une réponse, trier des demandes. L'IA là où elle fait gagner du temps, intégrée à vos outils.",
       },
     },
   },
@@ -121,18 +121,18 @@ const solutionEntries: SolutionEntry[] = [
     },
     text: {
       en: {
-        title: "Digital Platforms",
-        shortTitle: "Digital Platforms",
-        tagline: "From business process to working platform.",
+        title: "Business tools",
+        shortTitle: "Business tools",
+        tagline: "The software you're missing, built to measure.",
         description:
-          "Full-stack platforms: public interface, accounts, admin space, workflows, APIs and deployment, designed around how the business actually operates.",
+          "Internal app, customer portal, automation or links between your software: the tool developed for the way you work.",
       },
       fr: {
-        title: "Plateformes Digitales",
-        shortTitle: "Plateformes Digitales",
-        tagline: "Du processus métier à la plateforme fonctionnelle.",
+        title: "Outils métier",
+        shortTitle: "Outils métier",
+        tagline: "Le logiciel qui vous manque, construit sur mesure.",
         description:
-          "Des plateformes complètes : interface publique, comptes, espace admin, workflows, API et déploiement, conçues autour du fonctionnement réel de l'entreprise.",
+          "Application interne, espace client, automatisation ou lien entre vos logiciels : l'outil développé pour votre façon de travailler.",
       },
     },
   },

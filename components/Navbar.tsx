@@ -16,7 +16,7 @@ export function Navbar({ locale }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   // Whichever section currently sits directly behind the navbar — every
   // dark section on the site carries `data-nav-theme="dark"` (see Hero,
-  // EndToEndSection, TechnologySection, ContactSection, SolutionHero, and
+  // EndToEndSection, ContactSection, SolutionHero, and
   // the dark blocks on each solution page). Defaults to "dark" since the
   // Hero is always first, avoiding a flash of unreadable dark-on-dark text
   // before the effect below runs.
@@ -290,6 +290,9 @@ function LanguageSwitcher({
       className={cn(
         "flex items-center gap-1 font-mono text-xs uppercase transition-colors duration-300",
         compact ? "" : "border-l pl-6",
+        // Set the colour on the wrapper so the inactive locale and the "/"
+        // follow the navbar theme instead of inheriting the page's ink.
+        textColor,
         textColor === "text-on-dark" ? "border-border-dark" : "border-border"
       )}
     >
@@ -302,7 +305,7 @@ function LanguageSwitcher({
             aria-current={target === locale ? "true" : undefined}
             className={cn(
               "px-1 py-1 transition-colors duration-300",
-              target === locale ? textColor : "opacity-60 hover:opacity-100"
+              target === locale ? "" : "opacity-60 hover:opacity-100"
             )}
           >
             {target.toUpperCase()}

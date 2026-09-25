@@ -1,8 +1,8 @@
 import { Hero } from "@/components/sections/Hero";
+import { ProblemsSection } from "@/components/sections/ProblemsSection";
 import { SolutionsSection } from "@/components/sections/SolutionsSection";
 import { EndToEndSection } from "@/components/sections/EndToEndSection";
 import { ApproachSection } from "@/components/sections/ApproachSection";
-import { TechnologySection } from "@/components/sections/TechnologySection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { isLocale, type Locale } from "@/lib/i18n";
@@ -15,10 +15,10 @@ export default function HomePage({ params }: { params: { locale: string } }) {
   return (
     <>
       <Hero locale={locale} />
+      <ProblemsSection locale={locale} />
       <SolutionsSection locale={locale} />
-      <EndToEndSection locale={locale} />
       <ApproachSection locale={locale} />
-      <TechnologySection locale={locale} />
+      <EndToEndSection locale={locale} />
       <AboutSection locale={locale} />
       <ContactSection locale={locale} />
     </>

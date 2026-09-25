@@ -10,7 +10,7 @@ const emphasisKeys = new Set(["data", "dataModel", "interface"]);
 /**
  * The core positioning diagram: a single chain from business need to users,
  * with the data layer and the interface layer visually emphasized to show
- * NERA works on both what the system runs on and what people actually see.
+ * KAG Systèmes works on both what the system runs on and what people actually see.
  * Each step expands on click with a one-line explanation.
  */
 export function EndToEndDiagram({ locale }: { locale: Locale }) {

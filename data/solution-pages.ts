@@ -6,15 +6,16 @@ export interface SolutionPageContent {
   heroTitle: string;
   heroLead: string;
   problem: { title: string; body: string[] };
+  /** When set, the problem is shown as a list of situations instead of paragraphs. */
+  problemSituations?: string[];
   whatWeBuild: { title: string; items: string[] };
+  /** Overrides the shared "Deliverables" heading for this page. */
+  deliverablesTitle?: string;
   deliverables: string[];
-  technologies: string[];
   approachNote: string;
-  cta: { title: string; body: string };
-  /** Only populated for the Data & Analytics page today; kept generic so it
-   * can be extended with a detailed founder profile later without changing
-   * the page component. */
-  capabilities?: string[];
+  /** Tools clients recognise, shown next to the approach note. */
+  tools?: { title: string; items: string[]; certification?: string };
+  cta: { title: string; body: string; button?: string };
   /** Private AI only — infrastructure/pricing disclaimer. */
   pricingNote?: string;
   /** Private AI only — deployment/confidentiality clarification. */
@@ -32,367 +33,345 @@ type SolutionPages = Record<SolutionId, Record<Locale, SolutionPageContent>>;
 const solutionPages: SolutionPages = {
   "data-analytics": {
     en: {
-      eyebrow: "01 · Data & Analytics Consulting",
-      heroTitle: "Data & Analytics Consulting",
+      eyebrow: "01 · Data & reporting",
+      heroTitle: "Data & reporting",
       heroLead:
-        "Operational work inside your environment: auditing, cleaning, structuring and automating the data your business already runs on.",
-      problem: {
-        title: "The problem",
-        body: [
-          "Most businesses don't lack data, they lack a reliable, understood version of it. Reports disagree, spreadsheets diverge, and every new question means another export.",
-          "Fixing this takes more than a diagnosis. It takes someone willing to work inside the actual systems, the ERP, the spreadsheets, the operations data, and change how they're structured.",
-        ],
-      },
+        "Accurate, up-to-date figures, without rebuilding them by hand, starting from your current files and software.",
+      problem: { title: "The problem", body: [] },
+      problemSituations: [
+        "Every month, someone spends hours compiling the same figures.",
+        "Two reports on the same topic don't give the same result.",
+        "Every new question means another Excel export.",
+      ],
       whatWeBuild: {
-        title: "What NERA builds",
+        title: "What changes for you",
         items: [
-          "A clear picture of where data lives, how reliable it is, and where it breaks",
-          "Cleaned, structured and documented datasets the team can trust",
-          "Data models that match how the business actually operates",
-          "Automated pipelines that remove repetitive work",
-          "Reporting and dashboards, in whichever tool fits the context",
+          "You know where your data is and which of it you can trust.",
+          "Your files are cleaned and organised, and the whole team can rely on them.",
+          "Repetitive tasks run on their own.",
+          "Your reports update without anyone touching them.",
+          "Your indicators live in the tool you already use.",
         ],
       },
+      deliverablesTitle: "What you get",
       deliverables: [
-        "Data audit and quality assessment",
-        "Cleaned and structured datasets",
-        "Documented data model",
-        "ETL / automation scripts",
-        "KPI definitions and reporting logic",
-        "Dashboards using Power BI, Superset, or existing tooling",
+        "A clear picture of your data",
+        "Clean, structured files",
+        "Automatic updates",
+        "Indicators defined with you",
+        "Dashboards in your tool (Power BI, Excel or other)",
       ],
-      technologies: ["SQL", "ETL", "Python", "Power Query / Excel", "Power BI", "Microsoft Fabric", "Apache Superset"],
       approachNote:
-        "For this type of engagement, NERA works close to the data: reviewing tables, talking to the people who use the reports daily, and building fixes directly rather than only documenting them.",
-      capabilities: [
-        "Data auditing and quality assessment",
-        "SQL, Python and Power Query for cleaning and transformation",
-        "Data modeling for reporting and analytics",
-        "Process automation: ETL, scheduled jobs, scripts",
-        "Power BI, Microsoft Fabric and Apache Superset",
-        "Working directly inside operations and business data",
-      ],
+        "Close to your data: reviewing your files, talking to the people who build the reports, and fixing things directly.",
+      tools: {
+        title: "Tools",
+        certification: "Microsoft Certified: Power BI Data Analyst Associate (PL‑300)",
+        items: ["Power BI", "Microsoft Fabric", "SQL", "Power Query / Excel", "Python"],
+      },
       cta: {
         title: "Have a data problem you can already describe?",
         body: "That's usually enough to start. Discuss what isn't working today and what fixing it would actually take.",
+        button: "Describe your problem",
       },
     },
     fr: {
-      eyebrow: "01 · Conseil Data & Analytics",
-      heroTitle: "Conseil Data & Analytics",
+      eyebrow: "01 · Données & reporting",
+      heroTitle: "Données & reporting",
       heroLead:
-        "Un travail opérationnel dans votre environnement : audit, nettoyage, structuration et automatisation des données sur lesquelles votre entreprise fonctionne déjà.",
-      problem: {
-        title: "Le problème",
-        body: [
-          "La plupart des entreprises ne manquent pas de données, elles manquent d'une version fiable et comprise de ces données. Les rapports se contredisent, les tableurs divergent, et chaque nouvelle question demande un nouvel export.",
-          "Corriger cela demande plus qu'un diagnostic. Cela demande d'intervenir directement dans les systèmes réels, l'ERP, les tableurs, les données opérationnelles, et de changer leur structure.",
-        ],
-      },
+        "Des chiffres justes, à jour, sans les refaire à la main, à partir de vos fichiers et de vos logiciels actuels.",
+      problem: { title: "Le problème", body: [] },
+      problemSituations: [
+        "Chaque mois, quelqu'un passe des heures à compiler les mêmes chiffres.",
+        "Deux rapports sur le même sujet ne donnent pas le même résultat.",
+        "Chaque nouvelle question demande un nouvel export Excel.",
+      ],
       whatWeBuild: {
-        title: "Ce que NERA construit",
+        title: "Ce qui change pour vous",
         items: [
-          "Une vision claire de où se trouvent les données, de leur fiabilité et de leurs points de rupture",
-          "Des jeux de données nettoyés, structurés et documentés, sur lesquels l'équipe peut s'appuyer",
-          "Des modèles de données qui correspondent au fonctionnement réel de l'entreprise",
-          "Des pipelines automatisés qui suppriment le travail répétitif",
-          "Des rapports et tableaux de bord dans l'outil adapté au contexte",
+          "Vous savez où sont vos données et lesquelles sont fiables.",
+          "Vos fichiers sont nettoyés et rangés, toute l'équipe peut s'y fier.",
+          "Les tâches répétitives tournent toutes seules.",
+          "Vos rapports se mettent à jour sans intervention.",
+          "Vos indicateurs sont dans l'outil que vous utilisez déjà.",
         ],
       },
+      deliverablesTitle: "Ce que vous recevez",
       deliverables: [
-        "Audit et évaluation de la qualité des données",
-        "Jeux de données nettoyés et structurés",
-        "Modèle de données documenté",
-        "Scripts ETL / automatisation",
-        "Définition des KPI et logique de reporting",
-        "Tableaux de bord (Power BI, Superset, ou outils existants)",
+        "Un état des lieux de vos données",
+        "Des fichiers propres et structurés",
+        "Des mises à jour automatiques",
+        "Des indicateurs définis avec vous",
+        "Des tableaux de bord dans votre outil (Power BI, Excel ou autre)",
       ],
-      technologies: ["SQL", "ETL", "Python", "Power Query / Excel", "Power BI", "Microsoft Fabric", "Apache Superset"],
       approachNote:
-        "Pour ce type de mission, NERA travaille au plus près des données : en examinant les tables, en échangeant avec les personnes qui utilisent les rapports au quotidien, et en construisant les correctifs directement plutôt qu'en se limitant à les documenter.",
-      capabilities: [
-        "Audit et évaluation de la qualité des données",
-        "SQL, Python et Power Query pour le nettoyage et la transformation",
-        "Modélisation de données pour le reporting et l'analytics",
-        "Automatisation de processus : ETL, tâches planifiées, scripts",
-        "Power BI, Microsoft Fabric et Apache Superset",
-        "Intervention directe dans les données opérationnelles et métier",
-      ],
+        "Au plus près de vos données : examen de vos fichiers, échanges avec ceux qui font les rapports, et corrections faites directement.",
+      tools: {
+        title: "Outils maîtrisés",
+        certification: "Certifié Microsoft Power BI Data Analyst (PL‑300)",
+        items: ["Power BI", "Microsoft Fabric", "SQL", "Power Query / Excel", "Python"],
+      },
       cta: {
         title: "Vous pouvez déjà décrire un problème de données ?",
         body: "C'est souvent suffisant pour démarrer. Discutons de ce qui ne fonctionne pas aujourd'hui et de ce qu'il faudrait pour le corriger.",
+        button: "Décrire votre problème",
       },
     },
   },
   "analytics-platform": {
     en: {
-      eyebrow: "02 · Analytics Platform",
-      heroTitle: "Analytics Platform",
+      eyebrow: "02 · Analytics platform",
+      heroTitle: "Analytics platform",
       heroLead:
-        "A complete analytics environment: from source systems to the dashboards people check every day.",
-      problem: {
-        title: "The problem",
-        body: [
-          "A business needs somewhere for data to live, a consistent way to transform it, and a layer people can query.",
-          "Cleaning the data, understanding what it says, and making it usable requires a rigorous approach.",
-        ],
-      },
-      whatWeBuild: {
-        title: "What NERA builds",
-        items: [
-          "Ingestion from the systems that hold the data today",
-          "A warehouse or database sized to the actual data volume",
-          "A transformation layer that documents itself",
-          "A semantic / data model business teams can query consistently",
-          "A reporting layer people can actually use day to day",
-          "Access control, refresh schedules and monitoring so the platform stays trustworthy",
-        ],
-      },
-      deliverables: [
-        "Architecture and technology selection",
-        "Ingestion and transformation pipelines",
-        "Warehouse schema and documentation",
-        "Semantic / data model",
-        "Dashboards and self-service reporting",
-        "Deployment and operating instructions",
+        "A single database that brings all your data together, up to date and reliable. Your reports, analyses and AI projects all start from there.",
+      problem: { title: "The problem", body: [] },
+      problemSituations: [
+        "Your data is scattered across the ERP, accounting, the CRM and dozens of files.",
+        "History gets lost: there's no way to compare with last year.",
+        "Every new report or project starts from scratch to fetch the data.",
       ],
-      technologies: ["PostgreSQL", "ETL", "dbt", "Apache Superset", "Power BI", "Docker", "Office"],
+      whatWeBuild: {
+        title: "What changes for you",
+        items: [
+          "All your data is gathered in one place.",
+          "It's cleaned and updated automatically.",
+          "History is kept, so you can compare over time.",
+          "Your reports, analyses and AI projects start from the same base.",
+          "The platform is yours, with no dependency on a vendor.",
+        ],
+      },
+      deliverablesTitle: "What you get",
+      deliverables: [
+        "Your data sources connected",
+        "A central database",
+        "Automatic updates",
+        "A clear, documented data model",
+        "Access suited to each person",
+        "Go-live and documentation",
+      ],
       approachNote:
-        "Where it reduces licensing costs and increases control, NERA proposes an open-source alternative the client can operate independently, without treating open source as a requirement in itself.",
+        "A platform that belongs to you. When it's cheaper and simpler, KAG Systèmes proposes a licence-free alternative that you run on your own.",
       cta: {
-        title: "Need an analytics platform sized to your data?",
-        body: "Discuss what an analytics platform sized to your data and your team would actually look like.",
+        title: "Is your data scattered?",
+        body: "Tell us which software and files you use today. That's the starting point.",
+        button: "Describe your need",
       },
     },
     fr: {
-      eyebrow: "02 · Plateforme Analytique",
-      heroTitle: "Plateforme Analytique",
+      eyebrow: "02 · Plateforme analytique",
+      heroTitle: "Plateforme analytique",
       heroLead:
-        "Un environnement analytique complet : des systèmes sources jusqu'aux tableaux de bord consultés au quotidien.",
-      problem: {
-        title: "Le problème",
-        body: [
-          "Une entreprise a besoin d'un endroit où faire vivre ses données, d'une méthode cohérente pour les transformer, et d'une couche interrogeable.",
-          "Nettoyer les données, comprendre ce qu'elles racontent et les rendre exploitables nécessite une approche rigoureuse.",
-        ],
-      },
-      whatWeBuild: {
-        title: "Ce que NERA construit",
-        items: [
-          "L'ingestion depuis les systèmes qui détiennent les données aujourd'hui",
-          "Un entrepôt ou une base de données dimensionné au volume réel",
-          "Une couche de transformation qui se documente elle-même",
-          "Un modèle sémantique / de données interrogeable de façon cohérente par les équipes métier",
-          "Une couche de reporting que les équipes utilisent réellement au quotidien",
-          "Contrôle d'accès, rafraîchissements programmés et supervision pour garder la plateforme fiable",
-        ],
-      },
-      deliverables: [
-        "Architecture et choix technologiques",
-        "Pipelines d'ingestion et de transformation",
-        "Schéma d'entrepôt et documentation",
-        "Modèle sémantique / de données",
-        "Tableaux de bord et reporting en libre-service",
-        "Déploiement et instructions d'exploitation",
+        "Une base unique qui rassemble toutes vos données, à jour et fiable. Vos rapports, vos analyses et vos projets IA partent tous de là.",
+      problem: { title: "Le problème", body: [] },
+      problemSituations: [
+        "Vos données sont éparpillées entre l'ERP, la compta, le CRM et des dizaines de fichiers.",
+        "L'historique se perd : impossible de comparer avec l'an dernier.",
+        "Chaque nouveau rapport ou projet repart de zéro pour aller chercher les données.",
       ],
-      technologies: ["PostgreSQL", "ETL", "dbt", "Apache Superset", "Power BI", "Docker", "Office"],
+      whatWeBuild: {
+        title: "Ce qui change pour vous",
+        items: [
+          "Toutes vos données sont réunies au même endroit.",
+          "Elles sont nettoyées et mises à jour automatiquement.",
+          "L'historique est conservé, vous pouvez comparer dans le temps.",
+          "Vos rapports, vos analyses et vos projets IA partent de la même base.",
+          "La plateforme vous appartient, sans dépendre d'un éditeur.",
+        ],
+      },
+      deliverablesTitle: "Ce que vous recevez",
+      deliverables: [
+        "Vos sources de données connectées",
+        "Une base de données centrale",
+        "Des mises à jour automatiques",
+        "Un modèle de données clair et documenté",
+        "Des accès adaptés à chaque personne",
+        "La mise en service et la documentation",
+      ],
       approachNote:
-        "Quand cela réduit les coûts de licence et augmente le contrôle, NERA propose une alternative open source que le client peut exploiter de façon autonome.",
+        "Une plateforme qui vous appartient. Quand c'est moins cher et plus simple, KAG Systèmes propose une alternative sans licence, que vous exploitez en autonomie.",
       cta: {
-        title: "Vous avez besoin d'une plateforme analytique dimensionnée pour vos données ?",
-        body: "Discutons de ce à quoi ressemblerait une plateforme analytique dimensionnée pour vos données et votre équipe.",
+        title: "Vos données sont éparpillées ?",
+        body: "Dites-nous quels logiciels et fichiers vous utilisez aujourd'hui. C'est le point de départ.",
+        button: "Décrire votre besoin",
       },
     },
   },
   "digital-platforms": {
     en: {
-      eyebrow: "03 · Digital Platforms",
-      heroTitle: "Digital Platforms",
+      eyebrow: "04 · Business tools",
+      heroTitle: "Business tools",
       heroLead:
-        "From business process to working platform: public interface, accounts, admin space and the backend.",
-      problem: {
-        title: "The problem",
-        body: [
-          "A spreadsheet, a shared inbox and a handful of disconnected tools can run a small operation for a while, until they can't. Growth exposes the gaps: no single source of truth, manual handoffs, and processes that live in someone's head.",
-          "It's about building, for specific needs, a platform designed around how the business actually works.",
-        ],
-      },
-      whatWeBuild: {
-        title: "What NERA builds",
-        items: [
-          "A public-facing interface and, where needed, authenticated user accounts",
-          "A client space and an administrator space with the right permissions",
-          "Business workflows encoded directly into the platform",
-          "An API and backend that other systems can integrate with",
-          "A database designed around the business's actual data",
-          "Scheduling, payments, notifications or automations where the process needs them",
-          "Containerized deployment so the platform runs the same way in every environment",
-        ],
-      },
-      deliverables: [
-        "Product and workflow scoping",
-        "API / backend",
-        "Web interface, public and authenticated areas",
-        "PostgreSQL database",
-        "Containerized deployment (Docker)",
-        "Security and access control",
+        "When no off-the-shelf software fits the way you work, KAG Systèmes builds it. Internal app, customer portal, automation: a custom tool that belongs to you.",
+      problem: { title: "The problem", body: [] },
+      problemSituations: [
+        "Off-the-shelf software doesn't match the way you work, or does ten times too much.",
+        "Your tools don't talk to each other, and everything gets copied from one to the next.",
+        "Your customers call you for information they could find themselves.",
       ],
-      technologies: ["TypeScript", "PostgreSQL", "Docker", "API design", "Automations & integrations"],
+      whatWeBuild: {
+        title: "What can be built for you",
+        items: [
+          "An internal app: tracking production, job sites, orders, stock…",
+          "A customer or partner portal: orders, tracking, documents, self-service",
+          "Automations: reminders, notifications, document generation",
+          "Links between your software, so nothing gets copied by hand",
+          "A complete platform, with accounts, payments and an admin area",
+        ],
+      },
+      deliverablesTitle: "What you get",
+      deliverables: [
+        "A scoping of your needs and the way you work",
+        "The tool, built and tested with your teams",
+        "Access and permissions suited to each person",
+        "Links to your existing software",
+        "Go-live, security and documentation",
+        "A tool that belongs to you",
+      ],
       approachNote:
-        "NERA starts from the business process, not a feature list. The platform is scoped around what the workflow actually requires before any interface is designed.",
+        "First understanding how things really happen at your company, before drawing a single screen. Then building, testing with your teams, and adjusting.",
       cta: {
-        title: "Have a business process you want turned into a platform?",
-        body: "Discuss the process you want turned into a platform, and what it would need to cover end to end.",
+        title: "Missing a tool?",
+        body: "Describe what you want to do, or what's getting in the way today. That's the starting point.",
+        button: "Describe your need",
       },
     },
     fr: {
-      eyebrow: "03 · Plateformes Digitales",
-      heroTitle: "Plateformes Digitales",
+      eyebrow: "04 · Outils métier",
+      heroTitle: "Outils métier",
       heroLead:
-        "Du processus métier à la plateforme fonctionnelle : interface publique, comptes, espace admin et le backend.",
-      problem: {
-        title: "Le problème",
-        body: [
-          "Un tableur, une boîte mail partagée et quelques outils qui ne se parlent pas peuvent suffire un temps. Mais la croissance révèle vite les limites : aucune source de vérité unique, des transferts manuels, des processus qui n'existent que dans la tête de quelqu'un.",
-          "Il s'agit de construire, pour des besoins spécifiques, une plateforme pensée autour du fonctionnement réel de l'entreprise.",
-        ],
-      },
-      whatWeBuild: {
-        title: "Ce que NERA construit",
-        items: [
-          "Une interface publique et, si besoin, des comptes utilisateurs authentifiés",
-          "Un espace client et un espace administrateur avec les bonnes permissions",
-          "Les workflows métier encodés directement dans la plateforme",
-          "Une API et un backend avec lesquels d'autres systèmes peuvent s'intégrer",
-          "Une base de données conçue autour des données réelles de l'entreprise",
-          "Planification, paiements, notifications ou automatisations quand le processus l'exige",
-          "Un déploiement conteneurisé pour que la plateforme fonctionne de la même façon dans chaque environnement",
-        ],
-      },
-      deliverables: [
-        "Cadrage produit et workflows",
-        "API / backend",
-        "Interface web, espaces public et authentifié",
-        "Base de données PostgreSQL",
-        "Déploiement conteneurisé (Docker)",
-        "Sécurité et contrôle d'accès",
+        "Quand aucun logiciel du marché ne colle à votre façon de travailler, KAG Systèmes le construit. Application interne, espace client, automatisation : un outil sur mesure, qui vous appartient.",
+      problem: { title: "Le problème", body: [] },
+      problemSituations: [
+        "Les logiciels du marché ne correspondent pas à votre façon de travailler, ou en font dix fois trop.",
+        "Vos outils ne se parlent pas, et tout se recopie d'un logiciel à l'autre.",
+        "Vos clients vous appellent pour des informations qu'ils pourraient trouver eux-mêmes.",
       ],
-      technologies: ["TypeScript", "PostgreSQL", "Docker", "Conception d'API", "Automatisations & intégrations"],
+      whatWeBuild: {
+        title: "Ce qui peut être construit pour vous",
+        items: [
+          "Une application interne : suivi de production, de chantiers, de commandes, de stocks…",
+          "Un espace client ou partenaire : commandes, suivi, documents, en autonomie",
+          "Des automatisations : relances, notifications, génération de documents",
+          "Des liens entre vos logiciels, pour ne plus rien recopier",
+          "Une plateforme complète, avec comptes, paiements et espace d'administration",
+        ],
+      },
+      deliverablesTitle: "Ce que vous recevez",
+      deliverables: [
+        "Un cadrage de vos besoins et de votre façon de travailler",
+        "L'outil développé et testé avec vos équipes",
+        "Des accès et des droits adaptés à chaque personne",
+        "Les liens avec vos logiciels existants",
+        "La mise en service, la sécurité et la documentation",
+        "Un outil qui vous appartient",
+      ],
       approachNote:
-        "NERA part du processus métier, pas d'une liste de fonctionnalités. La plateforme est cadrée selon ce que le workflow exige réellement, avant même de concevoir une interface.",
+        "D'abord comprendre comment ça se passe vraiment chez vous, avant de dessiner le moindre écran. Puis construire, tester avec vos équipes, et ajuster.",
       cta: {
-        title: "Vous avez un processus métier à transformer en plateforme ?",
-        body: "Discutons du processus que vous voulez transformer en plateforme, et de ce qu'il faudrait couvrir de bout en bout.",
+        title: "Il vous manque un outil ?",
+        body: "Racontez ce que vous voulez faire, ou ce qui coince aujourd'hui. C'est le point de départ.",
+        button: "Décrire votre besoin",
       },
     },
   },
   "private-ai": {
     en: {
-      eyebrow: "04 · Private AI",
+      eyebrow: "03 · Private AI",
       heroTitle: "Private AI",
       heroLead:
-        "AI that depends on what's underneath: company data, retrieval, a model, and the application people actually use.",
-      problem: {
-        title: "The problem",
-        body: [
-          "What determines whether AI is actually useful, or actually private, is everything underneath it: which documents it can see, how they're indexed, which model runs it, and where that model runs.",
-          "NERA works on the full system, from ingesting company documents and data to deploying the model in an environment that matches the business's confidentiality requirements.",
-        ],
-      },
-      whatWeBuild: {
-        title: "What NERA builds",
-        items: [
-          "Ingestion of company documents and data into a searchable index",
-          "A retrieval layer (RAG) that gives the model relevant context instead of guesswork",
-          "A local or private model sized to the workload, not necessarily the largest available",
-          "An application or API layer connecting the model to how people actually work",
-          "Containerized deployment, on-premise or on dedicated hardware when required",
-        ],
-      },
-      deliverables: [
-        "Document and data ingestion pipeline",
-        "Retrieval / indexing layer",
-        "Model selection and deployment",
-        "Application or API integration",
-        "Docker-based deployment package",
-        "Sizing and infrastructure recommendation",
+        "AI where it truly saves time, connected to your documents and data, without sending them just anywhere.",
+      problem: { title: "The problem", body: [] },
+      problemSituations: [
+        "Your teams waste time looking for information in folders, emails or PDFs.",
+        "You want to use AI, but not send your documents to a tech giant.",
+        "Consumer AI tools miss the point, because they don't know your business.",
       ],
-      technologies: ["Docker", "Open-source LLMs", "Vector / search layer", "Python", "API integration"],
+      whatWeBuild: {
+        title: "What changes for you",
+        items: [
+          "Your teams ask a question and get an answer drawn from your own documents.",
+          "Answers rely on up-to-date information, not approximations.",
+          "Repetitive tasks go faster: drafting a reply, summarising a file, sorting requests.",
+          "Your data stays with you, or in the environment you choose.",
+          "AI is built into the tools your teams already use.",
+        ],
+      },
+      deliverablesTitle: "What you get",
+      deliverables: [
+        "Your documents and data made searchable by the AI",
+        "A model chosen for your use, not necessarily the biggest",
+        "An assistant built into your tools",
+        "An installation on your premises or on a dedicated server",
+        "A suitable hardware recommendation",
+      ],
       approachNote:
-        "NERA treats the retrieval layer and the data feeding it as the real engineering problem. The model is one component among several, not the whole project.",
-      pricingNote:
-        "Infrastructure and pricing depend on the selected model, workload, hardware and deployment requirements.",
-      maintenanceNote:
-        "Private AI has a life after go-live: models evolve, usage shifts. That follow-up gets scoped as part of the project — it isn't an open-ended support commitment.",
+        "An AI is only as good as its access to the right, well-organised documents. That's where most of the time goes. The model is just one piece among others.",
+      pricingNote: "It depends on the model, the number of users and the hardware. It's priced after a first conversation.",
+      maintenanceNote: "Models evolve and so do your uses. Follow-up is defined from the start.",
       privacyNote:
-        "Whether data stays fully on-premise depends on the deployment chosen, from fully local infrastructure to hybrid setups. This is defined with the client before the project starts.",
+        "Your data can stay entirely on your premises, or in a mixed setup. This is defined together before starting.",
       ragExplainer:
-        "In practice, this means the model doesn't rely only on what it was trained on. Before answering, it retrieves the most relevant passages from the company's own documents and uses them as context, which keeps answers grounded in current, real information instead of memory alone.",
+        "Before answering, the AI looks for the useful passages in your documents and relies on them. Answers stay grounded in your real information.",
       sizingFactors: [
         "Model size",
-        "Number of concurrent users",
-        "Expected response latency",
-        "Amount of document context retrieved per query",
-        "Overall workload",
-        "Confidentiality requirements",
+        "Number of users",
+        "Expected response speed",
+        "Volume of documents",
+        "Level of confidentiality",
       ],
       cta: {
-        title: "Considering AI that runs on your own data?",
-        body: "Discuss the documents, systems and confidentiality requirements involved. Sizing follows from there.",
+        title: "Want to use AI on your own documents?",
+        body: "Tell us what your teams search for or redo every day. That's the starting point.",
+        button: "Describe your need",
       },
     },
     fr: {
-      eyebrow: "04 · IA Privée",
-      heroTitle: "IA Privée",
+      eyebrow: "03 · IA privée",
+      heroTitle: "IA privée",
       heroLead:
-        "Une IA qui dépend de ce qu'il y a dessous : données de l'entreprise, recherche documentaire, modèle, et l'application réellement utilisée.",
-      problem: {
-        title: "Le problème",
-        body: [
-          "Ce qui détermine si une IA est réellement utile, ou réellement privée, c'est tout ce qu'il y a dessous : quels documents elle peut voir, comment ils sont indexés, quel modèle l'exécute, et où ce modèle tourne.",
-          "NERA travaille sur le système complet, de l'ingestion des documents et données de l'entreprise jusqu'au déploiement du modèle dans un environnement conforme aux exigences de confidentialité de l'entreprise.",
-        ],
-      },
-      whatWeBuild: {
-        title: "Ce que NERA construit",
-        items: [
-          "Ingestion des documents et données de l'entreprise dans un index consultable",
-          "Une couche de recherche documentaire (RAG) qui donne au modèle un contexte pertinent plutôt que des approximations",
-          "Un modèle local ou privé dimensionné pour la charge, pas nécessairement le plus grand disponible",
-          "Une couche application ou API qui relie le modèle à l'usage réel des équipes",
-          "Un déploiement conteneurisé, sur site ou sur du matériel dédié si nécessaire",
-        ],
-      },
-      deliverables: [
-        "Pipeline d'ingestion de documents et données",
-        "Couche de recherche documentaire / indexation",
-        "Sélection et déploiement du modèle",
-        "Intégration application ou API",
-        "Package de déploiement basé sur Docker",
-        "Recommandation de dimensionnement et d'infrastructure",
+        "L'IA là où elle fait vraiment gagner du temps, branchée sur vos documents et vos données, sans les envoyer n'importe où.",
+      problem: { title: "Le problème", body: [] },
+      problemSituations: [
+        "Vos équipes perdent du temps à chercher une information dans des dossiers, des mails ou des PDF.",
+        "Vous voulez utiliser l'IA, mais pas envoyer vos documents chez un géant du web.",
+        "Les outils d'IA grand public répondent à côté, parce qu'ils ne connaissent pas votre entreprise.",
       ],
-      technologies: ["Docker", "LLM open source", "Couche vectorielle / recherche", "Python", "Intégration API"],
+      whatWeBuild: {
+        title: "Ce qui change pour vous",
+        items: [
+          "Vos équipes posent une question et obtiennent une réponse tirée de vos propres documents.",
+          "Les réponses s'appuient sur une information à jour, pas sur des approximations.",
+          "Les tâches répétitives vont plus vite : préparer une réponse, résumer un dossier, trier des demandes.",
+          "Vos données restent chez vous, ou dans l'environnement que vous choisissez.",
+          "L'IA est intégrée aux outils que vos équipes utilisent déjà.",
+        ],
+      },
+      deliverablesTitle: "Ce que vous recevez",
+      deliverables: [
+        "Vos documents et données rendus consultables par l'IA",
+        "Un modèle choisi pour votre usage, pas forcément le plus gros",
+        "Un assistant intégré à vos outils",
+        "Une installation chez vous ou sur un serveur dédié",
+        "Une recommandation de matériel adaptée",
+      ],
       approachNote:
-        "NERA considère la couche de recherche documentaire et les données qui l'alimentent comme le véritable enjeu d'ingénierie. Le modèle est un composant parmi d'autres, pas le projet entier.",
-      pricingNote:
-        "L'infrastructure et le tarif dépendent du modèle choisi, de la charge, du matériel et des exigences de déploiement.",
-      maintenanceNote:
-        "L'IA privée a une vie après la mise en production : les modèles évoluent, les usages changent. Ce suivi est cadré dès le projet — ce n'est pas un engagement de support illimité.",
+        "Une IA n'est bonne que si elle a accès aux bons documents, bien rangés. C'est là que se joue l'essentiel du travail. Le modèle n'est qu'une pièce parmi d'autres.",
+      pricingNote: "Il dépend du modèle, du nombre d'utilisateurs et du matériel. Il est chiffré après un premier échange.",
+      maintenanceNote: "Les modèles évoluent et vos usages aussi. Le suivi est défini dès le départ.",
       privacyNote:
-        "Le fait que les données restent entièrement sur site dépend du déploiement choisi, d'une infrastructure totalement locale à des configurations hybrides. Cela est défini avec le client avant le démarrage du projet.",
+        "Vos données peuvent rester entièrement chez vous, ou dans une configuration mixte. C'est défini ensemble avant de démarrer.",
       ragExplainer:
-        "En pratique, cela signifie que le modèle ne s'appuie pas uniquement sur ce qu'il a appris à l'entraînement. Avant de répondre, il recherche les passages les plus pertinents dans les documents de l'entreprise et les utilise comme contexte, ce qui garde les réponses ancrées dans une information réelle et à jour plutôt que dans la seule mémoire du modèle.",
+        "Avant de répondre, l'IA va chercher les passages utiles dans vos documents et s'appuie dessus. Les réponses restent fondées sur votre information réelle.",
       sizingFactors: [
-        "Taille du modèle",
-        "Nombre d'utilisateurs simultanés",
-        "Latence de réponse attendue",
-        "Volume de contexte documentaire récupéré par requête",
-        "Charge globale",
-        "Exigences de confidentialité",
+        "La taille du modèle",
+        "Le nombre d'utilisateurs",
+        "La rapidité de réponse attendue",
+        "Le volume de documents",
+        "Le niveau de confidentialité",
       ],
       cta: {
-        title: "Vous envisagez une IA qui fonctionne sur vos propres données ?",
-        body: "Discutons des documents, systèmes et exigences de confidentialité concernés. Le dimensionnement en découle.",
+        title: "Vous voulez utiliser l'IA sur vos propres documents ?",
+        body: "Dites-nous ce que vos équipes cherchent ou refont tous les jours. C'est le point de départ.",
+        button: "Décrire votre besoin",
       },
     },
   },

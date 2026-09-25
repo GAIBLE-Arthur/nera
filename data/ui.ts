@@ -4,7 +4,7 @@ import type { Locale } from "@/lib/i18n";
  * Small, mostly one-off UI strings that don't belong to a single content
  * domain (section headings, diagram node labels, shared microcopy). Larger
  * blocks of editorial content live in their own files (site.ts, solutions.ts,
- * solution-pages.ts, approach.ts, technologies.ts, contact.ts, about.ts).
+ * solution-pages.ts, approach.ts, contact.ts, about.ts).
  *
  * Diagram nodes carry a short `description` in addition to their `label`:
  * every diagram on the site is click-to-expand (see DiagramNode), so each
@@ -16,13 +16,30 @@ export interface DiagramNodeText {
   description: string;
 }
 
+interface ProblemItem {
+  situation: string;
+  objective: string;
+}
+
+interface SectionCtaText {
+  text: string;
+  label: string;
+}
+
 interface UiText {
+  problemsSection: {
+    title: string;
+    items: ProblemItem[];
+    cta: SectionCtaText;
+  };
+  sectionCtas: Record<"solutions" | "approach" | "technology" | "about", SectionCtaText>;
   solutionsSection: { eyebrow: string; title: string; description: string };
   endToEnd: {
     eyebrow: string;
     title: string;
     description: string;
     paragraph: string;
+    chainTitle: string;
     axisLabel: string;
     chain: Record<"businessNeed" | "data" | "dataModel" | "businessLogic" | "backend" | "interface" | "users", DiagramNodeText>;
   };
@@ -44,9 +61,6 @@ interface UiText {
     architectureEyebrow: string;
     deploymentEyebrow: string;
     approachEyebrow: string;
-    capabilitiesEyebrow: string;
-    capabilitiesTitle: string;
-    technologyTitle: string;
     pricingLabel: string;
     maintenanceLabel: string;
     hardwareSizedAround: string;
@@ -72,6 +86,7 @@ interface UiText {
     dockerNote: string;
   };
   privateAiPage: {
+    ragTitle: string;
     approachTitle: string;
     ragDiagram: Record<"companyData" | "ingestion" | "retrieval" | "context" | "localModel" | "applicationApi" | "employee", DiagramNodeText>;
     deploymentDiagram: {
@@ -87,18 +102,37 @@ interface UiText {
 
 const uiText: Record<Locale, UiText> = {
   en: {
+    problemsSection: {
+      title: "Sound familiar?",
+      items: [
+        { situation: "The same reports are rebuilt by hand every week.", objective: "Figures that update themselves." },
+        { situation: "Each department has its own numbers, and they never match.", objective: "One reliable source, shared by everyone." },
+        { situation: "The same information is typed in two or three times.", objective: "Enter it once, use it everywhere." },
+        { situation: "Everything depends on a spreadsheet only one person understands.", objective: "A clear tool the whole team can use." },
+        { situation: "You want to use AI, but not just any way.", objective: "Concrete uses, with your data staying in-house." },
+        { situation: "Decisions are made without a clear view of the business.", objective: "The right indicators, visible at the right time." },
+      ],
+      cta: { text: "Recognise one of these?", label: "Talk about your situation" },
+    },
+    sectionCtas: {
+      solutions: { text: "Your need doesn't fit any of these boxes?", label: "Describe your problem" },
+      approach: { text: "It all starts with a conversation about your situation.", label: "Schedule a call" },
+      technology: { text: "Already have tools in place? KAG Systèmes starts from there.", label: "Discuss your current setup" },
+      about: { text: "A problem to solve, a project in mind?", label: "Get in touch" },
+    },
     solutionsSection: {
-      eyebrow: "What NERA builds",
+      eyebrow: "What KAG Systèmes builds",
       title: "Solutions",
-      description: "Four areas of work, one practice. Each can stand alone or connect into a larger system.",
+      description: "Four ways to fix a concrete problem. Each can stand alone or connect into a larger system.",
     },
     endToEnd: {
       eyebrow: "Positioning",
       title: "End-to-end, by design",
-      description: "NERA builds the technology underneath: from data to interface.",
+      description: "KAG Systèmes builds the technology underneath: from data to interface.",
       paragraph:
-        "A recommendation is only useful if something is built from it. NERA stays involved across the whole chain, from the data a system runs on to the interface people use, rather than handing off at the point where it gets difficult.",
-      axisLabel: "NERA: end to end",
+        "A recommendation is only useful if something is built from it. KAG Systèmes stays involved across the whole chain, from the data a system runs on to the interface people use, rather than handing off at the point where it gets difficult.",
+      chainTitle: "From data to interface.",
+      axisLabel: "KAG Systèmes: end to end",
       chain: {
         businessNeed: { label: "Business need", description: "What the business is actually trying to solve, in plain terms." },
         data: { label: "Data", description: "Where it lives today, how reliable it is, and what needs cleaning." },
@@ -118,20 +152,20 @@ const uiText: Record<Locale, UiText> = {
       eyebrow: "Technology",
       title: "Use what makes sense. Own what matters.",
       description:
-        "NERA can work inside what's already in place, or complete it. The technology serves the problem, it isn't the product.",
+        "KAG Systèmes can work inside what's already in place, or complete it. The technology serves the problem, it isn't the product.",
       diagram: {
         existingSystems: { label: "Existing systems", description: "What the client already runs today." },
-        nera: { label: "NERA", description: "Assesses what to keep, what to complete, and what to replace." },
-        existingStack: { label: "Existing stack", description: "Extended in place when it's already fit for purpose." },
-        openSource: { label: "Open-source components", description: "Added where they cut licensing cost and increase control." },
+        nera: { label: "KAG Systèmes", description: "Assesses what to keep, what to complete, and what to replace." },
+        existingStack: { label: "Existing tools", description: "Extended in place when they're already fit for purpose." },
+        openSource: { label: "Alternative", description: "Proposed where it cuts licensing cost and increases control." },
         workingSystem: { label: "Working system", description: "Either path ends in something the client actually runs." },
       },
     },
     footer: {
-      tagline: "End-to-end technology. Built pragmatically.",
+      tagline: "End-to-end technology. Results-driven.",
       solutionsHeading: "Solutions",
       siteHeading: "Site",
-      copyrightSuffix: "Independent engineering practice.",
+      copyrightSuffix: "Independent practice.",
     },
     navbar: { solutionsHeading: "Solutions" },
     solutionHero: { backLink: "Solutions" },
@@ -143,15 +177,12 @@ const uiText: Record<Locale, UiText> = {
       architectureEyebrow: "Architecture",
       deploymentEyebrow: "Deployment",
       approachEyebrow: "Approach",
-      capabilitiesEyebrow: "Capabilities",
-      capabilitiesTitle: "Direct expertise",
-      technologyTitle: "Technologies used in this type of work",
       pricingLabel: "Pricing",
       maintenanceLabel: "After go-live",
-      hardwareSizedAround: "Hardware is sized around",
+      hardwareSizedAround: "Hardware depends on",
       whereItRunsTitle: "Where it runs",
       whereItRunsDescription:
-        "A containerized deployment on hardware sized to the workload: on-premise, dedicated, or hybrid depending on the requirements.",
+        "On a server at your premises, on a dedicated server, or a mix of both, depending on your needs.",
     },
     dataAnalyticsPage: {
       architectureTitle: "From raw data to reporting",
@@ -167,7 +198,7 @@ const uiText: Record<Locale, UiText> = {
     analyticsPlatformPage: {
       architectureTitle: "Sources to dashboards",
       architectureDescription:
-        "A governed path from source systems to the reporting layer, open source where it reduces licensing cost and increases control.",
+        "The path your data takes, from the software where it's entered to the screens where you use it.",
       approachTitle: "Built to be owned",
       diagram: {
         dataSources: { label: "Data sources", description: "ERP, CRM, files, APIs: wherever the data starts out." },
@@ -180,22 +211,23 @@ const uiText: Record<Locale, UiText> = {
       },
     },
     digitalPlatformsPage: {
-      architectureTitle: "From business process to platform",
+      architectureTitle: "From your process to the tool",
       architectureDescription:
-        "A full-stack platform running on containerized infrastructure, designed around the workflow.",
-      approachTitle: "Starting from the process, not the feature list",
+        "The way you work, turned into a tool connected to your software and services (payment, email, calendar).",
+      approachTitle: "Starting from the way you work",
       diagram: {
         users: { label: "Users", description: "Whoever the platform is actually built for." },
         webInterface: { label: "Web interface", description: "What users see: public pages plus authenticated areas." },
         apiBackend: { label: "API / backend", description: "The layer other systems and the interface talk to." },
         businessLogic: { label: "Business logic", description: "The rules that encode how the business actually works." },
-        postgres: { label: "PostgreSQL", description: "Structured storage for the platform's real data." },
+        postgres: { label: "Database", description: "Structured storage for the platform's real data." },
         externalServices: { label: "External services", description: "Payments, email, calendar: connected where the process needs them." },
       },
-      dockerNote: "Infrastructure & deployment: the platform runs the same way in every environment",
+      dockerNote: "Installation: the tool runs the same way everywhere",
     },
     privateAiPage: {
-      approachTitle: "The retrieval layer is the real work",
+      ragTitle: "How the AI finds the right answer",
+      approachTitle: "The real work is your data",
       ragDiagram: {
         companyData: { label: "Company data / documents", description: "Whatever the answers should actually be grounded in." },
         ingestion: { label: "Ingestion", description: "Documents parsed and prepared for search." },
@@ -207,7 +239,7 @@ const uiText: Record<Locale, UiText> = {
       },
       deploymentDiagram: {
         companyNetwork: { label: "Company network", description: "The boundary the deployment operates inside." },
-        dockerEnvironment: "Docker environment",
+        dockerEnvironment: "Dedicated environment",
         services: {
           application: { label: "Application", description: "The interface people interact with." },
           aiService: { label: "AI service", description: "Runs the model itself." },
@@ -221,18 +253,37 @@ const uiText: Record<Locale, UiText> = {
     diagramHint: "Tap a step for detail",
   },
   fr: {
+    problemsSection: {
+      title: "Ça vous parle ?",
+      items: [
+        { situation: "Vous refaites les mêmes tableaux chaque semaine, à la main.", objective: "Des chiffres qui se mettent à jour tout seuls." },
+        { situation: "Chaque service a ses propres chiffres, et ils ne concordent jamais.", objective: "Une seule source fiable, partagée par tous." },
+        { situation: "Les mêmes informations sont saisies deux ou trois fois.", objective: "Une seule saisie, utilisée partout." },
+        { situation: "Tout repose sur un fichier Excel que seule une personne maîtrise.", objective: "Un outil clair que toute l'équipe utilise." },
+        { situation: "Vous voulez utiliser l'IA, mais pas n'importe comment.", objective: "Des usages concrets, avec vos données qui restent chez vous." },
+        { situation: "Les décisions se prennent sans vision claire de l'activité.", objective: "Les bons indicateurs, visibles au bon moment." },
+      ],
+      cta: { text: "Vous vous reconnaissez ?", label: "Parler de votre situation" },
+    },
+    sectionCtas: {
+      solutions: { text: "Votre besoin ne rentre dans aucune case ?", label: "Décrire votre problème" },
+      approach: { text: "Tout commence par un échange sur votre situation.", label: "Planifier un échange" },
+      technology: { text: "Vous avez déjà des outils en place ? KAG Systèmes part de là.", label: "Parler de votre existant" },
+      about: { text: "Un problème à régler, un projet en tête ?", label: "Prendre contact" },
+    },
     solutionsSection: {
-      eyebrow: "Ce que NERA construit",
+      eyebrow: "Ce que KAG Systèmes construit",
       title: "Solutions",
-      description: "Quatre domaines d'intervention, une seule pratique. Chacun peut fonctionner seul ou s'intégrer dans un système plus large.",
+      description: "Quatre façons de régler un problème concret. Chacune peut fonctionner seule ou s'intégrer dans un système plus large.",
     },
     endToEnd: {
       eyebrow: "Positionnement",
       title: "De bout en bout, par conception",
-      description: "NERA construit la technologie qui se trouve en dessous : des données à l'interface.",
+      description: "KAG Systèmes construit la technologie qui se trouve en dessous : des données à l'interface.",
       paragraph:
-        "NERA reste impliquée sur toute la chaîne, des données sur lesquelles un système fonctionne jusqu'à l'interface utilisée.",
-      axisLabel: "NERA : de bout en bout",
+        "KAG Systèmes reste impliqué sur toute la chaîne, des données sur lesquelles un système fonctionne jusqu'à l'interface utilisée.",
+      chainTitle: "Des données à l'interface.",
+      axisLabel: "KAG Systèmes : de bout en bout",
       chain: {
         businessNeed: { label: "Besoin métier", description: "Ce que l'entreprise cherche réellement à résoudre." },
         data: { label: "Données", description: "Où elles se trouvent aujourd'hui, leur fiabilité, ce qu'il faut nettoyer." },
@@ -252,20 +303,20 @@ const uiText: Record<Locale, UiText> = {
       eyebrow: "Technologie",
       title: "Utiliser ce qui a du sens. Maîtriser ce qui compte.",
       description:
-        "NERA peut travailler dans l'existant, ou le compléter. La technologie sert le problème, elle n'est pas le produit.",
+        "KAG Systèmes peut travailler dans l'existant, ou le compléter. La technologie sert le problème, elle n'est pas le produit.",
       diagram: {
         existingSystems: { label: "Systèmes existants", description: "Ce que le client utilise déjà aujourd'hui." },
-        nera: { label: "NERA", description: "Évalue ce qui doit être gardé, complété, ou remplacé." },
-        existingStack: { label: "Stack existante", description: "Étendue en place quand elle convient déjà." },
-        openSource: { label: "Composants open source", description: "Ajoutés quand ils réduisent les coûts de licence et augmentent le contrôle." },
+        nera: { label: "KAG Systèmes", description: "Évalue ce qui doit être gardé, complété, ou remplacé." },
+        existingStack: { label: "Outils existants", description: "Étendus en place quand ils conviennent déjà." },
+        openSource: { label: "Alternative", description: "Proposée quand elle réduit les coûts de licence et augmente le contrôle." },
         workingSystem: { label: "Système fonctionnel", description: "Les deux chemins aboutissent à quelque chose que le client utilise réellement." },
       },
     },
     footer: {
-      tagline: "Technologie de bout en bout. Construite avec pragmatisme.",
+      tagline: "Technologie de bout en bout. Orientée résultat.",
       solutionsHeading: "Solutions",
       siteHeading: "Site",
-      copyrightSuffix: "Pratique d'ingénierie indépendante.",
+      copyrightSuffix: "Pratique indépendante.",
     },
     navbar: { solutionsHeading: "Solutions" },
     solutionHero: { backLink: "Solutions" },
@@ -277,15 +328,12 @@ const uiText: Record<Locale, UiText> = {
       architectureEyebrow: "Architecture",
       deploymentEyebrow: "Déploiement",
       approachEyebrow: "Approche",
-      capabilitiesEyebrow: "Compétences",
-      capabilitiesTitle: "Expertise directe",
-      technologyTitle: "Technologies utilisées pour ce type de mission",
-      pricingLabel: "Tarification",
-      maintenanceLabel: "Après la mise en production",
-      hardwareSizedAround: "Le matériel est dimensionné selon",
+      pricingLabel: "Tarif",
+      maintenanceLabel: "Après la mise en service",
+      hardwareSizedAround: "Le matériel dépend de",
       whereItRunsTitle: "Où cela fonctionne",
       whereItRunsDescription:
-        "Un déploiement conteneurisé sur du matériel dimensionné à la charge : sur site, dédié, ou hybride selon les exigences.",
+        "Sur un serveur chez vous, sur un serveur dédié, ou un mélange des deux, selon vos besoins.",
     },
     dataAnalyticsPage: {
       architectureTitle: "Des données brutes au reporting",
@@ -301,7 +349,7 @@ const uiText: Record<Locale, UiText> = {
     analyticsPlatformPage: {
       architectureTitle: "Des sources aux tableaux de bord",
       architectureDescription:
-        "Un chemin gouverné depuis les systèmes sources jusqu'à la couche de reporting, open source quand cela réduit les coûts de licence et augmente le contrôle.",
+        "Le chemin de vos données, du logiciel où elles sont saisies jusqu'aux écrans où vous les exploitez.",
       approachTitle: "Conçu pour être maîtrisé",
       diagram: {
         dataSources: { label: "Sources de données", description: "ERP, CRM, fichiers, API : là où les données démarrent." },
@@ -314,22 +362,23 @@ const uiText: Record<Locale, UiText> = {
       },
     },
     digitalPlatformsPage: {
-      architectureTitle: "Du processus métier à la plateforme",
+      architectureTitle: "De votre processus à l'outil",
       architectureDescription:
-        "Une plateforme full-stack fonctionnant sur une infrastructure conteneurisée, conçue autour du workflow.",
-      approachTitle: "En partant du processus, pas de la liste de fonctionnalités",
+        "Votre façon de travailler, traduite en un outil relié à vos logiciels et à vos services (paiement, e-mail, agenda).",
+      approachTitle: "En partant de votre façon de travailler",
       diagram: {
         users: { label: "Utilisateurs", description: "Ceux pour qui la plateforme est réellement construite." },
         webInterface: { label: "Interface web", description: "Ce que voient les utilisateurs : pages publiques et espaces authentifiés." },
         apiBackend: { label: "API / backend", description: "La couche à laquelle parlent les autres systèmes et l'interface." },
         businessLogic: { label: "Logique métier", description: "Les règles qui encodent le fonctionnement réel de l'entreprise." },
-        postgres: { label: "PostgreSQL", description: "Stockage structuré pour les données réelles de la plateforme." },
+        postgres: { label: "Base de données", description: "Stockage structuré pour les données réelles de l'outil." },
         externalServices: { label: "Services externes", description: "Paiements, email, calendrier : connectés quand le processus l'exige." },
       },
-      dockerNote: "Infrastructure & déploiement : la plateforme fonctionne de la même façon dans chaque environnement",
+      dockerNote: "Installation : l'outil fonctionne de la même façon partout",
     },
     privateAiPage: {
-      approachTitle: "La couche de recherche documentaire est le véritable travail",
+      ragTitle: "Comment l'IA trouve la bonne réponse",
+      approachTitle: "Le vrai travail, c'est vos données",
       ragDiagram: {
         companyData: { label: "Données / documents de l'entreprise", description: "Ce sur quoi les réponses doivent réellement s'appuyer." },
         ingestion: { label: "Ingestion", description: "Documents analysés et préparés pour la recherche." },
@@ -341,7 +390,7 @@ const uiText: Record<Locale, UiText> = {
       },
       deploymentDiagram: {
         companyNetwork: { label: "Réseau de l'entreprise", description: "Le périmètre dans lequel le déploiement opère." },
-        dockerEnvironment: "Environnement Docker",
+        dockerEnvironment: "Environnement dédié",
         services: {
           application: { label: "Application", description: "L'interface avec laquelle les gens interagissent." },
           aiService: { label: "Service IA", description: "Exécute le modèle lui-même." },

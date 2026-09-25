@@ -27,8 +27,7 @@ export function DigitalPlatformDiagram({ locale }: { locale: Locale }) {
       <Reveal delay={450} className="flex flex-col items-center gap-2">
         <span aria-hidden="true" className="text-muted">↓</span>
         <div className="w-full border border-dashed border-border px-5 py-4 text-center">
-          <p className="font-mono text-xs uppercase tracking-widest2 text-accent-strong">Docker</p>
-          <p className="mt-1 text-sm text-muted">{t.dockerNote}</p>
+          <p className="text-sm text-muted">{t.dockerNote}</p>
         </div>
       </Reveal>
     </div>

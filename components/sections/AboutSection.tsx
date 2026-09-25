@@ -1,11 +1,14 @@
 import Image from "next/image";
 import { SectionHeader } from "@/components/SectionHeader";
+import { SectionCTA } from "@/components/SectionCTA";
 import { Reveal } from "@/components/ui/Reveal";
 import { getAboutText, founderPortfolioUrl } from "@/data/about";
+import { getUiText } from "@/data/ui";
 import type { Locale } from "@/lib/i18n";
 
 export function AboutSection({ locale }: { locale: Locale }) {
   const t = getAboutText(locale);
+  const cta = getUiText(locale).sectionCtas.about;
 
   return (
     <section id="about" data-snap className="bg-paper py-24 sm:py-28">
@@ -37,6 +40,7 @@ export function AboutSection({ locale }: { locale: Locale }) {
               <p key={p}>{p}</p>
             ))}
           </div>
+          <SectionCTA text={cta.text} label={cta.label} className="mt-10" />
         </div>
       </div>
     </section>

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { SolutionHero } from "@/components/solutions/SolutionHero";
 import { ContentBlock } from "@/components/solutions/ContentBlock";
 import { ListSection } from "@/components/solutions/ListSection";
-import { TechTags } from "@/components/solutions/TechTags";
 import { SolutionCTA } from "@/components/solutions/SolutionCTA";
 import { SectionHeader } from "@/components/SectionHeader";
 import { PrivateAIRagDiagram } from "@/components/diagrams/PrivateAIRagDiagram";
@@ -30,6 +29,8 @@ export default function PrivateAIPage({ params }: { params: { locale: string } }
   const content = getSolutionPage(locale, "private-ai");
   const solution = getSolution(locale, "private-ai");
   const t = getUiText(locale);
+  // French puts a space before the colon.
+  const labelSeparator = locale === "fr" ? "\u00a0: " : ": ";
 
   return (
     <>
@@ -37,7 +38,7 @@ export default function PrivateAIPage({ params }: { params: { locale: string } }
 
       <section className="bg-paper py-20 sm:py-24">
         <div className="container-nera">
-          <ContentBlock title={content.problem.title} paragraphs={content.problem.body} />
+          <ListSection title={content.problem.title} items={content.problemSituations ?? content.problem.body} />
         </div>
       </section>
 
@@ -50,7 +51,7 @@ export default function PrivateAIPage({ params }: { params: { locale: string } }
       <section data-nav-theme="dark" className="bg-surface py-20 text-on-dark sm:py-24">
         <div className="container-nera">
           <SectionHeader
-            title={t.privateAiPage.approachTitle}
+            title={t.privateAiPage.ragTitle}
             theme="dark"
             description={content.ragExplainer}
             className="mb-12"
@@ -61,7 +62,11 @@ export default function PrivateAIPage({ params }: { params: { locale: string } }
 
       <section className="bg-paper py-20 sm:py-24">
         <div className="container-nera">
-          <ListSection title={t.solutionShared.deliverablesTitle} items={content.deliverables} columns={2} />
+          <ListSection
+            title={content.deliverablesTitle ?? t.solutionShared.deliverablesTitle}
+            items={content.deliverables}
+            columns={2}
+          />
         </div>
       </section>
 
@@ -101,9 +106,8 @@ export default function PrivateAIPage({ params }: { params: { locale: string } }
       </section>
 
       <section className="bg-paper py-20 sm:py-24">
-        <div className="container-nera grid gap-14 lg:grid-cols-2">
+        <div className="container-nera">
           <ContentBlock title={t.privateAiPage.approachTitle} paragraphs={[content.approachNote]} />
-          <TechTags title={t.solutionShared.technologyTitle} items={content.technologies} />
         </div>
       </section>
 
@@ -113,7 +117,9 @@ export default function PrivateAIPage({ params }: { params: { locale: string } }
             {content.pricingNote && (
               <div className="border border-border bg-paper px-6 py-5">
                 <p className="text-sm text-muted">
-                  <span className="font-medium text-ink">{t.solutionShared.pricingLabel}: </span>
+                  <span className="font-medium text-ink">{t.solutionShared.pricingLabel}
+                  {labelSeparator}
+                  </span>
                   {content.pricingNote}
                 </p>
               </div>
@@ -121,7 +127,9 @@ export default function PrivateAIPage({ params }: { params: { locale: string } }
             {content.maintenanceNote && (
               <div className="border border-border bg-paper px-6 py-5">
                 <p className="text-sm text-muted">
-                  <span className="font-medium text-ink">{t.solutionShared.maintenanceLabel}: </span>
+                  <span className="font-medium text-ink">{t.solutionShared.maintenanceLabel}
+                  {labelSeparator}
+                  </span>
                   {content.maintenanceNote}
                 </p>
               </div>
@@ -130,7 +138,7 @@ export default function PrivateAIPage({ params }: { params: { locale: string } }
         </section>
       )}
 
-      <SolutionCTA locale={locale} title={content.cta.title} body={content.cta.body} />
+      <SolutionCTA locale={locale} title={content.cta.title} body={content.cta.body} buttonLabel={content.cta.button} />
     </>
   );
 }

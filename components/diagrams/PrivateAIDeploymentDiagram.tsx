@@ -7,7 +7,7 @@ import type { Locale } from "@/lib/i18n";
 const serviceKeys = ["application", "aiService", "vectorLayer", "database"] as const;
 
 /**
- * Deployment diagram: company network containing a Docker environment
+ * Deployment diagram: company network containing a dedicated environment
  * (four services) sitting on local hardware or a private server. Every
  * node expands in place on click — stacked vertically so an expanded node
  * never overlaps a neighbor.

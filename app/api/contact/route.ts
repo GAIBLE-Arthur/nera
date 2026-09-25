@@ -69,10 +69,10 @@ export async function POST(request: Request) {
   // Resend's shared sandbox sender — works immediately with no domain
   // verification. Replace with an address on a domain you've verified in
   // Resend (e.g. contact@yourdomain.com) once you have one.
-  const fromEmail = process.env.CONTACT_FROM_EMAIL || "NERA Website <onboarding@resend.dev>";
+  const fromEmail = process.env.CONTACT_FROM_EMAIL || "KAG Systèmes Website <onboarding@resend.dev>";
 
   const html = `
-    <h2>New message from the NERA website</h2>
+    <h2>New message from the KAG Systèmes website</h2>
     <p><strong>Name:</strong> ${escapeHtml(name)}</p>
     ${company ? `<p><strong>Company:</strong> ${escapeHtml(company)}</p>` : ""}
     <p><strong>Email:</strong> ${escapeHtml(email)}</p>

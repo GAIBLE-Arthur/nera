@@ -1,6 +1,6 @@
-# NERA — website
+# KAG Systèmes — website
 
-Marketing website for **NERA**, an independent Data, Software & Private AI
+Marketing website for **KAG Systèmes**, an independent Data, Software & Private AI
 engineering practice. Built with Next.js (App Router), TypeScript and
 Tailwind CSS, with French and English locales, momentum scrolling (Lenis),
 and a working contact form (Resend).
