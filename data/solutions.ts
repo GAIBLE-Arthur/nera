@@ -123,16 +123,16 @@ const solutionEntries: SolutionEntry[] = [
       en: {
         title: "Business tools",
         shortTitle: "Business tools",
-        tagline: "The tool that replaces the shared Excel file.",
+        tagline: "The software you're missing, built to measure.",
         description:
-          "A custom tool for your orders, production or job sites. Enter data once, available to the whole team.",
+          "Internal app, customer portal, automation or links between your software: the tool developed for the way you work.",
       },
       fr: {
         title: "Outils métier",
         shortTitle: "Outils métier",
-        tagline: "L'outil qui remplace le fichier Excel partagé.",
+        tagline: "Le logiciel qui vous manque, construit sur mesure.",
         description:
-          "Un outil sur mesure pour vos commandes, votre production ou vos chantiers. Une seule saisie, accessible à toute l'équipe.",
+          "Application interne, espace client, automatisation ou lien entre vos logiciels : l'outil développé pour votre façon de travailler.",
       },
     },
   },

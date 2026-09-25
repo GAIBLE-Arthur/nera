@@ -12,8 +12,6 @@ export interface SolutionPageContent {
   /** Overrides the shared "Deliverables" heading for this page. */
   deliverablesTitle?: string;
   deliverables: string[];
-  /** Omitted on pages that no longer show a technology list. */
-  technologies?: string[];
   approachNote: string;
   cta: { title: string; body: string; button?: string };
   /** Private AI only — infrastructure/pricing disclaimer. */
@@ -190,80 +188,76 @@ const solutionPages: SolutionPages = {
       eyebrow: "04 · Business tools",
       heroTitle: "Business tools",
       heroLead:
-        "From business process to working platform: public interface, accounts, admin space and the backend.",
-      problem: {
-        title: "The problem",
-        body: [
-          "A spreadsheet, a shared inbox and a handful of disconnected tools can run a small operation for a while, until they can't. Growth exposes the gaps: no single source of truth, manual handoffs, and processes that live in someone's head.",
-          "It's about building, for specific needs, a platform designed around how the business actually works.",
-        ],
-      },
-      whatWeBuild: {
-        title: "What KAG Systèmes builds",
-        items: [
-          "A public-facing interface and, where needed, authenticated user accounts",
-          "A client space and an administrator space with the right permissions",
-          "Business workflows encoded directly into the platform",
-          "An API and backend that other systems can integrate with",
-          "A database designed around the business's actual data",
-          "Scheduling, payments, notifications or automations where the process needs them",
-          "Containerized deployment so the platform runs the same way in every environment",
-        ],
-      },
-      deliverables: [
-        "Product and workflow scoping",
-        "API / backend",
-        "Web interface, public and authenticated areas",
-        "PostgreSQL database",
-        "Containerized deployment (Docker)",
-        "Security and access control",
+        "When no off-the-shelf software fits the way you work, KAG Systèmes builds it. Internal app, customer portal, automation: a custom tool that belongs to you.",
+      problem: { title: "The problem", body: [] },
+      problemSituations: [
+        "Off-the-shelf software doesn't match the way you work, or does ten times too much.",
+        "Your tools don't talk to each other, and everything gets copied from one to the next.",
+        "Your customers call you for information they could find themselves.",
       ],
-      technologies: ["TypeScript", "PostgreSQL", "Docker", "API design", "Automations & integrations"],
+      whatWeBuild: {
+        title: "What can be built for you",
+        items: [
+          "An internal app: tracking production, job sites, orders, stock…",
+          "A customer or partner portal: orders, tracking, documents, self-service",
+          "Automations: reminders, notifications, document generation",
+          "Links between your software, so nothing gets copied by hand",
+          "A complete platform, with accounts, payments and an admin area",
+        ],
+      },
+      deliverablesTitle: "What you get",
+      deliverables: [
+        "A scoping of your needs and the way you work",
+        "The tool, built and tested with your teams",
+        "Access and permissions suited to each person",
+        "Links to your existing software",
+        "Go-live, security and documentation",
+        "A tool that belongs to you",
+      ],
       approachNote:
-        "KAG Systèmes starts from the business process, not a feature list. The platform is scoped around what the workflow actually requires before any interface is designed.",
+        "First understanding how things really happen at your company, before drawing a single screen. Then building, testing with your teams, and adjusting.",
       cta: {
-        title: "Have a business process you want turned into a platform?",
-        body: "Discuss the process you want turned into a platform, and what it would need to cover end to end.",
+        title: "Missing a tool?",
+        body: "Describe what you want to do, or what's getting in the way today. That's the starting point.",
+        button: "Describe your need",
       },
     },
     fr: {
       eyebrow: "04 · Outils métier",
       heroTitle: "Outils métier",
       heroLead:
-        "Du processus métier à la plateforme fonctionnelle : interface publique, comptes, espace admin et le backend.",
-      problem: {
-        title: "Le problème",
-        body: [
-          "Un tableur, une boîte mail partagée et quelques outils qui ne se parlent pas peuvent suffire un temps. Mais la croissance révèle vite les limites : aucune source de vérité unique, des transferts manuels, des processus qui n'existent que dans la tête de quelqu'un.",
-          "Il s'agit de construire, pour des besoins spécifiques, une plateforme pensée autour du fonctionnement réel de l'entreprise.",
-        ],
-      },
-      whatWeBuild: {
-        title: "Ce que KAG Systèmes construit",
-        items: [
-          "Une interface publique et, si besoin, des comptes utilisateurs authentifiés",
-          "Un espace client et un espace administrateur avec les bonnes permissions",
-          "Les workflows métier encodés directement dans la plateforme",
-          "Une API et un backend avec lesquels d'autres systèmes peuvent s'intégrer",
-          "Une base de données conçue autour des données réelles de l'entreprise",
-          "Planification, paiements, notifications ou automatisations quand le processus l'exige",
-          "Un déploiement conteneurisé pour que la plateforme fonctionne de la même façon dans chaque environnement",
-        ],
-      },
-      deliverables: [
-        "Cadrage produit et workflows",
-        "API / backend",
-        "Interface web, espaces public et authentifié",
-        "Base de données PostgreSQL",
-        "Déploiement conteneurisé (Docker)",
-        "Sécurité et contrôle d'accès",
+        "Quand aucun logiciel du marché ne colle à votre façon de travailler, KAG Systèmes le construit. Application interne, espace client, automatisation : un outil sur mesure, qui vous appartient.",
+      problem: { title: "Le problème", body: [] },
+      problemSituations: [
+        "Les logiciels du marché ne correspondent pas à votre façon de travailler, ou en font dix fois trop.",
+        "Vos outils ne se parlent pas, et tout se recopie d'un logiciel à l'autre.",
+        "Vos clients vous appellent pour des informations qu'ils pourraient trouver eux-mêmes.",
       ],
-      technologies: ["TypeScript", "PostgreSQL", "Docker", "Conception d'API", "Automatisations & intégrations"],
+      whatWeBuild: {
+        title: "Ce qui peut être construit pour vous",
+        items: [
+          "Une application interne : suivi de production, de chantiers, de commandes, de stocks…",
+          "Un espace client ou partenaire : commandes, suivi, documents, en autonomie",
+          "Des automatisations : relances, notifications, génération de documents",
+          "Des liens entre vos logiciels, pour ne plus rien recopier",
+          "Une plateforme complète, avec comptes, paiements et espace d'administration",
+        ],
+      },
+      deliverablesTitle: "Ce que vous recevez",
+      deliverables: [
+        "Un cadrage de vos besoins et de votre façon de travailler",
+        "L'outil développé et testé avec vos équipes",
+        "Des accès et des droits adaptés à chaque personne",
+        "Les liens avec vos logiciels existants",
+        "La mise en service, la sécurité et la documentation",
+        "Un outil qui vous appartient",
+      ],
       approachNote:
-        "KAG Systèmes part du processus métier, pas d'une liste de fonctionnalités. La plateforme est cadrée selon ce que le workflow exige réellement, avant même de concevoir une interface.",
+        "D'abord comprendre comment ça se passe vraiment chez vous, avant de dessiner le moindre écran. Puis construire, tester avec vos équipes, et ajuster.",
       cta: {
-        title: "Vous avez un processus métier à transformer en plateforme ?",
-        body: "Discutons du processus que vous voulez transformer en plateforme, et de ce qu'il faudrait couvrir de bout en bout.",
+        title: "Il vous manque un outil ?",
+        body: "Racontez ce que vous voulez faire, ou ce qui coince aujourd'hui. C'est le point de départ.",
+        button: "Décrire votre besoin",
       },
     },
   },

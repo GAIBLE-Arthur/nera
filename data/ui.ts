@@ -4,7 +4,7 @@ import type { Locale } from "@/lib/i18n";
  * Small, mostly one-off UI strings that don't belong to a single content
  * domain (section headings, diagram node labels, shared microcopy). Larger
  * blocks of editorial content live in their own files (site.ts, solutions.ts,
- * solution-pages.ts, approach.ts, technologies.ts, contact.ts, about.ts).
+ * solution-pages.ts, approach.ts, contact.ts, about.ts).
  *
  * Diagram nodes carry a short `description` in addition to their `label`:
  * every diagram on the site is click-to-expand (see DiagramNode), so each
@@ -61,7 +61,6 @@ interface UiText {
     architectureEyebrow: string;
     deploymentEyebrow: string;
     approachEyebrow: string;
-    technologyTitle: string;
     pricingLabel: string;
     maintenanceLabel: string;
     hardwareSizedAround: string;
@@ -178,7 +177,6 @@ const uiText: Record<Locale, UiText> = {
       architectureEyebrow: "Architecture",
       deploymentEyebrow: "Deployment",
       approachEyebrow: "Approach",
-      technologyTitle: "Technologies used in this type of work",
       pricingLabel: "Pricing",
       maintenanceLabel: "After go-live",
       hardwareSizedAround: "Hardware depends on",
@@ -213,19 +211,19 @@ const uiText: Record<Locale, UiText> = {
       },
     },
     digitalPlatformsPage: {
-      architectureTitle: "From business process to platform",
+      architectureTitle: "From your process to the tool",
       architectureDescription:
-        "A full-stack platform running on containerized infrastructure, designed around the workflow.",
-      approachTitle: "Starting from the process, not the feature list",
+        "The way you work, turned into a tool connected to your software and services (payment, email, calendar).",
+      approachTitle: "Starting from the way you work",
       diagram: {
         users: { label: "Users", description: "Whoever the platform is actually built for." },
         webInterface: { label: "Web interface", description: "What users see: public pages plus authenticated areas." },
         apiBackend: { label: "API / backend", description: "The layer other systems and the interface talk to." },
         businessLogic: { label: "Business logic", description: "The rules that encode how the business actually works." },
-        postgres: { label: "PostgreSQL", description: "Structured storage for the platform's real data." },
+        postgres: { label: "Database", description: "Structured storage for the platform's real data." },
         externalServices: { label: "External services", description: "Payments, email, calendar: connected where the process needs them." },
       },
-      dockerNote: "Infrastructure & deployment: the platform runs the same way in every environment",
+      dockerNote: "Installation: the tool runs the same way everywhere",
     },
     privateAiPage: {
       ragTitle: "How the AI finds the right answer",
@@ -330,7 +328,6 @@ const uiText: Record<Locale, UiText> = {
       architectureEyebrow: "Architecture",
       deploymentEyebrow: "Déploiement",
       approachEyebrow: "Approche",
-      technologyTitle: "Technologies utilisées pour ce type de mission",
       pricingLabel: "Tarif",
       maintenanceLabel: "Après la mise en service",
       hardwareSizedAround: "Le matériel dépend de",
@@ -365,19 +362,19 @@ const uiText: Record<Locale, UiText> = {
       },
     },
     digitalPlatformsPage: {
-      architectureTitle: "Du processus métier à la plateforme",
+      architectureTitle: "De votre processus à l'outil",
       architectureDescription:
-        "Une plateforme full-stack fonctionnant sur une infrastructure conteneurisée, conçue autour du workflow.",
-      approachTitle: "En partant du processus, pas de la liste de fonctionnalités",
+        "Votre façon de travailler, traduite en un outil relié à vos logiciels et à vos services (paiement, e-mail, agenda).",
+      approachTitle: "En partant de votre façon de travailler",
       diagram: {
         users: { label: "Utilisateurs", description: "Ceux pour qui la plateforme est réellement construite." },
         webInterface: { label: "Interface web", description: "Ce que voient les utilisateurs : pages publiques et espaces authentifiés." },
         apiBackend: { label: "API / backend", description: "La couche à laquelle parlent les autres systèmes et l'interface." },
         businessLogic: { label: "Logique métier", description: "Les règles qui encodent le fonctionnement réel de l'entreprise." },
-        postgres: { label: "PostgreSQL", description: "Stockage structuré pour les données réelles de la plateforme." },
+        postgres: { label: "Base de données", description: "Stockage structuré pour les données réelles de l'outil." },
         externalServices: { label: "Services externes", description: "Paiements, email, calendrier : connectés quand le processus l'exige." },
       },
-      dockerNote: "Infrastructure & déploiement : la plateforme fonctionne de la même façon dans chaque environnement",
+      dockerNote: "Installation : l'outil fonctionne de la même façon partout",
     },
     privateAiPage: {
       ragTitle: "Comment l'IA trouve la bonne réponse",

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { SolutionHero } from "@/components/solutions/SolutionHero";
 import { ContentBlock } from "@/components/solutions/ContentBlock";
 import { ListSection } from "@/components/solutions/ListSection";
-import { TechTags } from "@/components/solutions/TechTags";
 import { SolutionCTA } from "@/components/solutions/SolutionCTA";
 import { SectionHeader } from "@/components/SectionHeader";
 import { DigitalPlatformDiagram } from "@/components/diagrams/DigitalPlatformDiagram";
@@ -36,7 +35,7 @@ export default function DigitalPlatformsPage({ params }: { params: { locale: str
 
       <section className="bg-paper py-20 sm:py-24">
         <div className="container-nera">
-          <ContentBlock title={content.problem.title} paragraphs={content.problem.body} />
+          <ListSection title={content.problem.title} items={content.problemSituations ?? content.problem.body} />
         </div>
       </section>
 
@@ -60,18 +59,21 @@ export default function DigitalPlatformsPage({ params }: { params: { locale: str
 
       <section className="bg-paper py-20 sm:py-24">
         <div className="container-nera">
-          <ListSection title={t.solutionShared.deliverablesTitle} items={content.deliverables} columns={2} />
+          <ListSection
+            title={content.deliverablesTitle ?? t.solutionShared.deliverablesTitle}
+            items={content.deliverables}
+            columns={2}
+          />
         </div>
       </section>
 
       <section className="bg-paper pb-20 sm:pb-24">
-        <div className="container-nera grid gap-14 lg:grid-cols-2">
+        <div className="container-nera">
           <ContentBlock title={t.digitalPlatformsPage.approachTitle} paragraphs={[content.approachNote]} />
-          <TechTags title={t.solutionShared.technologyTitle} items={content.technologies ?? []} />
         </div>
       </section>
 
-      <SolutionCTA locale={locale} title={content.cta.title} body={content.cta.body} />
+      <SolutionCTA locale={locale} title={content.cta.title} body={content.cta.body} buttonLabel={content.cta.button} />
     </>
   );
 }
