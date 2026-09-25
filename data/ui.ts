@@ -118,7 +118,7 @@ const uiText: Record<Locale, UiText> = {
     sectionCtas: {
       solutions: { text: "Your need doesn't fit any of these boxes?", label: "Describe your problem" },
       approach: { text: "It all starts with a conversation about your situation.", label: "Schedule a call" },
-      technology: { text: "Already have tools in place? That's where we start.", label: "Discuss your current setup" },
+      technology: { text: "Already have tools in place? KAG Systèmes starts from there.", label: "Discuss your current setup" },
       about: { text: "A problem to solve, a project in mind?", label: "Get in touch" },
     },
     solutionsSection: {
@@ -270,7 +270,7 @@ const uiText: Record<Locale, UiText> = {
     sectionCtas: {
       solutions: { text: "Votre besoin ne rentre dans aucune case ?", label: "Décrire votre problème" },
       approach: { text: "Tout commence par un échange sur votre situation.", label: "Planifier un échange" },
-      technology: { text: "Vous avez déjà des outils en place ? On part de là.", label: "Parler de votre existant" },
+      technology: { text: "Vous avez déjà des outils en place ? KAG Systèmes part de là.", label: "Parler de votre existant" },
       about: { text: "Un problème à régler, un projet en tête ?", label: "Prendre contact" },
     },
     solutionsSection: {
