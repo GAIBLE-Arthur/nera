@@ -87,6 +87,7 @@ interface UiText {
     dockerNote: string;
   };
   privateAiPage: {
+    ragTitle: string;
     approachTitle: string;
     ragDiagram: Record<"companyData" | "ingestion" | "retrieval" | "context" | "localModel" | "applicationApi" | "employee", DiagramNodeText>;
     deploymentDiagram: {
@@ -180,10 +181,10 @@ const uiText: Record<Locale, UiText> = {
       technologyTitle: "Technologies used in this type of work",
       pricingLabel: "Pricing",
       maintenanceLabel: "After go-live",
-      hardwareSizedAround: "Hardware is sized around",
+      hardwareSizedAround: "Hardware depends on",
       whereItRunsTitle: "Where it runs",
       whereItRunsDescription:
-        "A containerized deployment on hardware sized to the workload: on-premise, dedicated, or hybrid depending on the requirements.",
+        "On a server at your premises, on a dedicated server, or a mix of both, depending on your needs.",
     },
     dataAnalyticsPage: {
       architectureTitle: "From raw data to reporting",
@@ -227,7 +228,8 @@ const uiText: Record<Locale, UiText> = {
       dockerNote: "Infrastructure & deployment: the platform runs the same way in every environment",
     },
     privateAiPage: {
-      approachTitle: "The retrieval layer is the real work",
+      ragTitle: "How the AI finds the right answer",
+      approachTitle: "The real work is your data",
       ragDiagram: {
         companyData: { label: "Company data / documents", description: "Whatever the answers should actually be grounded in." },
         ingestion: { label: "Ingestion", description: "Documents parsed and prepared for search." },
@@ -239,7 +241,7 @@ const uiText: Record<Locale, UiText> = {
       },
       deploymentDiagram: {
         companyNetwork: { label: "Company network", description: "The boundary the deployment operates inside." },
-        dockerEnvironment: "Docker environment",
+        dockerEnvironment: "Dedicated environment",
         services: {
           application: { label: "Application", description: "The interface people interact with." },
           aiService: { label: "AI service", description: "Runs the model itself." },
@@ -329,12 +331,12 @@ const uiText: Record<Locale, UiText> = {
       deploymentEyebrow: "Déploiement",
       approachEyebrow: "Approche",
       technologyTitle: "Technologies utilisées pour ce type de mission",
-      pricingLabel: "Tarification",
-      maintenanceLabel: "Après la mise en production",
-      hardwareSizedAround: "Le matériel est dimensionné selon",
+      pricingLabel: "Tarif",
+      maintenanceLabel: "Après la mise en service",
+      hardwareSizedAround: "Le matériel dépend de",
       whereItRunsTitle: "Où cela fonctionne",
       whereItRunsDescription:
-        "Un déploiement conteneurisé sur du matériel dimensionné à la charge : sur site, dédié, ou hybride selon les exigences.",
+        "Sur un serveur chez vous, sur un serveur dédié, ou un mélange des deux, selon vos besoins.",
     },
     dataAnalyticsPage: {
       architectureTitle: "Des données brutes au reporting",
@@ -378,7 +380,8 @@ const uiText: Record<Locale, UiText> = {
       dockerNote: "Infrastructure & déploiement : la plateforme fonctionne de la même façon dans chaque environnement",
     },
     privateAiPage: {
-      approachTitle: "La couche de recherche documentaire est le véritable travail",
+      ragTitle: "Comment l'IA trouve la bonne réponse",
+      approachTitle: "Le vrai travail, c'est vos données",
       ragDiagram: {
         companyData: { label: "Données / documents de l'entreprise", description: "Ce sur quoi les réponses doivent réellement s'appuyer." },
         ingestion: { label: "Ingestion", description: "Documents analysés et préparés pour la recherche." },
@@ -390,7 +393,7 @@ const uiText: Record<Locale, UiText> = {
       },
       deploymentDiagram: {
         companyNetwork: { label: "Réseau de l'entreprise", description: "Le périmètre dans lequel le déploiement opère." },
-        dockerEnvironment: "Environnement Docker",
+        dockerEnvironment: "Environnement dédié",
         services: {
           application: { label: "Application", description: "L'interface avec laquelle les gens interagissent." },
           aiService: { label: "Service IA", description: "Exécute le modèle lui-même." },

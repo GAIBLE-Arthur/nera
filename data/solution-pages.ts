@@ -272,108 +272,100 @@ const solutionPages: SolutionPages = {
       eyebrow: "03 · Private AI",
       heroTitle: "Private AI",
       heroLead:
-        "AI that depends on what's underneath: company data, retrieval, a model, and the application people actually use.",
-      problem: {
-        title: "The problem",
-        body: [
-          "What determines whether AI is actually useful, or actually private, is everything underneath it: which documents it can see, how they're indexed, which model runs it, and where that model runs.",
-          "KAG Systèmes works on the full system, from ingesting company documents and data to deploying the model in an environment that matches the business's confidentiality requirements.",
-        ],
-      },
-      whatWeBuild: {
-        title: "What KAG Systèmes builds",
-        items: [
-          "Ingestion of company documents and data into a searchable index",
-          "A retrieval layer (RAG) that gives the model relevant context instead of guesswork",
-          "A local or private model sized to the workload, not necessarily the largest available",
-          "An application or API layer connecting the model to how people actually work",
-          "Containerized deployment, on-premise or on dedicated hardware when required",
-        ],
-      },
-      deliverables: [
-        "Document and data ingestion pipeline",
-        "Retrieval / indexing layer",
-        "Model selection and deployment",
-        "Application or API integration",
-        "Docker-based deployment package",
-        "Sizing and infrastructure recommendation",
+        "AI where it truly saves time, connected to your documents and data, without sending them just anywhere.",
+      problem: { title: "The problem", body: [] },
+      problemSituations: [
+        "Your teams waste time looking for information in folders, emails or PDFs.",
+        "You want to use AI, but not send your documents to a tech giant.",
+        "Consumer AI tools miss the point, because they don't know your business.",
       ],
-      technologies: ["Docker", "Open-source LLMs", "Vector / search layer", "Python", "API integration"],
+      whatWeBuild: {
+        title: "What changes for you",
+        items: [
+          "Your teams ask a question and get an answer drawn from your own documents.",
+          "Answers rely on up-to-date information, not approximations.",
+          "Repetitive tasks go faster: drafting a reply, summarising a file, sorting requests.",
+          "Your data stays with you, or in the environment you choose.",
+          "AI is built into the tools your teams already use.",
+        ],
+      },
+      deliverablesTitle: "What you get",
+      deliverables: [
+        "Your documents and data made searchable by the AI",
+        "A model chosen for your use, not necessarily the biggest",
+        "An assistant built into your tools",
+        "An installation on your premises or on a dedicated server",
+        "A suitable hardware recommendation",
+      ],
       approachNote:
-        "KAG Systèmes treats the retrieval layer and the data feeding it as the real engineering problem. The model is one component among several, not the whole project.",
-      pricingNote:
-        "Infrastructure and pricing depend on the selected model, workload, hardware and deployment requirements.",
-      maintenanceNote:
-        "Private AI has a life after go-live: models evolve, usage shifts. That follow-up gets scoped as part of the project — it isn't an open-ended support commitment.",
+        "An AI is only as good as its access to the right, well-organised documents. That's where most of the time goes. The model is just one piece among others.",
+      pricingNote: "It depends on the model, the number of users and the hardware. We price it after a first conversation.",
+      maintenanceNote: "Models evolve and so do your uses. Follow-up is defined from the start.",
       privacyNote:
-        "Whether data stays fully on-premise depends on the deployment chosen, from fully local infrastructure to hybrid setups. This is defined with the client before the project starts.",
+        "Your data can stay entirely on your premises, or in a mixed setup. We define it together before starting.",
       ragExplainer:
-        "In practice, this means the model doesn't rely only on what it was trained on. Before answering, it retrieves the most relevant passages from the company's own documents and uses them as context, which keeps answers grounded in current, real information instead of memory alone.",
+        "Before answering, the AI looks for the useful passages in your documents and relies on them. Answers stay grounded in your real information.",
       sizingFactors: [
         "Model size",
-        "Number of concurrent users",
-        "Expected response latency",
-        "Amount of document context retrieved per query",
-        "Overall workload",
-        "Confidentiality requirements",
+        "Number of users",
+        "Expected response speed",
+        "Volume of documents",
+        "Level of confidentiality",
       ],
       cta: {
-        title: "Considering AI that runs on your own data?",
-        body: "Discuss the documents, systems and confidentiality requirements involved. Sizing follows from there.",
+        title: "Want to use AI on your own documents?",
+        body: "Tell us what your teams search for or redo every day. We'll start from there.",
+        button: "Describe your need",
       },
     },
     fr: {
       eyebrow: "03 · IA privée",
       heroTitle: "IA privée",
       heroLead:
-        "Une IA qui dépend de ce qu'il y a dessous : données de l'entreprise, recherche documentaire, modèle, et l'application réellement utilisée.",
-      problem: {
-        title: "Le problème",
-        body: [
-          "Ce qui détermine si une IA est réellement utile, ou réellement privée, c'est tout ce qu'il y a dessous : quels documents elle peut voir, comment ils sont indexés, quel modèle l'exécute, et où ce modèle tourne.",
-          "KAG Systèmes travaille sur le système complet, de l'ingestion des documents et données de l'entreprise jusqu'au déploiement du modèle dans un environnement conforme aux exigences de confidentialité de l'entreprise.",
-        ],
-      },
-      whatWeBuild: {
-        title: "Ce que KAG Systèmes construit",
-        items: [
-          "Ingestion des documents et données de l'entreprise dans un index consultable",
-          "Une couche de recherche documentaire (RAG) qui donne au modèle un contexte pertinent plutôt que des approximations",
-          "Un modèle local ou privé dimensionné pour la charge, pas nécessairement le plus grand disponible",
-          "Une couche application ou API qui relie le modèle à l'usage réel des équipes",
-          "Un déploiement conteneurisé, sur site ou sur du matériel dédié si nécessaire",
-        ],
-      },
-      deliverables: [
-        "Pipeline d'ingestion de documents et données",
-        "Couche de recherche documentaire / indexation",
-        "Sélection et déploiement du modèle",
-        "Intégration application ou API",
-        "Package de déploiement basé sur Docker",
-        "Recommandation de dimensionnement et d'infrastructure",
+        "L'IA là où elle fait vraiment gagner du temps, branchée sur vos documents et vos données, sans les envoyer n'importe où.",
+      problem: { title: "Le problème", body: [] },
+      problemSituations: [
+        "Vos équipes perdent du temps à chercher une information dans des dossiers, des mails ou des PDF.",
+        "Vous voulez utiliser l'IA, mais pas envoyer vos documents chez un géant du web.",
+        "Les outils d'IA grand public répondent à côté, parce qu'ils ne connaissent pas votre entreprise.",
       ],
-      technologies: ["Docker", "LLM open source", "Couche vectorielle / recherche", "Python", "Intégration API"],
+      whatWeBuild: {
+        title: "Ce qui change pour vous",
+        items: [
+          "Vos équipes posent une question et obtiennent une réponse tirée de vos propres documents.",
+          "Les réponses s'appuient sur une information à jour, pas sur des approximations.",
+          "Les tâches répétitives vont plus vite : préparer une réponse, résumer un dossier, trier des demandes.",
+          "Vos données restent chez vous, ou dans l'environnement que vous choisissez.",
+          "L'IA est intégrée aux outils que vos équipes utilisent déjà.",
+        ],
+      },
+      deliverablesTitle: "Ce que vous recevez",
+      deliverables: [
+        "Vos documents et données rendus consultables par l'IA",
+        "Un modèle choisi pour votre usage, pas forcément le plus gros",
+        "Un assistant intégré à vos outils",
+        "Une installation chez vous ou sur un serveur dédié",
+        "Une recommandation de matériel adaptée",
+      ],
       approachNote:
-        "KAG Systèmes considère la couche de recherche documentaire et les données qui l'alimentent comme le véritable enjeu d'ingénierie. Le modèle est un composant parmi d'autres, pas le projet entier.",
-      pricingNote:
-        "L'infrastructure et le tarif dépendent du modèle choisi, de la charge, du matériel et des exigences de déploiement.",
-      maintenanceNote:
-        "L'IA privée a une vie après la mise en production : les modèles évoluent, les usages changent. Ce suivi est cadré dès le projet — ce n'est pas un engagement de support illimité.",
+        "Une IA n'est bonne que si elle a accès aux bons documents, bien rangés. C'est là qu'on passe l'essentiel du temps. Le modèle n'est qu'une pièce parmi d'autres.",
+      pricingNote: "Il dépend du modèle, du nombre d'utilisateurs et du matériel. On le chiffre après un premier échange.",
+      maintenanceNote: "Les modèles évoluent et vos usages aussi. Le suivi est défini dès le départ.",
       privacyNote:
-        "Le fait que les données restent entièrement sur site dépend du déploiement choisi, d'une infrastructure totalement locale à des configurations hybrides. Cela est défini avec le client avant le démarrage du projet.",
+        "Vos données peuvent rester entièrement chez vous, ou dans une configuration mixte. On le définit ensemble avant de démarrer.",
       ragExplainer:
-        "En pratique, cela signifie que le modèle ne s'appuie pas uniquement sur ce qu'il a appris à l'entraînement. Avant de répondre, il recherche les passages les plus pertinents dans les documents de l'entreprise et les utilise comme contexte, ce qui garde les réponses ancrées dans une information réelle et à jour plutôt que dans la seule mémoire du modèle.",
+        "Avant de répondre, l'IA va chercher les passages utiles dans vos documents et s'appuie dessus. Les réponses restent fondées sur votre information réelle.",
       sizingFactors: [
-        "Taille du modèle",
-        "Nombre d'utilisateurs simultanés",
-        "Latence de réponse attendue",
-        "Volume de contexte documentaire récupéré par requête",
-        "Charge globale",
-        "Exigences de confidentialité",
+        "La taille du modèle",
+        "Le nombre d'utilisateurs",
+        "La rapidité de réponse attendue",
+        "Le volume de documents",
+        "Le niveau de confidentialité",
       ],
       cta: {
-        title: "Vous envisagez une IA qui fonctionne sur vos propres données ?",
-        body: "Discutons des documents, systèmes et exigences de confidentialité concernés. Le dimensionnement en découle.",
+        title: "Vous voulez utiliser l'IA sur vos propres documents ?",
+        body: "Dites-nous ce que vos équipes cherchent ou refont tous les jours. On part de là.",
+        button: "Décrire votre besoin",
       },
     },
   },
