@@ -39,6 +39,7 @@ interface UiText {
     title: string;
     description: string;
     paragraph: string;
+    chainTitle: string;
     axisLabel: string;
     chain: Record<"businessNeed" | "data" | "dataModel" | "businessLogic" | "backend" | "interface" | "users", DiagramNodeText>;
   };
@@ -132,6 +133,7 @@ const uiText: Record<Locale, UiText> = {
       description: "KAG Systèmes builds the technology underneath: from data to interface.",
       paragraph:
         "A recommendation is only useful if something is built from it. KAG Systèmes stays involved across the whole chain, from the data a system runs on to the interface people use, rather than handing off at the point where it gets difficult.",
+      chainTitle: "From data to interface.",
       axisLabel: "KAG Systèmes: end to end",
       chain: {
         businessNeed: { label: "Business need", description: "What the business is actually trying to solve, in plain terms." },
@@ -284,6 +286,7 @@ const uiText: Record<Locale, UiText> = {
       description: "KAG Systèmes construit la technologie qui se trouve en dessous : des données à l'interface.",
       paragraph:
         "KAG Systèmes reste impliqué sur toute la chaîne, des données sur lesquelles un système fonctionne jusqu'à l'interface utilisée.",
+      chainTitle: "Des données à l'interface.",
       axisLabel: "KAG Systèmes : de bout en bout",
       chain: {
         businessNeed: { label: "Besoin métier", description: "Ce que l'entreprise cherche réellement à résoudre." },

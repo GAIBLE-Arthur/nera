@@ -16,7 +16,7 @@ export function Navbar({ locale }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   // Whichever section currently sits directly behind the navbar — every
   // dark section on the site carries `data-nav-theme="dark"` (see Hero,
-  // EndToEndSection, TechnologySection, ContactSection, SolutionHero, and
+  // EndToEndSection, ContactSection, SolutionHero, and
   // the dark blocks on each solution page). Defaults to "dark" since the
   // Hero is always first, avoiding a flash of unreadable dark-on-dark text
   // before the effect below runs.
