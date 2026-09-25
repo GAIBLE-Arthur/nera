@@ -36,7 +36,7 @@ const solutionPages: SolutionPages = {
       eyebrow: "01 · Data & reporting",
       heroTitle: "Data & reporting",
       heroLead:
-        "Accurate, up-to-date figures, without rebuilding them by hand. We start from your current files and software.",
+        "Accurate, up-to-date figures, without rebuilding them by hand, starting from your current files and software.",
       problem: { title: "The problem", body: [] },
       problemSituations: [
         "Every month, someone spends hours compiling the same figures.",
@@ -62,7 +62,7 @@ const solutionPages: SolutionPages = {
         "Dashboards in your tool (Power BI, Excel or other)",
       ],
       approachNote:
-        "Close to your data: we look at your files, talk to the people who build the reports, and fix things directly.",
+        "Close to your data: reviewing your files, talking to the people who build the reports, and fixing things directly.",
       cta: {
         title: "Have a data problem you can already describe?",
         body: "That's usually enough to start. Discuss what isn't working today and what fixing it would actually take.",
@@ -73,7 +73,7 @@ const solutionPages: SolutionPages = {
       eyebrow: "01 · Données & reporting",
       heroTitle: "Données & reporting",
       heroLead:
-        "Des chiffres justes, à jour, sans les refaire à la main. On part de vos fichiers et de vos logiciels actuels.",
+        "Des chiffres justes, à jour, sans les refaire à la main, à partir de vos fichiers et de vos logiciels actuels.",
       problem: { title: "Le problème", body: [] },
       problemSituations: [
         "Chaque mois, quelqu'un passe des heures à compiler les mêmes chiffres.",
@@ -99,7 +99,7 @@ const solutionPages: SolutionPages = {
         "Des tableaux de bord dans votre outil (Power BI, Excel ou autre)",
       ],
       approachNote:
-        "Au plus près de vos données : on regarde vos fichiers, on parle avec ceux qui font les rapports, et on corrige directement.",
+        "Au plus près de vos données : examen de vos fichiers, échanges avec ceux qui font les rapports, et corrections faites directement.",
       cta: {
         title: "Vous pouvez déjà décrire un problème de données ?",
         body: "C'est souvent suffisant pour démarrer. Discutons de ce qui ne fonctionne pas aujourd'hui et de ce qu'il faudrait pour le corriger.",
@@ -139,10 +139,10 @@ const solutionPages: SolutionPages = {
         "Go-live and documentation",
       ],
       approachNote:
-        "A platform that belongs to you. When it's cheaper and simpler, we propose a licence-free alternative that you run on your own.",
+        "A platform that belongs to you. When it's cheaper and simpler, KAG Systèmes proposes a licence-free alternative that you run on your own.",
       cta: {
         title: "Is your data scattered?",
-        body: "Tell us which software and files you use today. We'll start from there.",
+        body: "Tell us which software and files you use today. That's the starting point.",
         button: "Describe your need",
       },
     },
@@ -177,10 +177,10 @@ const solutionPages: SolutionPages = {
         "La mise en service et la documentation",
       ],
       approachNote:
-        "Une plateforme qui vous appartient. Quand c'est moins cher et plus simple, on propose une alternative sans licence, que vous exploitez en autonomie.",
+        "Une plateforme qui vous appartient. Quand c'est moins cher et plus simple, KAG Systèmes propose une alternative sans licence, que vous exploitez en autonomie.",
       cta: {
         title: "Vos données sont éparpillées ?",
-        body: "Dites-nous quels logiciels et fichiers vous utilisez aujourd'hui. On part de là.",
+        body: "Dites-nous quels logiciels et fichiers vous utilisez aujourd'hui. C'est le point de départ.",
         button: "Décrire votre besoin",
       },
     },
@@ -299,10 +299,10 @@ const solutionPages: SolutionPages = {
       ],
       approachNote:
         "An AI is only as good as its access to the right, well-organised documents. That's where most of the time goes. The model is just one piece among others.",
-      pricingNote: "It depends on the model, the number of users and the hardware. We price it after a first conversation.",
+      pricingNote: "It depends on the model, the number of users and the hardware. It's priced after a first conversation.",
       maintenanceNote: "Models evolve and so do your uses. Follow-up is defined from the start.",
       privacyNote:
-        "Your data can stay entirely on your premises, or in a mixed setup. We define it together before starting.",
+        "Your data can stay entirely on your premises, or in a mixed setup. This is defined together before starting.",
       ragExplainer:
         "Before answering, the AI looks for the useful passages in your documents and relies on them. Answers stay grounded in your real information.",
       sizingFactors: [
@@ -314,7 +314,7 @@ const solutionPages: SolutionPages = {
       ],
       cta: {
         title: "Want to use AI on your own documents?",
-        body: "Tell us what your teams search for or redo every day. We'll start from there.",
+        body: "Tell us what your teams search for or redo every day. That's the starting point.",
         button: "Describe your need",
       },
     },
@@ -348,11 +348,11 @@ const solutionPages: SolutionPages = {
         "Une recommandation de matériel adaptée",
       ],
       approachNote:
-        "Une IA n'est bonne que si elle a accès aux bons documents, bien rangés. C'est là qu'on passe l'essentiel du temps. Le modèle n'est qu'une pièce parmi d'autres.",
-      pricingNote: "Il dépend du modèle, du nombre d'utilisateurs et du matériel. On le chiffre après un premier échange.",
+        "Une IA n'est bonne que si elle a accès aux bons documents, bien rangés. C'est là que se joue l'essentiel du travail. Le modèle n'est qu'une pièce parmi d'autres.",
+      pricingNote: "Il dépend du modèle, du nombre d'utilisateurs et du matériel. Il est chiffré après un premier échange.",
       maintenanceNote: "Les modèles évoluent et vos usages aussi. Le suivi est défini dès le départ.",
       privacyNote:
-        "Vos données peuvent rester entièrement chez vous, ou dans une configuration mixte. On le définit ensemble avant de démarrer.",
+        "Vos données peuvent rester entièrement chez vous, ou dans une configuration mixte. C'est défini ensemble avant de démarrer.",
       ragExplainer:
         "Avant de répondre, l'IA va chercher les passages utiles dans vos documents et s'appuie dessus. Les réponses restent fondées sur votre information réelle.",
       sizingFactors: [
@@ -364,7 +364,7 @@ const solutionPages: SolutionPages = {
       ],
       cta: {
         title: "Vous voulez utiliser l'IA sur vos propres documents ?",
-        body: "Dites-nous ce que vos équipes cherchent ou refont tous les jours. On part de là.",
+        body: "Dites-nous ce que vos équipes cherchent ou refont tous les jours. C'est le point de départ.",
         button: "Décrire votre besoin",
       },
     },
