@@ -6,15 +6,16 @@ export interface SolutionPageContent {
   heroTitle: string;
   heroLead: string;
   problem: { title: string; body: string[] };
+  /** When set, the problem is shown as a list of situations instead of paragraphs. */
+  problemSituations?: string[];
   whatWeBuild: { title: string; items: string[] };
+  /** Overrides the shared "Deliverables" heading for this page. */
+  deliverablesTitle?: string;
   deliverables: string[];
-  technologies: string[];
+  /** Omitted on pages that no longer show a technology list. */
+  technologies?: string[];
   approachNote: string;
-  cta: { title: string; body: string };
-  /** Only populated for the Data & Analytics page today; kept generic so it
-   * can be extended with a detailed founder profile later without changing
-   * the page component. */
-  capabilities?: string[];
+  cta: { title: string; body: string; button?: string };
   /** Private AI only — infrastructure/pricing disclaimer. */
   pricingNote?: string;
   /** Private AI only — deployment/confidentiality clarification. */
@@ -35,92 +36,74 @@ const solutionPages: SolutionPages = {
       eyebrow: "01 · Data & reporting",
       heroTitle: "Data & reporting",
       heroLead:
-        "Operational work inside your environment: auditing, cleaning, structuring and automating the data your business already runs on.",
-      problem: {
-        title: "The problem",
-        body: [
-          "Most businesses don't lack data, they lack a reliable, understood version of it. Reports disagree, spreadsheets diverge, and every new question means another export.",
-          "Fixing this takes more than a diagnosis. It takes someone willing to work inside the actual systems, the ERP, the spreadsheets, the operations data, and change how they're structured.",
-        ],
-      },
+        "Accurate, up-to-date figures, without rebuilding them by hand. We start from your current files and software.",
+      problem: { title: "The problem", body: [] },
+      problemSituations: [
+        "Every month, someone spends hours compiling the same figures.",
+        "Two reports on the same topic don't give the same result.",
+        "Every new question means another Excel export.",
+      ],
       whatWeBuild: {
-        title: "What KAG Systèmes builds",
+        title: "What changes for you",
         items: [
-          "A clear picture of where data lives, how reliable it is, and where it breaks",
-          "Cleaned, structured and documented datasets the team can trust",
-          "Data models that match how the business actually operates",
-          "Automated pipelines that remove repetitive work",
-          "Reporting and dashboards, in whichever tool fits the context",
+          "You know where your data is and which of it you can trust.",
+          "Your files are cleaned and organised, and the whole team can rely on them.",
+          "Repetitive tasks run on their own.",
+          "Your reports update without anyone touching them.",
+          "Your indicators live in the tool you already use.",
         ],
       },
+      deliverablesTitle: "What you get",
       deliverables: [
-        "Data audit and quality assessment",
-        "Cleaned and structured datasets",
-        "Documented data model",
-        "ETL / automation scripts",
-        "KPI definitions and reporting logic",
-        "Dashboards using Power BI, Superset, or existing tooling",
+        "A clear picture of your data",
+        "Clean, structured files",
+        "Automatic updates",
+        "Indicators defined with you",
+        "Dashboards in your tool (Power BI, Excel or other)",
       ],
-      technologies: ["SQL", "ETL", "Python", "Power Query / Excel", "Power BI", "Microsoft Fabric", "Apache Superset"],
       approachNote:
-        "For this type of engagement, KAG Systèmes works close to the data: reviewing tables, talking to the people who use the reports daily, and building fixes directly rather than only documenting them.",
-      capabilities: [
-        "Data auditing and quality assessment",
-        "SQL, Python and Power Query for cleaning and transformation",
-        "Data modeling for reporting and analytics",
-        "Process automation: ETL, scheduled jobs, scripts",
-        "Power BI, Microsoft Fabric and Apache Superset",
-        "Working directly inside operations and business data",
-      ],
+        "Close to your data: we look at your files, talk to the people who build the reports, and fix things directly.",
       cta: {
         title: "Have a data problem you can already describe?",
         body: "That's usually enough to start. Discuss what isn't working today and what fixing it would actually take.",
+        button: "Describe your problem",
       },
     },
     fr: {
       eyebrow: "01 · Données & reporting",
       heroTitle: "Données & reporting",
       heroLead:
-        "Un travail opérationnel dans votre environnement : audit, nettoyage, structuration et automatisation des données sur lesquelles votre entreprise fonctionne déjà.",
-      problem: {
-        title: "Le problème",
-        body: [
-          "La plupart des entreprises ne manquent pas de données, elles manquent d'une version fiable et comprise de ces données. Les rapports se contredisent, les tableurs divergent, et chaque nouvelle question demande un nouvel export.",
-          "Corriger cela demande plus qu'un diagnostic. Cela demande d'intervenir directement dans les systèmes réels, l'ERP, les tableurs, les données opérationnelles, et de changer leur structure.",
-        ],
-      },
+        "Des chiffres justes, à jour, sans les refaire à la main. On part de vos fichiers et de vos logiciels actuels.",
+      problem: { title: "Le problème", body: [] },
+      problemSituations: [
+        "Chaque mois, quelqu'un passe des heures à compiler les mêmes chiffres.",
+        "Deux rapports sur le même sujet ne donnent pas le même résultat.",
+        "Chaque nouvelle question demande un nouvel export Excel.",
+      ],
       whatWeBuild: {
-        title: "Ce que KAG Systèmes construit",
+        title: "Ce qui change pour vous",
         items: [
-          "Une vision claire de où se trouvent les données, de leur fiabilité et de leurs points de rupture",
-          "Des jeux de données nettoyés, structurés et documentés, sur lesquels l'équipe peut s'appuyer",
-          "Des modèles de données qui correspondent au fonctionnement réel de l'entreprise",
-          "Des pipelines automatisés qui suppriment le travail répétitif",
-          "Des rapports et tableaux de bord dans l'outil adapté au contexte",
+          "Vous savez où sont vos données et lesquelles sont fiables.",
+          "Vos fichiers sont nettoyés et rangés, toute l'équipe peut s'y fier.",
+          "Les tâches répétitives tournent toutes seules.",
+          "Vos rapports se mettent à jour sans intervention.",
+          "Vos indicateurs sont dans l'outil que vous utilisez déjà.",
         ],
       },
+      deliverablesTitle: "Ce que vous recevez",
       deliverables: [
-        "Audit et évaluation de la qualité des données",
-        "Jeux de données nettoyés et structurés",
-        "Modèle de données documenté",
-        "Scripts ETL / automatisation",
-        "Définition des KPI et logique de reporting",
-        "Tableaux de bord (Power BI, Superset, ou outils existants)",
+        "Un état des lieux de vos données",
+        "Des fichiers propres et structurés",
+        "Des mises à jour automatiques",
+        "Des indicateurs définis avec vous",
+        "Des tableaux de bord dans votre outil (Power BI, Excel ou autre)",
       ],
-      technologies: ["SQL", "ETL", "Python", "Power Query / Excel", "Power BI", "Microsoft Fabric", "Apache Superset"],
       approachNote:
-        "Pour ce type de mission, KAG Systèmes travaille au plus près des données : en examinant les tables, en échangeant avec les personnes qui utilisent les rapports au quotidien, et en construisant les correctifs directement plutôt qu'en se limitant à les documenter.",
-      capabilities: [
-        "Audit et évaluation de la qualité des données",
-        "SQL, Python et Power Query pour le nettoyage et la transformation",
-        "Modélisation de données pour le reporting et l'analytics",
-        "Automatisation de processus : ETL, tâches planifiées, scripts",
-        "Power BI, Microsoft Fabric et Apache Superset",
-        "Intervention directe dans les données opérationnelles et métier",
-      ],
+        "Au plus près de vos données : on regarde vos fichiers, on parle avec ceux qui font les rapports, et on corrige directement.",
       cta: {
         title: "Vous pouvez déjà décrire un problème de données ?",
         body: "C'est souvent suffisant pour démarrer. Discutons de ce qui ne fonctionne pas aujourd'hui et de ce qu'il faudrait pour le corriger.",
+        button: "Décrire votre problème",
       },
     },
   },

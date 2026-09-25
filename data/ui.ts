@@ -61,8 +61,6 @@ interface UiText {
     architectureEyebrow: string;
     deploymentEyebrow: string;
     approachEyebrow: string;
-    capabilitiesEyebrow: string;
-    capabilitiesTitle: string;
     technologyTitle: string;
     pricingLabel: string;
     maintenanceLabel: string;
@@ -179,8 +177,6 @@ const uiText: Record<Locale, UiText> = {
       architectureEyebrow: "Architecture",
       deploymentEyebrow: "Deployment",
       approachEyebrow: "Approach",
-      capabilitiesEyebrow: "Capabilities",
-      capabilitiesTitle: "Direct expertise",
       technologyTitle: "Technologies used in this type of work",
       pricingLabel: "Pricing",
       maintenanceLabel: "After go-live",
@@ -332,8 +328,6 @@ const uiText: Record<Locale, UiText> = {
       architectureEyebrow: "Architecture",
       deploymentEyebrow: "Déploiement",
       approachEyebrow: "Approche",
-      capabilitiesEyebrow: "Compétences",
-      capabilitiesTitle: "Expertise directe",
       technologyTitle: "Technologies utilisées pour ce type de mission",
       pricingLabel: "Tarification",
       maintenanceLabel: "Après la mise en production",

@@ -6,9 +6,11 @@ interface SolutionCTAProps {
   locale: Locale;
   title: string;
   body: string;
+  /** Overrides the default contact button label. */
+  buttonLabel?: string;
 }
 
-export function SolutionCTA({ locale, title, body }: SolutionCTAProps) {
+export function SolutionCTA({ locale, title, body, buttonLabel }: SolutionCTAProps) {
   const contactCta = getContactCta(locale);
 
   return (
@@ -19,7 +21,7 @@ export function SolutionCTA({ locale, title, body }: SolutionCTAProps) {
           <p className="mt-3 text-sm leading-relaxed text-on-dark-muted sm:text-base">{body}</p>
         </div>
         <CTAButton href={contactCta.href} variant="ghost-dark" className="shrink-0">
-          {contactCta.label}
+          {buttonLabel ?? contactCta.label}
         </CTAButton>
       </div>
     </section>

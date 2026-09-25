@@ -67,7 +67,7 @@ export default function AnalyticsPlatformPage({ params }: { params: { locale: st
       <section className="bg-paper pb-20 sm:pb-24">
         <div className="container-nera grid gap-14 lg:grid-cols-2">
           <ContentBlock title={t.analyticsPlatformPage.approachTitle} paragraphs={[content.approachNote]} />
-          <TechTags title={t.solutionShared.technologyTitle} items={content.technologies} />
+          <TechTags title={t.solutionShared.technologyTitle} items={content.technologies ?? []} />
         </div>
       </section>
 

@@ -103,7 +103,7 @@ export default function PrivateAIPage({ params }: { params: { locale: string } }
       <section className="bg-paper py-20 sm:py-24">
         <div className="container-nera grid gap-14 lg:grid-cols-2">
           <ContentBlock title={t.privateAiPage.approachTitle} paragraphs={[content.approachNote]} />
-          <TechTags title={t.solutionShared.technologyTitle} items={content.technologies} />
+          <TechTags title={t.solutionShared.technologyTitle} items={content.technologies ?? []} />
         </div>
       </section>
 
