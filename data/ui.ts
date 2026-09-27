@@ -138,7 +138,7 @@ const uiText: Record<Locale, UiText> = {
         data: { label: "Data", description: "Where it lives today, how reliable it is, and what needs cleaning." },
         dataModel: { label: "Data model", description: "A structure that matches how the business actually operates." },
         businessLogic: { label: "Business logic", description: "The rules and workflows that make the system behave correctly." },
-        backend: { label: "Backend / services", description: "The APIs and services that run the logic and serve the data." },
+        backend: { label: "Engine", description: "The software that runs the logic and serves the data." },
         interface: { label: "Interface", description: "What people actually see and use, day to day." },
         users: { label: "Users", description: "The people the whole chain exists to serve." },
       },
@@ -202,8 +202,8 @@ const uiText: Record<Locale, UiText> = {
       approachTitle: "Built to be owned",
       diagram: {
         dataSources: { label: "Data sources", description: "ERP, CRM, files, APIs: wherever the data starts out." },
-        ingestion: { label: "Ingestion", description: "Pulling data in on a schedule that matches how fast it changes." },
-        database: { label: "Database / warehouse", description: "A single place for data to live, sized to the actual volume." },
+        ingestion: { label: "Collection", description: "Pulling data in on a schedule that matches how fast it changes." },
+        database: { label: "Database", description: "A single place for data to live, sized to the actual volume." },
         transformation: { label: "Transformation", description: "Raw tables turned into something queryable and documented." },
         dataModel: { label: "Data model", description: "A consistent layer business teams can query without guessing." },
         analytics: { label: "Analytics", description: "Dashboards and self-service reporting on top of the model." },
@@ -218,7 +218,7 @@ const uiText: Record<Locale, UiText> = {
       diagram: {
         users: { label: "Users", description: "Whoever the platform is actually built for." },
         webInterface: { label: "Web interface", description: "What users see: public pages plus authenticated areas." },
-        apiBackend: { label: "API / backend", description: "The layer other systems and the interface talk to." },
+        apiBackend: { label: "Connections", description: "The layer other systems and the interface talk to." },
         businessLogic: { label: "Business logic", description: "The rules that encode how the business actually works." },
         postgres: { label: "Database", description: "Structured storage for the platform's real data." },
         externalServices: { label: "External services", description: "Payments, email, calendar: connected where the process needs them." },
@@ -231,10 +231,10 @@ const uiText: Record<Locale, UiText> = {
       ragDiagram: {
         companyData: { label: "Company data / documents", description: "Whatever the answers should actually be grounded in." },
         ingestion: { label: "Ingestion", description: "Documents parsed and prepared for search." },
-        retrieval: { label: "Indexing / retrieval", description: "Finds the passages relevant to a given question." },
+        retrieval: { label: "Search", description: "Finds the passages relevant to a given question." },
         context: { label: "Context", description: "Those passages, handed to the model alongside the question." },
         localModel: { label: "Local model", description: "Sized to the workload, not necessarily the largest available." },
-        applicationApi: { label: "Application / API", description: "Where the model connects to how people actually work." },
+        applicationApi: { label: "Application", description: "Where the model connects to how people actually work." },
         employee: { label: "Employee", description: "Gets an answer grounded in real, current documents." },
       },
       deploymentDiagram: {
@@ -243,7 +243,7 @@ const uiText: Record<Locale, UiText> = {
         services: {
           application: { label: "Application", description: "The interface people interact with." },
           aiService: { label: "AI service", description: "Runs the model itself." },
-          vectorLayer: { label: "Vector / search layer", description: "Powers retrieval over the indexed documents." },
+          vectorLayer: { label: "Search", description: "Powers retrieval over the indexed documents." },
           database: { label: "Database", description: "Stores everything outside the documents themselves." },
         },
         hardware: { label: "Local hardware / private server", description: "Sized to the model, workload and confidentiality requirements." },
@@ -289,7 +289,7 @@ const uiText: Record<Locale, UiText> = {
         data: { label: "Données", description: "Où elles se trouvent aujourd'hui, leur fiabilité, ce qu'il faut nettoyer." },
         dataModel: { label: "Modèle de données", description: "Une structure qui correspond au fonctionnement réel de l'entreprise." },
         businessLogic: { label: "Logique métier", description: "Les règles et workflows qui font fonctionner le système correctement." },
-        backend: { label: "Backend / services", description: "Les API et services qui exécutent la logique et servent les données." },
+        backend: { label: "Moteur", description: "Le logiciel qui exécute la logique et sert les données." },
         interface: { label: "Interface", description: "Ce que les gens voient et utilisent." },
         users: { label: "Utilisateurs", description: "Les personnes que toute cette chaîne sert." },
       },
@@ -353,8 +353,8 @@ const uiText: Record<Locale, UiText> = {
       approachTitle: "Conçu pour être maîtrisé",
       diagram: {
         dataSources: { label: "Sources de données", description: "ERP, CRM, fichiers, API : là où les données démarrent." },
-        ingestion: { label: "Ingestion", description: "Récupération des données selon un rythme adapté à leur fréquence de changement." },
-        database: { label: "Base de données / entrepôt", description: "Un lieu unique pour les données, dimensionné au volume réel." },
+        ingestion: { label: "Récupération", description: "Récupération des données selon un rythme adapté à leur fréquence de changement." },
+        database: { label: "Base de données", description: "Un lieu unique pour les données, dimensionné au volume réel." },
         transformation: { label: "Transformation", description: "Des tables brutes transformées en données requêtables et documentées." },
         dataModel: { label: "Modèle de données", description: "Une couche cohérente que les équipes métier peuvent interroger." },
         analytics: { label: "Analytique", description: "Tableaux de bord et reporting en libre-service au-dessus du modèle." },
@@ -369,7 +369,7 @@ const uiText: Record<Locale, UiText> = {
       diagram: {
         users: { label: "Utilisateurs", description: "Ceux pour qui la plateforme est réellement construite." },
         webInterface: { label: "Interface web", description: "Ce que voient les utilisateurs : pages publiques et espaces authentifiés." },
-        apiBackend: { label: "API / backend", description: "La couche à laquelle parlent les autres systèmes et l'interface." },
+        apiBackend: { label: "Connexions", description: "La couche à laquelle parlent les autres systèmes et l'interface." },
         businessLogic: { label: "Logique métier", description: "Les règles qui encodent le fonctionnement réel de l'entreprise." },
         postgres: { label: "Base de données", description: "Stockage structuré pour les données réelles de l'outil." },
         externalServices: { label: "Services externes", description: "Paiements, email, calendrier : connectés quand le processus l'exige." },
@@ -382,10 +382,10 @@ const uiText: Record<Locale, UiText> = {
       ragDiagram: {
         companyData: { label: "Données / documents de l'entreprise", description: "Ce sur quoi les réponses doivent réellement s'appuyer." },
         ingestion: { label: "Ingestion", description: "Documents analysés et préparés pour la recherche." },
-        retrieval: { label: "Indexation / recherche", description: "Retrouve les passages pertinents pour une question donnée." },
+        retrieval: { label: "Recherche", description: "Retrouve les passages pertinents pour une question donnée." },
         context: { label: "Contexte", description: "Ces passages, transmis au modèle en plus de la question." },
         localModel: { label: "Modèle local", description: "Dimensionné pour la charge, pas nécessairement le plus grand disponible." },
-        applicationApi: { label: "Application / API", description: "Là où le modèle se connecte à l'usage réel des équipes." },
+        applicationApi: { label: "Application", description: "Là où le modèle se connecte à l'usage réel des équipes." },
         employee: { label: "Collaborateur", description: "Obtient une réponse ancrée dans des documents réels et à jour." },
       },
       deploymentDiagram: {
@@ -394,7 +394,7 @@ const uiText: Record<Locale, UiText> = {
         services: {
           application: { label: "Application", description: "L'interface avec laquelle les gens interagissent." },
           aiService: { label: "Service IA", description: "Exécute le modèle lui-même." },
-          vectorLayer: { label: "Couche vectorielle / recherche", description: "Alimente la recherche dans les documents indexés." },
+          vectorLayer: { label: "Recherche", description: "Alimente la recherche dans les documents indexés." },
           database: { label: "Base de données", description: "Stocke tout ce qui n'est pas les documents eux-mêmes." },
         },
         hardware: { label: "Matériel local / serveur privé", description: "Dimensionné selon le modèle, la charge et les exigences de confidentialité." },
